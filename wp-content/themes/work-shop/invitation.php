@@ -12,6 +12,7 @@
 					<hgroup>
 						<h2>Want to have coffee with us?</h2>
 						<h3>Maybe you want to talk about a new project, tell us about your dreams, or just shoot the proverbial breeze. We're always up for a good conversation. </h3>
+						<h3>Come join us at our office, in downtown Providence. </h3>
 						<h3>We keep a spot open every thursday morning, and schedule coffee at least two weeks in advance. If you can't make Thursday morning, but still want to join us, <a href="#contact" class="jump">drop us a line.</a></h3>	
 					</hgroup>
 					
