@@ -23,7 +23,8 @@ function create_post_type() {
 			'public' => true,
 			'has_archive' => true,
 			'rewrite' => array('slug' => 'projects'),
-			'supports' => array( 'title', 'editor', 'thumbnail' )			
+			'supports' => array( 'title', 'editor', 'thumbnail', 'tags' ),
+			'taxonomies' => array( 'scope_tag' )			
 		)
 	);
 		
@@ -42,6 +43,22 @@ function projects_taxonomy() {
 );  
 }
 add_action( 'init', 'projects_taxonomy' );  
+
+function projects_scope_tags() {
+	register_taxonomy(
+		'scope_tag',
+		'projects',
+		array(
+			'hierarchical' => false,
+			'label' => 'Scope Tags',
+			'query_var' => true,
+			'rewrite' => array('slug' => 'scope_tags')
+		)
+	);
+}
+add_action('init', 'projects_scope_tags');
+
+
 
 	
 function theme_scripts() {
