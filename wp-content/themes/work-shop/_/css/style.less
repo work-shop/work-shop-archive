@@ -41,6 +41,10 @@
 	font-family: @font-family-text;	
 }
 
+.regular(){
+	font-family: 'Apercu Regular','Apercu',Helvetica, Arial, Sans-Serif;	
+}
+
 .transition(@property: all,@duration: .5s, @delay: 0s, @easeing: ease){
 	transition: @property @duration @delay @easeing;
 	-moz-transition: @property @duration @delay @easeing; 
@@ -224,7 +228,7 @@ body{
 
 
 .regular{
-	font-weight: 400;
+	font-family: 'Apercu Regular','Apercu',Helvetica, Arial, Sans-Serif;
 }
 
 .bold{
@@ -331,7 +335,7 @@ h5,h6{
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 0;
+	//z-index: -1;
 	background-size: cover;
 	
 	&.mask-light{
@@ -340,10 +344,11 @@ h5,h6{
 			position: absolute;
 			width: 100%;
 			height: 100%;
-			background: yellow;
 			top: 0;
 			left: 0;
-			background: rgba(255,255,255,.33);
+			z-index: 0;
+			background: rgba(255,255,255,.53);
+			background: yellow;
 		}
 	}
 }
@@ -443,6 +448,45 @@ h5,h6{
 }
 
 
+/********** @PROJECTS *********/
+
+#projects-filters{
+	height: 70px;
+	overflow: hidden;
+	position: relative;
+	padding-top: 5px;
+	
+	.container{
+		//border-bottom: 2px solid @brand;
+	}
+	
+	ul{
+		text-align: center;
+	}
+	
+	li{
+		display: inline-block;
+		margin-right: 13px;
+		
+		a{
+			color: @dark;
+			font-size: 14px;
+			padding-bottom: 2px;
+
+			&:hover{
+				border-bottom: 2px solid @brand;
+			}
+			
+			
+			&.active{
+				border-bottom: 2px solid @brand;
+			}
+		}
+	}
+	
+}
+
+
 /********** @INVITATIONS *********/
 
 .invitation{
@@ -451,9 +495,19 @@ h5,h6{
 
 .invitation-form{
 	position: relative;
+	top: 0;
 	left: 150%;
 	.transition(left,1s);
 	background: rgba(255,255,255,.1);
+	background: @brand;
+	width: 320px;
+	padding: 10px;
+	
+	.gform_wrapper{
+		*{
+			color: white;
+		}
+	}
 	
 	&.open{
 		left: 0;
