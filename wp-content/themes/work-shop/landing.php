@@ -1,107 +1,118 @@
-<div class="landing" style="width: 100%; height: 100%; position: absolute; z-index: 9999; background: #eee;">
+<div class="landing" style="width: 100%; height: 100%; position: fixed; z-index: 9999; background: white;">
 
 
-<style>
-#loadingProgressG{
-width:205px;
-height:16px;
-margin: 33% auto;
-overflow:hidden;
-background-color:#F6871F;
--moz-border-radius:8px;
--webkit-border-radius:8px;
--ms-border-radius:8px;
--o-border-radius:8px;
-border-radius:8px;
-}
-
-.loadingProgressG{
-background-color:#FFFFFF;
-margin-top:0;
-margin-left:-205px;
--moz-animation-name:bounce_loadingProgressG;
--moz-animation-duration:1.7s;
--moz-animation-iteration-count:infinite;
--moz-animation-timing-function:linear;
--webkit-animation-name:bounce_loadingProgressG;
--webkit-animation-duration:1.7s;
--webkit-animation-iteration-count:infinite;
--webkit-animation-timing-function:linear;
--ms-animation-name:bounce_loadingProgressG;
--ms-animation-duration:1.7s;
--ms-animation-iteration-count:infinite;
--ms-animation-timing-function:linear;
--o-animation-name:bounce_loadingProgressG;
--o-animation-duration:1.7s;
--o-animation-iteration-count:infinite;
--o-animation-timing-function:linear;
-animation-name:bounce_loadingProgressG;
-animation-duration:1.7s;
-animation-iteration-count:infinite;
-animation-timing-function:linear;
-width:205px;
-height:16px;
-}
-
-@-moz-keyframes bounce_loadingProgressG{
-0%{
-margin-left:-205px;
-}
-
-100%{
-margin-left:205px;
-}
-
-}
-
-@-webkit-keyframes bounce_loadingProgressG{
-0%{
-margin-left:-205px;
-}
-
-100%{
-margin-left:205px;
-}
-
-}
-
-@-ms-keyframes bounce_loadingProgressG{
-0%{
-margin-left:-205px;
-}
-
-100%{
-margin-left:205px;
-}
-
-}
-
-@-o-keyframes bounce_loadingProgressG{
-0%{
-margin-left:-205px;
-}
-
-100%{
-margin-left:205px;
-}
-
-}
-
-@keyframes bounce_loadingProgressG{
-0%{
-margin-left:-205px;
-}
-
-100%{
-margin-left:205px;
-}
-
-}
-
-</style>
-
-<div id="loadingProgressG">
-	<div id="loadingProgressG_1" class="loadingProgressG"></div>
-</div>
+	<style>
+	
+	#loader{
+		width:30px;
+		height:9px;
+		overflow:hidden;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -20px;
+		margin-left: -20px;
+		background-color:#F6871F;
+	}
+	
+	#loader-bar{
+		background-color:#eee;
+		
+		-moz-animation-name:move_loader;
+		-moz-animation-duration:1.5s;
+		-moz-animation-iteration-count:infinite;
+		-moz-animation-timing-function:linear;
+		-webkit-animation-name:move_loader;
+		-webkit-animation-duration:1.5s;
+		-webkit-animation-iteration-count:infinite;
+		-webkit-animation-timing-function:linear;
+		-ms-animation-name:move_loader;
+		-ms-animation-duration:1.5s;
+		-ms-animation-iteration-count:infinite;
+		-ms-animation-timing-function:linear;
+		-o-animation-name:move_loader;
+		-o-animation-duration:1.5s;
+		-o-animation-iteration-count:infinite;
+		-o-animation-timing-function:linear;
+		animation-name:move_loader;
+		animation-duration:1.5s;
+		animation-iteration-count:infinite;
+		animation-timing-function:linear;
+		width:40px;
+		height:16px;
+	}
+	
+	
+	@-webkit-keyframes move_loader{
+	
+		0%{
+			background-color: #F6871F;
+		}
+		50%{
+			 background-color: #eee; 
+		}	
+		100%{
+			background-color: #F6871F;
+		}	
+		
+	}
+	
+	@-moz-keyframes move_loader{
+		0%{
+			background-color: #F6871F;
+		}
+		50%{
+			 background-color: #eee; 
+		}	
+		100%{
+			background-color: #F6871F;
+		}
+	}
+	
+	
+	@-ms-keyframes move_loader{
+		0%{
+			background-color: #F6871F;
+		}
+		50%{
+			 background-color: #eee; 
+		}	
+		100%{
+			background-color: #F6871F;
+		}
+	
+	}
+	
+	@-o-keyframes move_loader{
+		0%{
+			background-color: #F6871F;
+		}
+		50%{
+			 background-color: #eee; 
+		}	
+		100%{
+			background-color: #F6871F;
+		}
+	
+	}
+	
+	@keyframes move_loader{
+		0%{
+			background-color: #F6871F;
+		}
+		50%{
+			 background-color: #eee; 
+		}	
+		100%{
+			background-color: #F6871F;
+		}
+	
+	}
+	
+	</style>
+	
+	<div id="loader">
+		<div id="loader-bar" class="loader"></div>
+	</div>
 						
 </div>

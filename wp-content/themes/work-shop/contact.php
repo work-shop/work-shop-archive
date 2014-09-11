@@ -1,4 +1,4 @@
 
-<section id="contact" class="block full padded loading">
+<section id="contact" class="block padded">
 
 </section>

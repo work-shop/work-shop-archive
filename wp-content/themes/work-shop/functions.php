@@ -44,12 +44,36 @@ function projects_taxonomy() {
 add_action( 'init', 'projects_taxonomy' );  
 
 	
-function theme_styles()  
-{ 
- //wp_register_style( 'style-less', get_template_directory_uri() . '/_/css/style.less');  
- //wp_register_style( 'style-css', get_template_directory_uri() . '/_/css/style.css');  
+function theme_scripts() {
+	wp_deregister_script( 'jquery' );
+    
+    wp_register_script( 'jquery', get_template_directory_uri() . '/_/js/jquery.js');
+    wp_register_script( 'less', get_template_directory_uri() . '/_/js/less.js');
+    wp_register_script( 'bootstrap', get_template_directory_uri() . '/_/js/bootstrap.js');
+    wp_register_script( 'flexslider', get_template_directory_uri() . '/_/js/flexslider.js');
+    wp_register_script( 'functions', get_template_directory_uri() . '/_/js/functions.js');
+
+    wp_enqueue_script( 'jquery' );
+    wp_enqueue_script( 'less' );    
+    wp_enqueue_script( 'bootstrap' );
+    wp_enqueue_script( 'flexslider' ); 
+	wp_enqueue_script( 'functions' );
+	
+}
+add_action('wp_enqueue_scripts', 'theme_scripts');
+
+
+function theme_styles() { 
   
-  //wp_enqueue_style( 'style-less' );
+  wp_register_style( 'bootstrap', get_template_directory_uri() . '/_/css/bootstrap/bootstrap.less');    
+  wp_register_style( 'style-less', get_template_directory_uri() . '/_/css/style.less');  
+  //wp_register_style( 'style-css', get_template_directory_uri() . '/_/css/style.css');    
+  wp_register_style( 'pictograms', get_template_directory_uri() . '/_/fonts/pictograms.css');  
+   
+  wp_enqueue_style( 'bootstrap' );   
+  wp_enqueue_style( 'style-less' );
+  wp_enqueue_style( 'pictograms' );  
+  
 }
 add_action('wp_enqueue_scripts', 'theme_styles');
 
@@ -75,7 +99,8 @@ if ( function_exists( 'add_theme_support' ) ) {
     set_post_thumbnail_size( 300, 183, true ); 
 }
 if ( function_exists( 'add_image_size' ) ) { 
-	add_image_size( 'project', 720, 440, false );  	
+	add_image_size( 'square', 720, 720, true );  	
+	add_image_size( 'project', 720, 440, true );  	
 	add_image_size( 'full', 1440, 878, true );  
 }
 
@@ -95,13 +120,6 @@ add_action('login_head', 'login_css');
 function customAdmin() {
 	wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/_/css/admin.css' );}
 add_action('admin_head', 'customAdmin');
-
-	
-function get_template_parts( $parts = array() ) {
-	foreach( $parts as $part ) {
-		get_template_part( $part );
-	};
-}	
 
 
 add_action( 'register' , 'register_replacement' );
@@ -128,7 +146,7 @@ add_action( 'admin_menu', 'edit_admin_menus' );
 
 function remove_menus () {
 global $menu;
-	$restricted = array( __('Comments'),/*__('Tools') ,__('Posts'),__('Settings') */ );
+	$restricted = array( __('Comments'),__('Appearance'),/*__('Tools') ,__('Posts'),__('Settings') */ );
 	end ($menu);
 	while (prev($menu)){
 		$value = explode(' ',$menu[key($menu)][0]);
@@ -141,7 +159,7 @@ add_action('admin_menu', 'remove_menus');
 function remove_acf_menu(){
     // provide a list of usernames who can edit custom field definitions here
     $admins = array( 
-        'dev','greg'
+        'dev','greg','nic'
     );
  
     // get the current user
@@ -176,29 +194,12 @@ function cc_mime_types( $mimes ){
 }
 add_filter( 'upload_mimes', 'cc_mime_types' );
 
-
-function loadMore() {
-    $ajax_output = '';
-    
-	get_template_part('work-ajax');
-
-    die($ajax_output);
-}
-
-add_action('wp_ajax_loadMore', 'loadMore');
-add_action('wp_ajax_nopriv_loadMore', 'loadMore'); // not really needed
-
-function loadContact() {
-    $ajax_output_contact = '';
-    
-	get_template_part('contact-ajax');
-
-    die($ajax_output_contact);
-}
-
-add_action('wp_ajax_loadContact', 'loadContact');
-add_action('wp_ajax_nopriv_loadContact', 'loadContact'); // not really needed
-
+	
+function get_template_parts( $parts = array() ) {
+	foreach( $parts as $part ) {
+		get_template_part( $part );
+	};
+}	
 
     
 ?>
