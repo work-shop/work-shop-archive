@@ -1,9 +1,6 @@
-
 @import "animations.less";
 
-
 /********** @VARIABLES *********/
-
 
 @brand: #f6871f;
 
@@ -483,6 +480,66 @@ h5,h6{
 			}
 		}
 	}
+	
+}
+
+#projects-grid{
+	padding-bottom: 15%;
+}
+
+.project-tile{
+	overflow: hidden;
+	
+	&:nth-child(odd){
+	
+		.project-tile-image{
+			
+			&:hover{
+				//opacity: .5;
+				.project-tile-hook{
+					left: 0;
+				}		
+			}
+		}	
+
+		.project-tile-hook{
+			left: -300%;
+		}				
+			
+	}
+	
+	&:nth-child(even){
+	
+		.project-tile-image{
+			
+			&:hover{
+				//opacity: .5;
+				.project-tile-hook{
+					left: 0;
+				}		
+			}
+		}	
+		
+		.project-tile-hook{
+			left: 300%;
+		}		
+			
+	}	
+	
+	.project-tile-image{
+		position: relative;
+	}
+	
+	.project-tile-hook{
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		padding: 30px;
+		.transition(left,.75s);	
+		background: rgba(255,255,255,.5);
+	}
+	
 	
 }
 

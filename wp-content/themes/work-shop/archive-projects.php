@@ -70,7 +70,7 @@
 						$perma = get_permalink();
 						?>
 
-						<article class="col-sm-6 project tile element <?php echo ws_derive_scope_string( get_field('project_scope_tags') ); ?>">
+						<article class="col-sm-6 project project-tile element <?php echo ws_derive_scope_string( get_field('project_scope_tags') ); ?>">
 						
 							<a href="<?php the_permalink(); ?>">
 			
@@ -83,8 +83,8 @@
 								</div>
 								
 								<div class="project-tile-info">
-									<h3><?php echo ws_ifdef_show( $title ); ?></h3>
-									<h4><?php echo $scope_tags_comma_separated_bro; ?></h4>
+									<h3 class="centered"><?php echo ws_ifdef_show( $title ); ?></h3>
+									<h4 class="centered">Molecules, Boom</h4>
 								</div>
 								
 							</a>
