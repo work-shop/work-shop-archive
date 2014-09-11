@@ -1,8 +1,8 @@
 # Makefile for command-line+browser-based wordpress development
 
-# MYSQL information
-MYSQL_USER	= root
-MYSQL_PASS 	= root
+# MYSQL local development information
+MYSQL_USER	= root				
+MYSQL_PASS 	= root				
 MYSQL_DB	= ws_wp_db
 
 # Workspace Configuration
@@ -39,7 +39,7 @@ pull-db-prep:
 	rm -f _databases/dump.sql
 
 imp-db:
-	cd $(WORKSPACE)
+	cd $(THEME)
 	/Applications/MAMP/Library/bin/mysql $(SQL_ARGS) $(MYSQL_DB) < _databases/dump.sql
 
 
