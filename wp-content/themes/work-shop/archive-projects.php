@@ -84,7 +84,18 @@
 								
 								<div class="project-tile-info">
 									<h3><?php echo ws_ifdef_show( $title ); ?></h3>
-									<h4><?php echo $scope_tags_comma_separated_bro; ?></h4>
+									<h4><?php 
+
+										echo ws_split_array_by_key( 
+											get_field('project_scope_tags'), ', ',
+											function( $cb_tag ) {
+												return $cb_tag['scope_tag']->name;
+											}
+										);
+
+
+
+									 ?></h4>
 								</div>
 								
 							</a>
