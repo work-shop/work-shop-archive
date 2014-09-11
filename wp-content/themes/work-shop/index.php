@@ -7,14 +7,14 @@
 	
 		<div id="home-sides" class="">
 			<div id="left-side" class="side">
-				<a href="<?php bloginfo('url'); ?>/projects" class="display-block h2">
-					<h2 class="centered uppercase brand"><span class="border">Projects</span></h2>
+				<a href="<?php bloginfo('url'); ?>/projects" class="display-block h1">
+					<h1 class="centered uppercase brand"><span class="border">Projects</span></h1>
 				</a>
 			</div>
 			
 			<div id="right-side" class="side">
-				<a href="<?php bloginfo('url'); ?>/about" class="display-block h2">
-					<h2 class="centered uppercase brand"><span class="border">About</span></h2>
+				<a href="<?php bloginfo('url'); ?>/about" class="display-block h1">
+					<h1 class="centered uppercase brand"><span class="border">About</span></h1>
 				</a>
 			</div>
 			
