@@ -62,8 +62,9 @@
 						)
 					);
 			
+					$i = 0;
 					while ( $q->have_posts() ) : $q->the_post();
-			
+						
 						// requesting all of the post's relevant values
 						$hero_image = get_field('project_hero_image');
 						$hero_image_url = ( $hero_image ) ? $hero_image['sizes']['full'] : NULL; // url to the full-size image of the project		
@@ -72,7 +73,7 @@
 						$perma = get_permalink();
 						?>
 
-						<article class="col-sm-6 project project-tile element <?php echo ws_derive_scope_string( get_field('project_scope_tags') ); ?>">
+						<article class="<?php echo ws_parity( $i,'left','right' ); ?> col-sm-6 project tile element <?php echo ws_derive_scope_string( get_field('project_scope_tags') ); ?>">
 						
 							<a href="<?php the_permalink(); ?>">
 			
@@ -103,7 +104,7 @@
 											
 						</article>
 			
-			<?php endwhile; ?>
+			<?php $i++; endwhile; ?>
 			
 			</div>
 		</div>
