@@ -2,28 +2,50 @@
 // general functions for use in setting up post data, etc.
 
 // Monadic functions for echoing content to the page.
+function ws_ifdef_do_else( $check, $content, $else ) {
+	return ( $check ) ? $content : $else;
+}
+
+function ws_ifdef_do( $check, $content ) {
+	return ws_ifdef_do_else( $check, $content, "");
+}
+
 function ws_ifdef_show( $content ) {
-	return ( $content ) ? $content : "";
+	return ws_ifdef_do( $content, $content );
 }
 
 function ws_ifdef_concat($before, $content, $after) {
 	return $before . ws_ifdef_show( $content ) . $after;
 }
 
-function ws_ifdef_do( $check, $content ) {
-	return ( $check ) ? $content : "";
+function ws_derive_story_title( $story ) {
+	return strtolower( str_replace( ' ', '-', $story['project_story_name'] ));
 }
-
 
 function ws_derive_scope_string( $scope_tags ) {
 	$accumulator = "";
 	if ( $scope_tags ) {
 		$count = count( $scope_tags );
 		foreach ( $scope_tags as $i => $tag ) {
-			if ( $i < $count ) {
+			if ( $i < $count - 1 ) {
 				$accumulator .= $tag['scope_tag']->slug." ";
 			} else {
 				$accumulator .= $tag['scope_tag']->slug;
+			}
+		}
+	}
+	return $accumulator;	
+}
+
+function ws_split_array_by_key( $array, $delimiter, $format_function ) {
+	$accumulator = "";
+	if ( $array ) {
+		$count = count( $array );
+		foreach ( $array as $i => $tag ) {
+			if ( $i < $count - 1 ) {
+				$accumulator .= $format_function($tag) . $delimiter;
+			} else {
+				$accumulator .= $format_function($tag);
 			}
 		}
 	}
@@ -38,7 +60,24 @@ function ws_render_taxonomy( $taxonomy, $action ) {
 	return $accumulator;
 }
 
+function ws_render_date( $datestring ) {
+	$date = date_parse( $datestring );
+	return $date['month'] . '/' . $date['day'] . '/' . $date['year'];
+}
 
+function ws_decide_image_type( $file ) {
+		return '<img type="'.$file['mime_type'].'" src="'.$file['url'].'" />';
+}
+
+function ws_decide_link_type( $link ) {
+	return ( !strpos($link, 'http://') ) ? $link : get_bloginfo('url').$link;
+	
+}
+
+
+
+
+// Wordpress Functionality
 
 get_template_parts( array( 'theme-options') );
 
