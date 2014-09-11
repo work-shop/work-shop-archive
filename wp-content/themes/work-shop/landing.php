@@ -4,14 +4,14 @@
 	<style>
 	
 	#loader{
-		width:30px;
-		height:9px;
+		width:20px;
+		height:6px;
 		overflow:hidden;
 		position: absolute;
-		top: 50%;
+		top: 45%;
 		left: 50%;
-		margin-top: -20px;
-		margin-left: -20px;
+		margin-top: -3px;
+		margin-left: -10px;
 		background-color:#F6871F;
 	}
 	

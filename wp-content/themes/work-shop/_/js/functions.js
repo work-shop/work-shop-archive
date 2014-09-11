@@ -171,8 +171,9 @@ function view(){
 	ch = $(window).height();
 	cw = $(window).width();
 	
-	if($(window).width() <= 768){		
-		$('.block.crop').css('min-height',ch);		
+	if($(window).width() >= 768){		
+		$('.block.crop').css('height',ch);		
+		$('.block.min').css('min-height',ch);				
 	}
 	
 	if(!loaded){
@@ -190,8 +191,7 @@ function loadPage(){
 	setTimeout(function(){
 		$('.loading').addClass('loaded');
 		$('.landing').addClass('landed');
-		view();
-	},1000);		
+	},750);		
 		
 }
 

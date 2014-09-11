@@ -53,9 +53,9 @@
 
 <?php get_template_part('ie'); ?>
 
-<div id="state">
+<div id="state" class="loading">
 	
-		<header id="header" class="closed loading">
+		<header id="header" class="closed">
 			<div class="container">		
 			
 				<a id="logo" class="logo" href="<?php bloginfo('url'); ?>">
@@ -91,4 +91,4 @@
 
 	<div id="headerfix"></div>
 		
-	<div id="content" class="loading">
+	<div id="content" class="">
