@@ -52,10 +52,6 @@ function ws_split_array_by_key( $array, $delimiter, $format_function ) {
 	return $accumulator;	
 }
 
-function ws_parity( $i, $zero, $one ) {
-	return ( $i % 2 == 0 ) ? $zero : $one;
-}
-
 function ws_render_taxonomy( $taxonomy, $action ) {
 	$accumulator = "";
 	foreach ( $taxonomy as $i => $term ) {
