@@ -1702,7 +1702,7 @@ function media_upload_form( $errors = null ) {
 	global $type, $tab, $is_IE, $is_opera;
 
 	if ( ! _device_can_upload() ) {
-		echo '<p>' . sprintf( __('The web browser on your device cannot be used to upload files. You may be able to use the <a href="%s">native app for your device</a> instead.'), 'https://apps.wordpress.org/' ) . '</p>';
+		echo '<p>' . sprintf( __('The web browser on your device cannot be used to upload files. You may be able to use the <a href="%s">native app for your device</a> instead.'), 'http://apps.wordpress.org/' ) . '</p>';
 		return;
 	}
 
@@ -1779,12 +1779,6 @@ $plupload_init = array(
 	),
 	'multipart_params'    => $post_params,
 );
-
-// Currently only iOS Safari supports multiple files uploading but has a bug that prevents uploading of videos
-// when enabled. See #29602.
-if ( wp_is_mobile() ) {
-	$plupload_init['multi_selection'] = false;
-}
 
 /**
  * Filter the default Plupload settings.
@@ -2866,7 +2860,7 @@ function wp_add_id3_tag_data( &$metadata, $data ) {
 	foreach ( array( 'id3v2', 'id3v1' ) as $version ) {
 		if ( ! empty( $data[$version]['comments'] ) ) {
 			foreach ( $data[$version]['comments'] as $key => $list ) {
-				if ( 'length' !== $key && ! empty( $list ) ) {
+				if ( ! empty( $list ) ) {
 					$metadata[$key] = reset( $list );
 					// Fix bug in byte stream analysis.
 					if ( 'terms_of_use' === $key && 0 === strpos( $metadata[$key], 'yright notice.' ) )
@@ -2928,7 +2922,7 @@ function wp_read_video_metadata( $file ) {
 	if ( ! empty( $data['mime_type'] ) )
 		$metadata['mime_type'] = $data['mime_type'];
 	if ( ! empty( $data['playtime_seconds'] ) )
-		$metadata['length'] = (int) round( $data['playtime_seconds'] );
+		$metadata['length'] = (int) ceil( $data['playtime_seconds'] );
 	if ( ! empty( $data['playtime_string'] ) )
 		$metadata['length_formatted'] = $data['playtime_string'];
 	if ( ! empty( $data['video']['resolution_x'] ) )
@@ -2984,7 +2978,7 @@ function wp_read_audio_metadata( $file ) {
 	if ( ! empty( $data['mime_type'] ) )
 		$metadata['mime_type'] = $data['mime_type'];
 	if ( ! empty( $data['playtime_seconds'] ) )
-		$metadata['length'] = (int) round( $data['playtime_seconds'] );
+		$metadata['length'] = (int) ceil( $data['playtime_seconds'] );
 	if ( ! empty( $data['playtime_string'] ) )
 		$metadata['length_formatted'] = $data['playtime_string'];
 
