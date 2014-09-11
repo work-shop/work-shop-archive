@@ -13,12 +13,10 @@
 				</div>
 			</div>
 		</div>
-		
-	<div id="projects-dash" class="dash static"></div>	
-		
+
 	</section>	
 	
-	<section id="projects-filters" class="filters hidden">
+	<section id="projects-filters" class="filters">
 		<div class="container">
 			<ul>
 			<?php
@@ -86,9 +84,8 @@
 								</div>
 								
 								<div class="project-tile-info">
-
-									<h3 class="centered"><?php echo ws_ifdef_show( $title ); ?></h3>
-									<h4 class="centered"><?php 
+									<h3><?php echo ws_ifdef_show( $title ); ?></h3>
+									<h4><?php 
 
 										echo ws_split_array_by_key( 
 											get_field('project_scope_tags'), ', ',
@@ -96,6 +93,8 @@
 												return $cb_tag['scope_tag']->name;
 											}
 										);
+
+
 
 									 ?></h4>
 								</div>
@@ -108,11 +107,7 @@
 			
 			</div>
 		</div>
-		
-	<div id="projects-dash" class="dash static"></div>		
-		
 	</section>
-	
 
 </div>
 
