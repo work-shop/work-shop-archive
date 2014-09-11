@@ -1,4 +1,44 @@
 <?php
+// general functions for use in setting up post data, etc.
+
+// Monadic functions for echoing content to the page.
+function ws_ifdef_show( $content ) {
+	return ( $content ) ? $content : "";
+}
+
+function ws_ifdef_concat($before, $content, $after) {
+	return $before . ws_ifdef_show( $content ) . $after;
+}
+
+function ws_ifdef_do( $check, $content ) {
+	return ( $check ) ? $content : "";
+}
+
+
+function ws_derive_scope_string( $scope_tags ) {
+	$accumulator = "";
+	if ( $scope_tags ) {
+		$count = count( $scope_tags );
+		foreach ( $scope_tags as $i => $tag ) {
+			if ( $i < $count ) {
+				$accumulator .= $tag['scope_tag']->slug." ";
+			} else {
+				$accumulator .= $tag['scope_tag']->slug;
+			}
+		}
+	}
+	return $accumulator;	
+}
+
+function ws_render_taxonomy( $taxonomy, $action ) {
+	$accumulator = "";
+	foreach ( $taxonomy as $i => $term ) {
+		$accumulator .= $action( $term );
+	}
+	return $accumulator;
+}
+
+
 
 get_template_parts( array( 'theme-options') );
 
