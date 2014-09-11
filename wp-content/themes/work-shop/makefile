@@ -48,7 +48,10 @@ exp-db:
 	/Applications/MAMP/Library/bin/mysqldump $(SQL_ARGS) $(MYSQL_DB) > _databases/dump.sql
 
 
-push-db: push-db-prep exp-db push
+push-db: push-db-prep exp-db
+	git add .
+	git commit -m "added new database version"
+	git push origin master
 
 pull-db: pull-db-prep pull imp-db
 
