@@ -62,7 +62,7 @@ add_action('init', 'projects_scope_tags');
 
 	
 function theme_scripts() {
-	wp_deregister_script( 'jquery' );
+	//wp_deregister_script( 'jquery' );
     
     wp_register_script( 'jquery', get_template_directory_uri() . '/_/js/jquery.js');
     wp_register_script( 'less', get_template_directory_uri() . '/_/js/less.js');
@@ -139,31 +139,9 @@ function customAdmin() {
 add_action('admin_head', 'customAdmin');
 
 
-add_action( 'register' , 'register_replacement' );
-function register_replacement( $link ){
-	if ( ! is_user_logged_in() ) {
-		if ( get_option('users_can_register') )
-			$link = $before . '<a href="' . site_url('wp-login.php?action=register', 'login') . '">' . __('Register') . '</a>' . $after;
-		else
-			$link = '';
-	} else {
-		$link = $before . '<a id="admin" href="' . admin_url() . '">' . __('<span class="icon">(</span>') . '</a>' . $after;
-	}
-	return $link;
-}
-
-
-function edit_admin_menus() {  
-    global $menu;  
-      
-    $menu[5][0] = 'Blog'; // Change Posts to Blog  
-}  
-add_action( 'admin_menu', 'edit_admin_menus' );  
-
-
 function remove_menus () {
 global $menu;
-	$restricted = array( __('Comments'),__('Appearance'),/*__('Tools') ,__('Posts'),__('Settings') */ );
+	$restricted = array( __('Comments'),/*__('Tools') ,__('Posts'),__('Settings') */ );
 	end ($menu);
 	while (prev($menu)){
 		$value = explode(' ',$menu[key($menu)][0]);
@@ -194,16 +172,6 @@ add_action( 'admin_menu', 'remove_acf_menu' );
 
 show_admin_bar(false);
 
-
-add_filter('default_hidden_meta_boxes', 'be_hidden_meta_boxes', 10, 2);
-function be_hidden_meta_boxes($hidden, $screen) {
-	if ( 'post' == $screen->base || 'page' == $screen->base )
-		$hidden = array('slugdiv', 'trackbacksdiv', 'commentstatusdiv', 'commentsdiv', 'postcustom', 'revisionsdiv');
-	return $hidden;
-}
-
-
-define('MAGPIE_FETCH_TIME_OUT', 180);
 
 function cc_mime_types( $mimes ){
 	$mimes['svg'] = 'image/svg+xml';
