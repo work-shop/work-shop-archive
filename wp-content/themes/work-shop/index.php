@@ -17,20 +17,21 @@
 					<h1 class="centered uppercase brand"><span class="border">About</span></h1>
 				</a>
 			</div>
-			
-			<div id="home-dash" class="dash">
-			</div>
+
 		</div>
+			
+	<div id="home-dash" class="dash">
+	</div>		
 				
 	</section>	
 	
-	<section id="home-mission" class="home-mission block min bg-light padded">	
+	<section id="home-mission" class="home-mission block bg-light padded">	
 	
 		<div class="container">
 			<div class="row">
 			
-				<div class="col-sm-12">
-					<h1>Work-Shop is research, design, and fabrication studio in Providence, Rhode Island.</h1>
+				<div class="col-sm-12 col-md-offset-1 col-md-10">
+					<h1 class="centered">Work-Shop is a <a href="#">research</a>, design, and fabrication studio in Providence, Rhode Island.</h1>
 				</div>
 			
 			</div>

@@ -19,6 +19,11 @@ jQuery(document).ready(function($) {
 	  	event.preventDefault();
 		menuToggle();
 	});
+	
+	$('.invitation-toggle').click(function(event) {
+	  	event.preventDefault();
+		invitationToggle();
+	});	
 
 	$(".jump").click(function(e){
 		e.preventDefault();
@@ -137,7 +142,7 @@ function flexsliderSetup(){
 //animate jump links
 function scrollLink(destination){
 	$('html,body').animate({
-		scrollTop: $(destination).offset().top - scrollOffset
+		scrollTop: $(destination).offset().top - 0
 	},1000);
 }
 
@@ -165,6 +170,15 @@ function menuToggle(){
 	
 }
 
+function invitationToggle(){
+	
+	if($('.invitation-form').hasClass('closed')){
+		$('.invitation-form').removeClass('closed');
+		$('.invitation-form').addClass('open');
+	}
+	
+}
+
 //measure, resize, and adjust the viewport
 function view(){
 	
@@ -174,6 +188,10 @@ function view(){
 	if($(window).width() >= 768){		
 		$('.block.crop').css('height',ch);		
 		$('.block.min').css('min-height',ch);				
+	}
+	else{
+		$('.block.crop').css('min-height',ch);	
+		$('.block.min').css('min-height',ch);							
 	}
 	
 	if(!loaded){

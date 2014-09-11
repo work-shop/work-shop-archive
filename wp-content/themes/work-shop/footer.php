@@ -1,7 +1,9 @@
 
 	</div><!--/#content-->
 	
-	<?php get_template_part('signpost'); ?>
+	
+	
+	<?php if(!is_home()): get_template_part('signpost'); endif; ?>
 	
 	<?php get_template_part('invitation'); ?>
 	
