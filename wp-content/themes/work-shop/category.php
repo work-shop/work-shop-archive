@@ -2,7 +2,7 @@
 
 <div id="category" class="template category">	
 
-	<section id="category-introduction" class="category-introduction block crop bg-light">	
+	<section id="category-introduction" class="category-introduction introduction block crop bg-light">	
 				
 	</section>	
 	

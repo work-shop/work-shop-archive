@@ -3,7 +3,7 @@
 
 <div id="info" class="template info">	
 
-	<section id="info-introduction" class="info-introduction block crop bg-light">	
+	<section id="info-introduction" class="info-introduction introduction block crop bg-light">	
 				
 	</section>	
 	

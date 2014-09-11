@@ -47,7 +47,7 @@
 				
 </head>
 
-<body <?php body_class('before loading'); ?>>
+<body <?php body_class('before'); ?>>
 
 <?php get_template_part('landing'); ?>
 
@@ -55,7 +55,7 @@
 
 <div id="state">
 	
-		<header id="header" class="closed">
+		<header id="header" class="closed loading">
 			<div class="container">		
 			
 				<a id="logo" class="logo" href="<?php bloginfo('url'); ?>">
@@ -89,7 +89,6 @@
 			</div>					
 		</header>
 
-	
 	<div id="headerfix"></div>
 		
-	<div id="content">
+	<div id="content" class="loading">

@@ -3,7 +3,15 @@
 
 <div id="home" class="template home">	
 
-	<section id="home-introduction" class="home-introduction block crop bg-light">	
+	<section id="home-introduction" class="home-introduction introduction block crop bg-light">	
+	
+		<div id="home-left">
+		
+		</div>
+		
+		<div id="home-right">
+		
+		</div>
 				
 	</section>	
 	

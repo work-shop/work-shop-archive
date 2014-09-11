@@ -29,7 +29,7 @@
 		  var _gaq = _gaq || [];
 		  _gaq.push(['_setAccount', 'UA-43897729-1']);
 		  _gaq.push(['_trackPageview']);
-		0
+		
 		  (function() {
 		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -46,7 +46,7 @@
 	</script>		 		
 
 	<script type="text/javascript">
-	     less.env = "development"; less.watch();
+	     less.env = "production"; less.watch();
 	</script>
 
 </div>

@@ -2,7 +2,7 @@
 		
 <div id="projects" class="template projects">	
 	
-	<section id="projects-introduction" class="project-introduction block crop bg-light">	
+	<section id="projects-introduction" class="project-introduction introduction block crop bg-light">	
 				
 	</section>	
 
