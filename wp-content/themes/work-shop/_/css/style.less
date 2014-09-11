@@ -41,6 +41,10 @@
 	font-family: @font-family-text;	
 }
 
+.regular(){
+	font-family: 'Apercu Regular','Apercu',Helvetica, Arial, Sans-Serif;	
+}
+
 .transition(@property: all,@duration: .5s, @delay: 0s, @easeing: ease){
 	transition: @property @duration @delay @easeing;
 	-moz-transition: @property @duration @delay @easeing; 
@@ -198,7 +202,7 @@ body{
 }
 
 .container{
-	padding: 0;
+	//padding: 0;
 }
 
 .white{
@@ -224,7 +228,7 @@ body{
 
 
 .regular{
-	font-weight: 400;
+	font-family: 'Apercu Regular','Apercu',Helvetica, Arial, Sans-Serif;
 }
 
 .bold{
@@ -260,7 +264,7 @@ body{
 }
 
 h1,h2,h3,h4,h5,h6,p{
-	line-height: 1.3;
+	line-height: 1.4;
 	color: @dark;
 	font-weight: normal;	
 }
@@ -321,7 +325,31 @@ h5,h6{
 	}
 	
 	&.padded{
-		padding: 7% 0 6% 0;
+		padding: 8% 0 9% 0;
+	}
+}
+
+.block-background{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	//z-index: -1;
+	background-size: cover;
+	
+	&.mask-light{
+		&:after{
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			z-index: 0;
+			background: rgba(255,255,255,.53);
+			background: yellow;
+		}
 	}
 }
 
@@ -357,7 +385,10 @@ h5,h6{
 	width: 20px;
 	height: 6px;
 	background: @brand;
+	z-index: 9;
 }
+
+
 
 
 /********** @HOME *********/
@@ -381,14 +412,14 @@ h5,h6{
 			.transition(background,.35s);
 			
 			&:hover{
-				background: #fefefe;
+				background: #fdfdfd;
 				
 				.border{
 					border-bottom: 5px solid @brand;
 				}
 			}
 			
-			h2{
+			h1{
 				margin-top: 0;
 				position: relative;
 				top: 45%;
@@ -410,6 +441,182 @@ h5,h6{
 	left: 50%;
 	-webkit-transform: translate(-50%,-50%);
 	z-index: 9;
+}
+
+#home-mission{
+	
+}
+
+
+/********** @PROJECTS *********/
+
+#projects-filters{
+	height: 70px;
+	overflow: hidden;
+	position: relative;
+	padding-top: 5px;
+	
+	.container{
+		//border-bottom: 2px solid @brand;
+	}
+	
+	ul{
+		text-align: center;
+	}
+	
+	li{
+		display: inline-block;
+		margin-right: 13px;
+		
+		a{
+			color: @dark;
+			font-size: 14px;
+			padding-bottom: 2px;
+
+			&:hover{
+				border-bottom: 2px solid @brand;
+			}
+			
+			
+			&.active{
+				border-bottom: 2px solid @brand;
+			}
+		}
+	}
+	
+}
+
+
+/********** @INVITATIONS *********/
+
+.invitation{
+	overflow: hidden;
+}
+
+.invitation-form{
+	position: relative;
+	top: 0;
+	left: 150%;
+	.transition(left,1s);
+	background: rgba(255,255,255,.1);
+	background: @brand;
+	width: 320px;
+	padding: 10px;
+	
+	.gform_wrapper{
+		*{
+			color: white;
+		}
+	}
+	
+	&.open{
+		left: 0;
+	}
+}
+
+
+/********** @UTILITIES *********/
+
+.button{
+	padding: 7px;
+	border: 2px solid @brand;
+	background: white;
+	
+	font-size: 17px;
+	text-transform: uppercase;
+	
+	.transition(all,.125s);
+	
+	&:hover{
+		background: @brand;
+		color: white;
+	}
+	
+	&.centered{
+		display: block;
+		max-width: 150px;
+		margin: 0 auto;
+	}
+	
+	&.margin{
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+}
+
+.contact-button{
+	max-width: 300px;
+	height: 183px;
+	padding: 10px;
+	margin: 30px auto;
+	background: @brand;
+	
+	*{
+		color: white;
+	}
+}
+
+.gform_wrapper{
+	
+	.gfield{
+		margin-bottom: 20px;
+	}
+	
+	.gfield.gform_validation_container{
+		display: none;
+	}	
+	
+	.gfield_checkbox{
+		label{
+			display: inline;
+			max-width: none;
+		}
+		
+		li{
+			margin-bottom: 5px;
+		}
+	}	
+	
+	.gfield_required{
+		color: @brand;
+		margin-left: 5px;
+	}
+	
+}
+
+input,textarea{
+	.transition(all,.125s);
+	padding: 5px;
+	border: 2px solid transparent;
+	outline: none;
+	width: 100%;
+	max-width: 300px;
+	font-size: 16px;
+	opacity: .8;
+
+	&:focus{
+		outline: none;
+		border: 2px solid @brand;
+		opacity: 1;
+	}
+	
+	&[type="submit"]{
+		background: white;
+		padding: 10px;
+		color: @brand;
+	}
+	
+	&[type="checkbox"]{
+		max-width: 30px;
+		display: inline;
+	}	
+	
+}
+
+label{
+	font-size: 15px;
+	margin-bottom: 4px;
+	display: block;
 }
 
 
