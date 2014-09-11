@@ -22,7 +22,8 @@
 							
 	</section>	
 	
-	<div id="home-dash" class="dash"></div>	
+	<div id="home-dash" class="dash">
+	</div>	
 	
 	<section id="home-mission" class="home-mission block bg-white padded-more">	
 	

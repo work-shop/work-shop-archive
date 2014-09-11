@@ -14,9 +14,8 @@
 			</div>
 		</div>
 		
-	<div id="projects-dash" class="dash"></div>	
+	<div id="projects-dash" class="dash static"></div>	
 		
-
 	</section>	
 	
 	<section id="projects-filters" class="filters hidden">
@@ -73,7 +72,7 @@
 						$perma = get_permalink();
 						?>
 
-						<article class="project project-tile element <?php echo ws_derive_scope_string( get_field('project_scope_tags') ); ?>">
+						<article class="col-sm-6 project project-tile element <?php echo ws_derive_scope_string( get_field('project_scope_tags') ); ?>">
 						
 							<a href="<?php the_permalink(); ?>">
 			
@@ -108,7 +107,11 @@
 			
 			</div>
 		</div>
+		
+	<div id="projects-dash" class="dash static"></div>		
+		
 	</section>
+	
 
 </div>
 
