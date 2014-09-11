@@ -108,42 +108,73 @@
 	<?php
 
 	$stories = get_field('project_stories');
+	$sidebar_accumulator = "<ul>"; 	// this variable accumulates the names and slugs of stories, so that
+							   		// we don't have to reiterate over the stories to construct the sidebar later.
+									// When it is complete, the sidebar is a ul, comprised of li > a
 
-	foreach ( ( $stories ) ? $stories : array() as $key => $story ) : 
+		foreach ( ( $stories ) ? $stories : array() as $key => $story ) : 
 
-		var_dump($story);
+			$story_title_slug = ws_derive_story_title( $story );
+			$story_style_background_image = $story['project_story_background_image'];
+			$story_style_background_color = $story['project_story_background_color'];
+			$story_is_container = $story['is_container'];
+			$story_content = $story['project_story_content'];
 
-		$story_title_slug = ws_derive_story_title( $story );
-		$story_style_background_image = $story['project_story_background_image'];
-		$story_style_background_color = $story['project_story_background_color'];
-		$story_is_container = $story['is_container'];
-		$story_content = $story['project_story_content'];
+			$sidebar_accumulator .= '<li><a href="#'.$story_title_slug.'">'.$story['project_story_name'].'</a></li>'; 
 
+		?>
 
+		<section id="<?php echo $story_title_slug; ?>" class="<?php echo $story_title_slug; ?> story block crop bg-light">
+
+		<?php
+			echo ws_ifdef_do( $story_is_container, 
+				ws_ifdef_concat(
+					'<div class="block-background" style="',
+					ws_ifdef_do($story_style_background_image, 'background-image:url('.$story_style_background_image.');' )
+					.ws_ifdef_do($story_style_background_color, 'background-color:'.$story_style_background_color.';' ),
+					'" ></div>'
+				)
+				
+			);
+			// echos a background container to the frame.
+
+			echo ws_ifdef_show( $story_content );
+		?>
+
+		</section>
+
+	<?php 
+
+		endforeach; 
+
+		$sidebar_accumulator .= "</ul>"; // end the sidebar, and
+		echo $sidebar_accumulator;
 
 	?>
 
-	<section id="<?php echo $story_title_slug; ?>" class="<?php echo $story_title_slug; ?> story block crop bg-light">
+	<?php
+
+		if ( $slideshow = get_field('project_slideshow') ) :
+
+	?>
+
+	<section id="project-slideshow" class="project-slideshow block crop bg-light">
 
 	<?php
-		ws_ifdef_do( $story_is_container, 
-			ws_ifdef_concat(
-				'<div class="block-background">',
-				,
-				'</div>'
-			)
-			
+		echo ws_split_array_by_key(
+			$slideshow,
+			"",
+			function( $cb_img ) {
+				return '<img type="'.$cb_img[ 'mime_type' ].'" src="'.$cb_img['sizes']['full'].'" />';
+			}
 		);
-
-
-
-
 
 	?>
 
 	</section>
 
-	<?php endforeach; ?>
+	<?php endif; ?>
+
 	
 </div>	
 

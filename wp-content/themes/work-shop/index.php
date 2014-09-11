@@ -19,13 +19,13 @@
 			</div>
 
 		</div>
-			
-	<div id="home-dash" class="dash">
-	</div>		
-				
+							
 	</section>	
 	
-	<section id="home-mission" class="home-mission block bg-light padded">	
+	<div id="home-dash" class="dash">
+	</div>	
+	
+	<section id="home-mission" class="home-mission block bg-white padded-more">	
 	
 		<div class="container">
 			<div class="row">
