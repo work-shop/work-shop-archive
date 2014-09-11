@@ -62,7 +62,7 @@ add_action('init', 'projects_scope_tags');
 
 	
 function theme_scripts() {
-	//wp_deregister_script( 'jquery' );
+	wp_deregister_script( 'jquery' );
     
     wp_register_script( 'jquery', get_template_directory_uri() . '/_/js/jquery.js');
     wp_register_script( 'less', get_template_directory_uri() . '/_/js/less.js');
