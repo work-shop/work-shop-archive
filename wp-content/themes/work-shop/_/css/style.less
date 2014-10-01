@@ -336,7 +336,7 @@ h5,h6{
 	position: absolute;
 	top: 0;
 	left: 0;
-	//z-index: -1;
+	z-index: -1;
 	background-size: cover;
 	
 	&.mask-light{
@@ -368,14 +368,20 @@ h5,h6{
 		left: 50%;
 		margin-left: -65px;
 		position: absolute;
+		margin-top: 15px;
 	}
 	
 	#carrot{
 		position: fixed;
-		right: 15px;
+		right: 18px;
 		width: 23px;
 		top: 20px;
-		opacity: .25;
+		opacity: .75;
+		.transition(opacity,.125s);
+		
+		&:hover{
+			opacity: 1;
+		}
 	}
 }
 
@@ -558,9 +564,56 @@ h5,h6{
 			height: 60px;
 		}
 	}
-	
-	
+		
 }
+
+/********** @SINGLE-PROJECT *********/
+
+@gutter: 60px;
+
+#project-introduction{
+	//background: #333;
+	
+	.hero-image{
+		padding: 0 @gutter;
+	}
+}
+
+#project-overview{
+	.block-background{
+		opacity: .5;
+		z-index: -1;
+	}
+}
+
+#story-bar{
+	margin: 0;
+	padding: 0;
+	height: @gutter;	
+	position: fixed;
+	right: 5px;
+	top: 40%;
+	z-index: 8;	
+	transform: rotate(90deg);
+	transform-origin: 50% 200%;
+	overflow: hidden;
+	
+	li{
+		margin: 0;
+		height: inherit;
+
+		a{
+			height: inherit;
+			display: block;
+			font-size: 20px;
+			line-height: @gutter;
+			vertical-align: middle;	
+			text-transform: uppercase;	
+			color: @dark;
+		}
+	}
+}
+
 
 
 /********** @INVITATIONS *********/
