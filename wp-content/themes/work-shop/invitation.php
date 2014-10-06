@@ -1,6 +1,6 @@
 
 <section id="invitation" class="invitation block min padded">
-	<div id="invitiation-background" class="block-background invitation-background mask-light" style="background-image: url(<?php bloginfo('template_directory'); ?>/_/img/invitation.jpg)">
+	<div id="invitiation-background" class="block-background invitation-background" style="background-image: url(<?php bloginfo('template_directory'); ?>/_/img/invitation.jpg)">
 	</div>
 	
 	<div class="block-body">

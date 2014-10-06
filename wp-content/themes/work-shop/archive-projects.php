@@ -73,7 +73,7 @@
 						$perma = get_permalink();
 						?>
 
-						<article class="<?php echo ws_parity( $i,'left','right' ); ?> col-sm-6 project project-tile element <?php echo ws_derive_scope_string( get_field('project_scope_tags') ); ?>">
+						<article class="<?php echo ws_parity( $i,'left','right' ); ?> col-sm-4 project project-tile element <?php echo ws_derive_scope_string( get_field('project_scope_tags') ); ?>">
 						
 							<a href="<?php the_permalink(); ?>">
 			

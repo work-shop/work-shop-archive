@@ -62,12 +62,12 @@
 					<img src="<?php bloginfo('template_directory'); ?>/_/img/logo.png" alt="logo">					
 				</a>		
 
-				<nav class="right hidden-xs hidden" id="nav">
+				<nav class="right hidden-xs" id="nav">
 					<ul class="main-menu">
 						<li id="home-link"><a href="<?php bloginfo('url'); ?>" class="hidden" >Home</a></li>
-						<li><a href="/work" id="work-link" class="">Work</a></li>	
-						<li><a href="/contact" class="">Info</a></li>
-						<li><a href="/process" class="">Process</a></li>	
+						<li><a href="<?php bloginfo('url'); ?>/projects" id="work-link" class="">Projects</a></li>	
+						<li><a href="<?php bloginfo('url'); ?>/about" class="">About</a></li>
+						<li><a href="/process" class="hidden">Process</a></li>	
 					</ul>	
 				</nav>	
 				

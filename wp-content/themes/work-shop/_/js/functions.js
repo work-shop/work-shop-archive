@@ -120,10 +120,9 @@ $(document).keydown(function(e){
 //initialize flexslider slideshows
 function flexsliderSetup(){
 
-	$('.flexslider-shop').flexslider({	
+	$('.flexslider-home').flexslider({	
 	      animation: 'fade',
-	      controlsContainer: '.flexslider-controls',
-	      slideshowSpeed: 8000,           
+	      slideshowSpeed: 4000,           
 		  animationSpeed: 1000,
 	      directionNav: false,
 	      controlNav: false
@@ -135,7 +134,7 @@ function flexsliderSetup(){
 	      slideshowSpeed: 5000,           
 		  animationSpeed: 250,
 	      directionNav: true
-	 });	
+	 });			 
 	 	 	
 }
 

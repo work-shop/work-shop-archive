@@ -12,32 +12,28 @@
 }
 
 
-.dream-drawing{
-	.animation(orbit, 20s, linear, 4s, infinite);
+#home-mission .flex-active-slide{
+	//.animation(scale, 8s, linear, 0s, infinite);
 }	
 
-.dream-active .dream-drawing{
-	 -webkit-animation-play-state: paused; 
-	 animation-play-state: paused;	
+#home-mission .block-background{
+	.animation(scale, 20s, linear, 0s, infinite);
+}	
+
+#home-mission .slides li{
+	-webkit-transform: scale(1.05);  		
 }
 
 
-
-
-
-
-@-webkit-keyframes fader{
+@-webkit-keyframes scale{
   0% {
-	opacity: .25;  
+	-webkit-transform: scale(1.0);
 	}
-  33% {
-	opacity: 1;
+  50% {
+	-webkit-transform: scale(1.05);  	
   }
-  66% {
-	opacity: .25;  
-	} 
   100% {
-	opacity: 1;
+	-webkit-transform: scale(1.0);  	
   }	
 	  
 }

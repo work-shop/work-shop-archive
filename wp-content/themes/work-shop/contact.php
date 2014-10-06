@@ -38,14 +38,14 @@
 			<div class="row">
 			
 				<div class="col-sm-4 col-sm-offset-2">
-					<div class="contact-button">
+					<div class="button">
 						<h3>Contact Us</h3>
 					</div>
 				
 				</div>
 			
 				<div class="col-sm-4">
-					<div class="contact-button">
+					<div class="button">
 						<h3>Subscribe to our Newsletter</h3>
 					</div>				
 				</div>
