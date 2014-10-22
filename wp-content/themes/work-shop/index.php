@@ -45,12 +45,9 @@
 		</div>
 		
 		<div class="tagline-container">
-			<h1 class="centered tagline white bold">Work-Shop is an <a href="#" class="bold">interdisciplinary</a><br/>
+			<h1 class="centered tagline white">Work-Shop is an <a href="#" class="bold">interdisciplinary</a><br/>
 			research, design, and fabrication studio<br/>
 			in Providence, Rhode Island.<br/></h1>
-			<h1 class="centered tagline white">We make experiences that are<br/>
-			 tangible, virtual, and cultural.
-			</h1>			
 		</div>
 						
 	</section>	
@@ -74,7 +71,8 @@
 		</div>
 						
 	</section>
-			
+	
+	<?php get_template_part('projects'); ?>	
 	
 </div>	
 

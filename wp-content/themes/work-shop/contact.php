@@ -33,20 +33,20 @@
 		</div>
 	</div>
 	
-	<div class="block-body">
+	<div class="block-body actions">
 		<div class="container">
 			<div class="row">
 			
 				<div class="col-sm-4 col-sm-offset-2">
-					<div class="button">
-						<h3>Contact Us</h3>
+					<div class="contact-button-">
+						<a href="#" class="button">Contact Us</a>
 					</div>
 				
 				</div>
 			
 				<div class="col-sm-4">
-					<div class="button">
-						<h3>Subscribe to our Newsletter</h3>
+					<div class="contact-button-">
+						<a href="#" class="button">Subscribe to our Newsletter</a>
 					</div>				
 				</div>
 				

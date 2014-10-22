@@ -8,7 +8,7 @@
 
 @mid: #ccc;
 
-@light: #eee;
+@light: #efefef;
 
 @error: #f2dede;
 
@@ -370,7 +370,7 @@ h5,h6{
 			left: 0;
 			z-index: 2;
 			//background: linear-gradient(to bottom,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.4) 75%,rgba(0,0,0,.1) 100%); /* W3C */
-			background: rgba(0,0,0,.33);
+			background: rgba(65,60,60,.33);
 		}
 		
 	}	
@@ -544,16 +544,6 @@ h5,h6{
 }
 
 
-#header #nav{
-	 ul li{
-		a{
-			color: white;
-		}
-	}
-}
-
-
-
 
 /********** @PROJECTS *********/
 
@@ -595,6 +585,10 @@ h5,h6{
 
 #projects-grid{
 	padding-bottom: 10%;
+	
+	.container{
+		max-width: 1000px;
+	}
 }
 
 .project-tile{
@@ -602,7 +596,7 @@ h5,h6{
 	margin-bottom: 60px;
 	
 	h2{
-/* 		/font-size: 70px; */
+		color: white;
 	}
 	
 	&:nth-child(odd){
@@ -652,7 +646,7 @@ h5,h6{
 		height: 100%;
 		padding: 30px;
 		.transition(left,.75s);	
-		background: rgba(255,255,255,.95);
+		//background: rgba(110,110,110,.53);
 		
 	}
 	
@@ -715,6 +709,32 @@ h5,h6{
 	}
 }
 
+/********** @ABOUT *********/
+
+.info-mission{
+	
+
+	h3{
+		line-height: 1.6;
+	}
+
+	
+}
+
+.person{
+
+	h3{
+		margin-bottom: 3px;
+	}
+	h4{
+		margin-top: 3px;
+		margin-bottom: 3px;
+	}
+	
+	p{
+		//margin-top: 
+	}
+}
 
 
 /********** @INVITATIONS *********/
@@ -750,8 +770,27 @@ h5,h6{
 
 #contact{
 	
+	address *{
+		text-align: center;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+	
+	.button{
+		display: block;
+	}
+	
+	.actions{
+		margin-top: 100px;
+		
+		.button{
+			height: 60px;
+		}
+	}
 
 }
+
+
 
 
 /********** @UTILITIES *********/
@@ -760,15 +799,25 @@ h5,h6{
 	padding: 7px;
 	border: 2px solid @brand;
 	background: white;
+	color: @brand;
+	
+	*{
+		color: @brand;
+	}
 	
 	font-size: 17px;
 	text-transform: uppercase;
+	text-align: center;
 	
 	.transition(all,.125s);
 	
 	&:hover{
 		background: @brand;
 		color: white;
+		
+		*{
+			color: white;
+		}
 	}
 	
 	&.centered{
@@ -856,6 +905,13 @@ label{
 	font-size: 15px;
 	margin-bottom: 4px;
 	display: block;
+}
+
+.blurby{
+	&.margined{
+		//margin-top: 60px;
+		margin-bottom: 60px;
+	}
 }
 
 
