@@ -53,7 +53,7 @@
 
 <?php get_template_part('ie'); ?>
 
-<div id="state" class="loading">
+<div id="state" class="loading spy">
 	
 		<header id="header" class="closed">
 			<div class="container">		
@@ -66,8 +66,8 @@
 					<ul class="main-menu">
 						<li id="home-link"><a href="<?php bloginfo('url'); ?>" class="hidden" >Home</a></li>
 						<li><a href="<?php bloginfo('url'); ?>/projects" id="work-link" class="">Projects</a></li>	
+						<li><a href="<?php bloginfo('url'); ?>/process" class="">Process</a></li>							
 						<li><a href="<?php bloginfo('url'); ?>/about" class="">About</a></li>
-						<li><a href="/process" class="hidden">Process</a></li>	
 					</ul>	
 				</nav>	
 				
@@ -90,5 +90,20 @@
 		</header>
 
 	<div id="headerfix"></div>
+
+	<div id="nav-side" class="dark">
+		<ul>
+			<li><a class="jump active side" href="#home-introduction"></a></li>
+			<li><a class="jump side" href="#home-about" ></a></li>
+			<li><a class="jump side" href="#home-spaces" ></a></li>		
+			<li><a class="jump side" href="#home-interfaces"></a></li>
+			<li><a class="jump side" href="#home-furniture"></a></li>		
+			<li><a class="jump side" href="#home-fabrication"></a></li>
+			<li><a class="jump side" href="#home-info"></a></li>	
+			<li><a class="jump side" href="#home-news"></a></li>				
+			<li><a class="jump side" href="#invitation"></a></li
+		</ul>
+		
+	</div>	
 		
 	<div id="content" class="">

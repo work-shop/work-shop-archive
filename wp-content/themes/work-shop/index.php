@@ -3,54 +3,97 @@
 
 <div id="home" class="template home">	
 
-	<section id="home-introduction" class="home-introduction introduction block crop hidden">	
-	
-		<div id="home-sides" class="">
-			<div id="left-side" class="side">
-				<a href="<?php bloginfo('url'); ?>/projects" class="display-block h1">
-					<h1 class="centered uppercase brand"><span class="border">Projects</span></h1>
-				</a>
-			</div>
-			
-			<div id="right-side" class="side">
-				<a href="<?php bloginfo('url'); ?>/about" class="display-block h1">
-					<h1 class="centered uppercase brand"><span class="border">About</span></h1>
-				</a>
-			</div>
+	<div id="home-background" class="block">
+		<div class="block-background mask-light" style="background-image: url('<?php bloginfo('template_directory'); ?>/_/img/sketching.jpg')">
+		</div>	
+	</div>
 
+	<section id="home-introduction" class="home-introduction introduction block crop">	
+	
+		<div class="tagline-container">
+			<h1 class="centered tagline">
+				We design and make<br/>
+				spaces, furniture, objects<br/>
+				websites, and apps.
+			</h1>
 		</div>
 							
 	</section>	
 	
-	<div id="home-dash" class="dash hidden">
-	</div>	
+	<section id="home-about" class="home-about block half padded">	
 	
-	<section id="home-mission" class="home-mission block crop bg-white">	
-	
-		<div class="block-background mask-dark">
-
-			<div class="flexslider-home">
-				<ul class="slides">
-					<li style="background-image: url(<?php bloginfo('template_directory'); ?>/_/img/home.jpg)">		
-					</li>
-					<li style="background-image: url(<?php bloginfo('template_directory'); ?>/_/img/home2.jpg)">		
-					</li>	
-					<li style="background-image: url(<?php bloginfo('template_directory'); ?>/_/img/home3.jpg)">		
-					</li>	
-					<li style="background-image: url(<?php bloginfo('template_directory'); ?>/_/img/home5.jpg)">		
-					</li>		
-				</ul>
-			</div>
-														
-		</div>
-		
-		<div class="tagline-container">
-			<h1 class="centered tagline white">Work-Shop is an <a href="#" class="bold">interdisciplinary</a><br/>
+		<div class="vertical-center">
+			<h2 class="centered tagline">Work-Shop is an <a href="#" class="bold">interdisciplinary</a><br/>
 			research, design, and fabrication studio<br/>
-			in Providence, Rhode Island.<br/></h1>
+			in Providence, Rhode Island.<br/></h2>
 		</div>
 						
 	</section>	
+	
+	<section id="home-spaces" class="home-spaces block crop bg-light">	
+	
+		<div class="block-background mask-dark" style="background-image: url('<?php bloginfo('template_directory'); ?>/_/img/home.jpg')">
+		</div>
+	
+		<div class="vertical-center">
+			<h1 class="centered tagline white">
+				Spaces
+			</h1>
+		</div>
+							
+	</section>		
+	
+	<section id="home-interfaces" class="home-interfaces block crop bg-light">	
+	
+		<div class="block-background mask-light" style="background-image: url('<?php bloginfo('template_directory'); ?>/_/img/home4.jpg')">	
+		</div>
+	
+		<div class="vertical-center">
+			<h1 class="centered tagline">
+				Interfaces
+			</h1>
+		</div>
+							
+	</section>		
+	
+	<section id="home-furniture" class="home-furniture block crop bg-light">	
+	
+		<div class="block-background mask-dark" style="background-image: url('<?php bloginfo('template_directory'); ?>/_/img/home3.jpg')">	
+		</div>
+	
+		<div class="vertical-center">
+			<h1 class="centered tagline white">
+				Furniture
+			</h1>
+		</div>
+							
+	</section>	
+	
+	<section id="home-fabrication" class="home-fabrication block crop bg-light">	
+	
+		<div class="block-background mask-light" style="background-image: url('<?php bloginfo('template_directory'); ?>/_/img/home2.jpg')">	
+		</div>
+	
+		<div class="vertical-center">
+			<h1 class="centered tagline">
+				Fabrication
+			</h1>
+		</div>
+							
+	</section>			
+
+	<section id="home-info" class="home-info block crop bg-light">	
+	
+		<div class="block-background mask-light" style="background-image: none">	
+		</div>
+	
+		<div class="vertical-center">
+			<h1 class="centered tagline">
+				Info
+			</h1>
+		</div>
+							
+	</section>		
 	
 	<section id="home-news" class="home-news block bg-light padded">	
 		
@@ -71,9 +114,7 @@
 		</div>
 						
 	</section>
-	
-	<?php get_template_part('projects'); ?>	
-	
+		
 </div>	
 
 <?php get_footer(); ?>

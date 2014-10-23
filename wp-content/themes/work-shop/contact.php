@@ -1,5 +1,5 @@
 
-<section id="contact" class="contact block min bg-light padded-more">
+<section id="contact" class="contact block min padded-more">
 
 	<div class="block-body">
 		<div class="container">
@@ -7,7 +7,7 @@
 			
 				<div class="col-sm-6 col-md-4">
 					<address>
-						<h2>The Design Office</h2>
+						<h2>Office</h2>
 						<h3>204 Westminster Street, Floor 3</h3>
 						<h3>Providence, RI 02903</h3>						
 					</address>				
@@ -23,7 +23,7 @@
 				
 				<div class="col-sm-6 col-md-4">
 					<address>
-						<h2>The Shop</h2>
+						<h2>Shop</h2>
 						<h3>610 Manton Avenue</h3>
 						<h3>Providence, RI 02909</h3>						
 					</address>					

@@ -184,7 +184,8 @@ function view(){
 	ch = $(window).height();
 	cw = $(window).width();
 	
-	if($(window).width() >= 768){		
+	if($(window).width() >= 768){	
+		$('.block.half').css('height',ch/2);				
 		$('.block.crop').css('height',ch);		
 		$('.block.min').css('min-height',ch);				
 	}
@@ -218,38 +219,22 @@ function spy(){
 	var targets = new Array();
 	
 	$('#nav-side .jump').each(function(i){
-		targets[i] = new Array(5);
+		targets[i] = new Array(3);
 		var temp = $(this).attr('href');
 		var offset = $(temp).offset();	
 		targets[i][0] = $(this);		
 		targets[i][1] = offset.top;
-		targets[i][2] = temp.replace("#if-","active-");
-		targets[i][3] = temp.replace("#if-","");
-		targets[i][4] = $(temp);
+		targets[i][2] = $(temp);
 		
 	});
 	
-	o = $(window).height() * .33;
-	
 	for(var j = 0; j < targets.length; j++){
-		if(( targets[j+1] && $(window).scrollTop()+o) >= targets[j][1] && $(window).scrollTop()+o <= targets[j+1][1]){
-			state =  targets[j][3];
-			if(j == 0){
-				statePrevious = targets[j][4];			
-			} else{
-				statePrevious = targets[j-1][4];							
-			}
-			stateNext = targets[j+1][4];
-			$('#state').attr("class", targets[j][2]);
-			$('#nav-side .jump').removeClass('active');
-			targets[j][0].addClass('active');			
-		}
-		else if(j == targets.length-1 && $(window).scrollTop()+o >= targets[j][1]){
-			stateNext = 'thanks';
-			stateNext = targets[j][4];		
-			$('#state').attr("class", 'active-thanks');
-			$('#nav-side .jump').removeClass('active');
-			$('#if-thanks-link').addClass('active');	
+		if(($(window).scrollTop()+180) >= targets[j][1]){
+			$('.block').removeClass('active');					
+			$('#nav-side .jump').removeClass('active');		
+			targets[j][0].addClass('active');		
+			targets[j][2].addClass('active');			
+				
 		}
 	}	
 	
