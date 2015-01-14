@@ -47,9 +47,11 @@
 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50f20b8a658458ce">
 	</script>		 		
 
-	<script type="text/javascript">
-	     less.env = "production"; less.watch();
-	</script>
+	<?php 
+		if ( !file_exists( dirname(__FILE__) . 'env_prod' )  ) { 
+			include('less.php');
+		}
+	?>
 
 </div>
 
