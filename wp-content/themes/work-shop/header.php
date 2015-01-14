@@ -72,7 +72,7 @@
 					<img src="<?php bloginfo('template_directory'); ?>/_/img/logo.png" alt="logo">					
 				</a>		
 
-				<nav class="right" id="nav">
+				<nav class="right hidden" id="nav">
 					<ul class="main-menu">
 						<li id="home-link"><a href="<?php bloginfo('url'); ?>" class="hidden" >Home</a></li>
 						<li><a href="<?php bloginfo('url'); ?>/projects" id="work-link" class="">Projects</a></li>	

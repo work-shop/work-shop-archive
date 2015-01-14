@@ -54,7 +54,7 @@
 
 				<div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 slide-right">
 				
-					<a href="<?php bloginfo('url');?>/spaces" class="button white centered margin uppercase">See more spaces</a>
+					<a href="<?php bloginfo('url');?>/spaces" class="button hidden white centered margin uppercase">See more spaces</a>
 				
 				</div>
 
@@ -96,7 +96,7 @@
 
 				<div class="col-sm-6 col-sm-offset-3 slide-right">
 				
-					<a href="#" class="button centered margin uppercase">See more interfaces</a>
+					<a href="#" class="button hidden centered margin uppercase">See more interfaces</a>
 				
 				</div>
 
@@ -129,7 +129,7 @@
 
 				<div class="col-sm-6 col-sm-offset-3 slide-right">
 				
-					<a href="#" class="button white centered margin uppercase">See more furniture</a>
+					<a href="#" class="button hidden white centered margin uppercase">See more furniture</a>
 				
 				</div>
 
@@ -175,7 +175,7 @@
 
 				<div class="col-sm-6 col-sm-offset-3 slide-right">
 				
-					<a href="<?php bloginfo('url'); ?>/web" class="button centered margin uppercase">See more websites</a>
+					<a href="<?php bloginfo('url'); ?>/web" class="button hidden centered margin uppercase">See more websites</a>
 				
 				</div>
 
@@ -208,7 +208,7 @@
 
 				<div class="col-sm-6 col-sm-offset-3 slide-right">
 				
-					<a href="<?php bloginfo('url'); ?>/fabrication" class="button centered margin uppercase white">See more fabrication</a>
+					<a href="<?php bloginfo('url'); ?>/fabrication" class="button hidden centered margin uppercase white">See more fabrication</a>
 				
 				</div>
 
