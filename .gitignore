@@ -11,3 +11,4 @@ wp-content/upgrade/
 
 wp-content/wp-cache-config.php
 wp-congif.php
+env_prod
