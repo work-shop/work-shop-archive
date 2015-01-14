@@ -65,7 +65,7 @@
 	
 	<section id="home-interfaces" class="home-interfaces block full bg-light">	
 	
-		<div class="block-background mask-light padded">
+		<div class="block-background mask-light padded hidden-xs">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6 col-md-4 col-md-offset-1">		
@@ -75,6 +75,9 @@
 					</div>
 				</div>		
 			</div>		
+		</div>
+		
+		<div class="block-background mask-light padded visible-xs" style="background-image: url('<?php bloginfo('template_directory'); ?>/_/img/home4.jpg')">
 		</div>
 	
 		<div class="vertical-center">
@@ -140,19 +143,17 @@
 	
 	<section id="home-web" class="home-web block full bg-white padded">	
 	
-		<div class="block-background mask-light">
+		<div class="block-background mask-light hidden-xs">
 			<div class="row">
-			
-				<div class="col-sm-10 col-sm-offset-1 mt">
-			
+				<div class="col-sm-10 col-sm-offset-1 mt">			
 					<video autoplay="autoplay" loop>
 					  <source src="<?php bloginfo('template_directory'); ?>/_/img/mykd-shorter-medium.mp4" type="video/mp4">
-					</video>
-			
+					</video>			
 				</div>
-				
 			</div>
-
+		</div>
+		
+		<div class="block-background mask-light visible-xs" style="background-image: url('<?php bloginfo('template_directory'); ?>/_/img/home5.jpg')">
 		</div>
 	
 		<div class="vertical-center">
