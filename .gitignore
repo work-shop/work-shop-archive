@@ -10,5 +10,5 @@ wp-content/cache/
 wp-content/upgrade/
 
 wp-content/wp-cache-config.php
-wp-congif.php
+wp-config.php
 env_prod
