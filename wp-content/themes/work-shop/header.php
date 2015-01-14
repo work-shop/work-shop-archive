@@ -12,20 +12,25 @@
 
 	<title> 
 	   <?php
-	      if (function_exists('is_tag') && is_tag()) {
-	         single_tag_title(); 
+	      if (is_category()) {
+	         	single_cat_title(); echo ' - '; bloginfo('name'); 
+	         }
+	         elseif (is_archive()){
+		        single_cat_title(); echo ' - '; bloginfo('name'); 
 	         }
 	      elseif (is_search()) {
-	         echo 'Search for &quot;'.wp_specialchars($s).'&quot; - '; }
+	         	echo 'Search for &quot;'.wp_specialchars($s).'&quot; - '; }
 	      elseif (!(is_404()) && (is_single()) || (is_page())) {
-	         wp_title(''); echo ' - '; }
+	         	wp_title(''); echo ' - '; bloginfo('name'); 
+	         }
 	      elseif (is_404()) {
-	         echo 'Not Found - '; 
+	         	echo 'Not Found - '; bloginfo('name');
 	         }
 	      if (is_home()) {
 	         bloginfo('name'); echo ' - '; bloginfo('description'); }
 	      else {
-	          bloginfo('name'); }
+	          bloginfo('name'); 
+	          }
 	   ?>
 	</title>
 
@@ -72,7 +77,7 @@
 					<img src="<?php bloginfo('template_directory'); ?>/_/img/logo.png" alt="logo">					
 				</a>		
 
-				<nav class="right hidden" id="nav">
+				<nav class="right " id="nav">
 					<ul class="main-menu">
 						<li id="home-link"><a href="<?php bloginfo('url'); ?>" class="hidden" >Home</a></li>
 						<li><a href="<?php bloginfo('url'); ?>/projects" id="work-link" class="">Projects</a></li>	

@@ -176,6 +176,12 @@ a{
 		text-decoration: none;
 		color: darken(@brand,5%);
 	}
+	
+	&:focus{
+		text-decoration: none;
+		color: auto;
+		outline: none;
+	}
 }
 
 ul{
@@ -246,7 +252,7 @@ body{
 	color: white;
 }
 
-.gray{
+.dark{
 	color: #333;
 }
 
@@ -338,11 +344,15 @@ h5,h6{
 
 
 .tooltip > .tooltip-inner{
+	background: @brand;
 	.border-radius(2px);
+	font-size: 16px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .tooltip > .tooltip-arrow{
-	.border-radius(2px);
+	border-left-color: @brand !important;
 }
 
 
@@ -399,14 +409,18 @@ h5,h6{
 		
 		.slide-right{
 			right: 0;
-		}		
+		}	
+		
+		.fade-in{
+			opacity: 1;
+		}	
 		
 	}
 	
 
 	.mask-light{
 		&:after{
-			background: linear-gradient(to bottom,  rgba(255,255,255,0.95) 0%,rgba(255,255,255,0.82) 75%,rgba(255,255,255,.53) 100%); /* W3C */	
+			background: linear-gradient(to bottom,  rgba(255,255,255,0.99) 0%,rgba(255,255,255,0.85) 75%,rgba(255,255,255,.73) 100%); /* W3C */	
 		}
 	}
 
@@ -415,7 +429,36 @@ h5,h6{
 			background: rgba(55,50,50,.72);
 		}
 			
-	}			
+	}		
+	
+	.block-project-link{
+		position: absolute;
+		bottom: 6%;
+		left: 30px;
+		max-width: 250px;
+		opacity: 0;
+		.transition(opacity,4s);
+		
+		a{
+			padding: 5px 10px;
+			display: block;
+			font-size: 14px;
+
+			
+			.see{
+				opacity: .5;
+			}
+			
+			&:hover{
+				background: @brand;
+				color: white;
+				
+				.see{
+					opacity: 1;
+				}
+			}
+		}
+	}	
 
 	
 	
@@ -462,7 +505,7 @@ h5,h6{
 		width: 130px;
 		left: 50%;
 		margin-left: -65px;
-		position: absolute;
+		position: fixed;
 		margin-top: 10px;
 	}
 	
@@ -494,10 +537,13 @@ h5,h6{
 }
 
 .home{
-	#header #logo{
-		position: fixed;
-	}
 	
+	#content{
+		padding-top: 0px;
+	}
+}
+
+.single{
 	#content{
 		padding-top: 0px;
 	}
@@ -540,7 +586,7 @@ h5,h6{
 			padding: 4px;
 			margin: 9px auto;
 			display: block;
-			background: rgba(245,245,245,.5);
+			background: rgba(235,235,235,.9);
 			border: 1px solid @dark;
 			.border-radius(20px);
 			.transition(all,.07s);
@@ -557,6 +603,7 @@ h5,h6{
 
 			&.active{
 				background: @dark;
+				border: 1px solid @light;
 			}
 			
 			&:hover{
@@ -770,6 +817,10 @@ h5,h6{
 .project-tile{
 	overflow: hidden;
 	margin-bottom: 30px;
+	.transition(all,.25s);
+	opacity: .75;
+	-webkit-filter: grayscale(40%);
+	
 	
 	h2{
 		color: white;
@@ -805,8 +856,12 @@ h5,h6{
 	
 	&:hover{
 		.project-tile-hook{
-			opacity: 1;
+			//opacity: 1;
 		}
+		
+		-webkit-filter: grayscale(10%);
+		opacity: 1;
+
 	}
 		
 }
@@ -1062,7 +1117,14 @@ h5,h6{
 
 /********** @FOOTER *********/
 
+.home{
+	#contact{
+		background: none;
+	}
+}
+
 #contact{
+
 	
 	address h2,h3{
 		margin-top: 5px;
@@ -1431,6 +1493,7 @@ h5,h6{
 .project-tile{
 	overflow: hidden;
 	margin-bottom: 30px;
+	
 
 	.project-tile-image{
 		position: relative;
