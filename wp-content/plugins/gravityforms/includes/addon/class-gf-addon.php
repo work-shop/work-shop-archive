@@ -1649,27 +1649,36 @@ abstract class GFAddOn {
         // Populate form fields
         if( is_array( $form["fields"] ) ) {
             foreach( $form["fields"] as $field ) {
-                if( is_array( rgar( $field, "inputs") ) ) {
+				if( is_array( rgar( $field, "inputs") ) ) {
 
-                    //If this is an address field, add full name to the list
-                    if(RGFormsModel::get_input_type($field) == "address")
-                        $fields[] =  array( 'value' => $field["id"], 'label' => GFCommon::get_label($field) . " (" . __("Full" , "gravityforms") . ")" );
+					//If this is an address field, add full name to the list
+					if(RGFormsModel::get_input_type($field) == "address")
+						$fields[] =  array( 'value' => $field["id"], 'label' => GFCommon::get_label($field) . " (" . __("Full" , "gravityforms") . ")" );
 
-                    //If this is a name field, add full name to the list
-                    if(RGFormsModel::get_input_type($field) == "name")
-                        $fields[] =  array( 'value' => $field["id"], 'label' => GFCommon::get_label($field) . " (" . __("Full" , "gravityforms") . ")" );
+					//If this is a name field, add full name to the list
+					if(RGFormsModel::get_input_type($field) == "name")
+						$fields[] =  array( 'value' => $field["id"], 'label' => GFCommon::get_label($field) . " (" . __("Full" , "gravityforms") . ")" );
 
-                    //If this is a checkbox field, add to the list
-                    if(RGFormsModel::get_input_type($field) == "checkbox")
-                        $fields[] =  array( 'value' => $field["id"], 'label' => GFCommon::get_label($field) . " (" . __("Selected" , "gravityforms") . ")" );
+					//If this is a checkbox field, add to the list
+					if(RGFormsModel::get_input_type($field) == "checkbox")
+						$fields[] =  array( 'value' => $field["id"], 'label' => GFCommon::get_label($field) . " (" . __("Selected" , "gravityforms") . ")" );
 
-                    foreach($field["inputs"] as $input)
-                        $fields[] =  array( 'value' => $input["id"], 'label' => GFCommon::get_label($field, $input["id"]) );
-                }
-                else if(!rgar($field,"displayOnly")){
-                    $fields[] =  array( 'value' => $field["id"], 'label' => GFCommon::get_label($field));
-                }
-            }
+					foreach( $field['inputs'] as $input ) {
+						if( RGFormsModel::get_input_type( $field ) == 'creditcard' ) {
+							//only include the credit card type (field_id.4) and number (field_id.1)
+							if ( $input['id'] == $field['id'] . '.1' || $input['id'] == $field['id'] . '.4' ) {
+								$fields[] =  array( 'value' => $input["id"], 'label' => GFCommon::get_label( $field, $input['id'] ) );
+							}
+						}
+						else {
+							$fields[] =  array( 'value' => $input["id"], 'label' => GFCommon::get_label($field, $input["id"]) );
+						}
+					}
+				}
+				else if(!rgar($field,"displayOnly")){
+					$fields[] =  array( 'value' => $field["id"], 'label' => GFCommon::get_label($field));
+				}
+			}
         }
 
         return $fields;
@@ -2037,11 +2046,14 @@ abstract class GFAddOn {
 			}
         }
 
-		//Prepending default attributes to the current list of attributes
-		foreach( $choice_attributes as $name => &$attribute ){
+		//Adding default attributes. Either creating a new attribute or pre-pending to an existing one.
+		foreach ( $default_choice_attributes as $default_attr_name => $default_attr_value ){
 
-			if ( isset( $default_choice_attributes[ $name ] ) ){
-				$attribute = $this->prepend_attribute($name, $default_choice_attributes[ $name ], $attribute );
+			if ( isset( $choice_attributes[ $default_attr_name ] ) ){
+				$choice_attributes[ $default_attr_name ] = $this->prepend_attribute( $default_attr_name, $default_attr_value, $choice_attributes[ $default_attr_name ] );
+			}
+			else {
+				$choice_attributes[ $default_attr_name ] = "{$default_attr_name}='" . esc_attr( $default_attr_value ) . "'";
 			}
 		}
 
@@ -2816,7 +2828,7 @@ abstract class GFAddOn {
             return $links;
         }
 
-        array_unshift($links, '<a href="' . admin_url("admin.php") . '?page=gf_settings&subview=' . $this->get_short_title() . '">' . __( 'Settings', 'gravityforms' ) . '</a>');
+        array_unshift($links, '<a href="' . admin_url("admin.php") . '?page=gf_settings&subview=' . $this->_slug . '">' . __( 'Settings', 'gravityforms' ) . '</a>');
 
         return $links;
     }
@@ -2870,7 +2882,7 @@ abstract class GFAddOn {
     }
 
     public function plugin_settings_title(){
-        return $this->get_short_title() . ' ' . __( "Settings", "gravityforms" );
+        return sprintf( __( "%s Settings", "gravityforms" ), $this->get_short_title() );
     }
 
     protected function plugin_settings_icon(){
@@ -3659,7 +3671,7 @@ abstract class GFAddOn {
     *
     */
     protected function get_plugin_settings_url() {
-        return add_query_arg( array( 'page' => 'gf_settings', 'subview' => $this->get_short_title() ), admin_url('admin.php') );
+        return add_query_arg( array( 'page' => 'gf_settings', 'subview' => $this->_slug ), admin_url('admin.php') );
     }
 
     /**

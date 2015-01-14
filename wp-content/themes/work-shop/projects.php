@@ -4,7 +4,7 @@
 				<div class="row">
 				<div class="col-sm-10 col-sm-offset-1">
 					<h2 class="centered">
-						We design and make experiences that are physical and digital. 
+						We design and make ---
 					</h2>
 				</div>
 			</div>
@@ -41,7 +41,7 @@
 	</section>
 	
 	<section id="projects-grid" class="block">
-		<div class="">
+		<div class="container	">
 			<div class="row">
 
 				<?php
@@ -63,19 +63,19 @@
 						
 						// requesting all of the post's relevant values
 						$hero_image = get_field('project_hero_image');
-						$hero_image_url = ( $hero_image ) ? $hero_image['sizes']['full'] : NULL; // url to the full-size image of the project		
+						$hero_image_url = ( $hero_image ) ? $hero_image['sizes']['project'] : NULL; // url to the full-size image of the project		
 						$title = get_the_title(); // title text
 						$blurby = get_field('project_hero_blurby');
 						$perma = get_permalink();
 						?>
 
-						<article class="<?php echo ws_parity( $i,'left','right' ); ?> col-sm-4 project project-tile element <?php echo ws_derive_scope_string( get_field('project_scope_tags') ); ?>">
+						<article class="<?php // echo ws_parity( $i,'left','right' ); ?> col-sm-4 col-xs-6 project project-tile element <?php echo ws_derive_scope_string( get_field('project_scope_tags') ); ?>">
 						
 							<a href="<?php the_permalink(); ?>">
-			
+											
 								<div class="project-tile-image">
 									<?php echo ws_ifdef_do( $hero_image, ws_ifdef_concat( '<img src="', $hero_image_url, '" \>' ) ); ?>					
-									<div class="project-tile-hook">
+									<div class="project-tile-hook hidden">
 										<h2><?php echo ws_ifdef_show( $blurby ); ?></h2>
 									</div>
 									
@@ -84,7 +84,7 @@
 								<div class="project-tile-info">
 
 									<h3 class="centered"><?php echo ws_ifdef_show( $title ); ?></h3>
-									<h4 class="centered"><?php 
+									<h4 class="centered hidden-xs"><?php 
 
 										echo ws_split_array_by_key( 
 											get_field('project_scope_tags'), ', ',

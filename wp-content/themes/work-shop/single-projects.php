@@ -2,28 +2,82 @@
 		
 <div id="project" class="template project">	
 
-	<section id="project-introduction" class="project-introduction introduction block bg-white">
+	<section id="project-introduction" class="project-introduction introduction block three-quarter crop bg-white">
 	
 	<?php
 		$title 					= get_the_title();
 		$hero_image 			= get_field('project_hero_image');
 		$hero_blurby 			= get_field('project_hero_blurby');
-		$hero_image_url 		= ($hero_image) ? $hero_image['sizes']['full'] : NULL;
+		$hero_image_url 		= ($hero_image) ? $hero_image['sizes']['slideshow'] : NULL;
 		
 		?>
 		
+		
+		
 		<div class="hero-image project-hero-image">
-			<?php echo ws_ifdef_do( $hero_image, ws_ifdef_concat('<img src="',$hero_image_url,'" />')); ?>
+		
+	
+	<?php if ( $slideshow = get_field('project_slideshow') ) : ?>
+	
+			<div class="flexslider-full">
+				<ul class="slides">
+					<?php
+						echo ws_split_array_by_key(
+							$slideshow,
+							"",
+							function( $cb_img ) {
+								return '<li><img type="'.$cb_img[ 'mime_type' ].'" src="'.$cb_img['sizes']['slideshow-project'].'" /></li>';
+							}
+						);
+				
+					?>
+				</ul>	
+			
+				<div class="flexslider-full-controls"></div> 
+				
+				<div id="previous-home" class="flexslider-full-direction previous flex-previous">
+					<span class="icon" data-icon="&#8216;"></span>
+				</div>					
+				
+				<div id="next-1" class="flexslider-full-direction next flex-next">
+					<span class="icon" data-icon="&#8212;"></span>
+				</div>	
+				
+			</div>						
+			
+			<?php endif; ?>
+
+	
+	
+<!--
+			<div class="row">
+				<div class="col-sm-12 col-sm-offset-0">
+										
+					<video autoplay="autoplay" loop>
+						<source src="http://gregnemes.com/wp-content/uploads/2013/12/iphone-videod-croppeda.mp4" type="video/mp4">
+					</video>				
+
+				</div>
+				
+			</div>
+		
+			<div class="row">
+				<div class="col-sm-12 col-sm-offset-0">
+				
+					<?php  echo ws_ifdef_do( $hero_image, ws_ifdef_concat('<img src="',$hero_image_url,'" />')); ?>
+
+				</div>
+				
+			</div>		
+-->			
+		
+			
 		</div>
 
-		
-<?php
-//			echo ws_ifdef_concat( '<h1>',$title,'</h1>' );	// or whatever kind of semantics you want here...
-//			echo ws_ifdef_concat( '<h4>',$hero_blurby,'</h4>' ); 	// or whatever kind of semantics you want here...
-?>
 	</section>
+	
 
-	<section id="project-overview" class="project-overview overview block min padded bg-white">
+	<section id="project-overview" class="project-overview overview block bg-light">
 		
 		<?php
 			$client 			= get_field('project_client');
@@ -42,23 +96,39 @@
 			
 			?>
 			
-			<div class="block-background">
+			<div class="block-background hidden">
 				<?php echo ws_ifdef_do( $bg_image, ws_decide_image_type( $bg_image ) ); ?>
-			</div>			
-			
-			<div class="container">
+			</div>
+					
+			<div class="container project-header">
 				<div class="row">
-					<div class="col-sm-12 col-md-10 col-md-offset-1">
+					<div class="col-sm-12">
+						<h2 class=" project-title centered"><?php echo $title; ?></h2>
+						<h4 class=" project-scope centered">
+							<?php echo ws_split_array_by_key( 
+									$scope_tags, ", ", 
+									function( $cb_elem ) {
+										return $cb_elem['scope_tag']->name;
+								}); ?>
+						</h4>														
+					</div>
+				</div>			
+			</div>
+
+			
+			<div class="container project-metadata">
+				<div class="row">
+					<div class="col-sm-6 col-md-4 metadata">
 								
 						<?php 
 						if ( $client || $location || $date_started || $project_link || $collaborators || $scope_tags ) :
 			
-						echo '<ul>';
+						echo '<ul class="">';
 			
 							echo ws_ifdef_do( $client, ws_ifdef_do_else( 
 								$client_link, 
-								'<li><a href="'.ws_decide_link_type( $client_link ).'"><h6>'.$client.'</h6></a></li>',
-								'<li><h6>'.$client.'</h6></li>'
+								'<li><a href="'.ws_decide_link_type( $client_link ).'">Client: '.$client.'</a></li>',
+								'<li>'.$client.'</li>'
 							) );
 							// conditionally echos a linked client ( or just a client )
 			
@@ -74,7 +144,7 @@
 			
 							echo ws_ifdef_do( $scope_tags,
 								ws_ifdef_concat( 
-									"<ul>",
+									'<ul class="">',
 									ws_split_array_by_key( 
 									$scope_tags, ", </li>", 
 									function( $cb_elem ) {
@@ -86,7 +156,7 @@
 			
 							echo ws_ifdef_do( $collaborators, 
 								ws_ifdef_concat( 
-									"<ul>",
+									"<ul>Collaborators: ",
 									ws_split_array_by_key( 
 									$collaborators, ", </li>", 
 									function( $cb_elem ) {
@@ -100,14 +170,18 @@
 							));
 							// this outputs a comma-separated list of links. This is NOT currently an html list.
 			
-							echo ws_ifdef_concat( '<a href="',ws_decide_link_type( $project_link ),'" > more </a>' );
+							//echo ws_ifdef_concat( '<a href="',ws_decide_link_type( $project_link ),'" > more </a>' );
 							// this outputs an external link to more information about this project
 			
 						echo '</ul>';
 			
-						endif;
-			
-						echo ws_ifdef_concat(  '<p>', $intro,'</p>' );
+						endif; ?>
+						
+					</div>
+					<div class="col-sm-6 col-md-7 col-md-offset-1 description">
+
+						<?php 
+						echo ws_ifdef_concat(  '<p class="h3 text"><span class="bold">We designed a material and fabrication system for a set of 86 acoustic panels.</span> ', $intro,'</p>' );
 						// echos the descriptive introductory paragraph beneath the ul of metadata
 			
 					?>
@@ -130,7 +204,7 @@
 			foreach ( ( $stories ) ? $stories : array() as $key => $story ) : 
 	
 				$story_title_slug = ws_derive_story_title( $story );
-				$story_style_background_image = $story['project_story_background_image'];
+				$story_style_background_image = $story['project_story_background_image']['sizes']['slideshow'];
 				$story_style_background_color = $story['project_story_background_color'];
 				$story_is_container = $story['is_container'];
 				$story_content = $story['project_story_content'];
@@ -139,18 +213,18 @@
 				?>
 				
 
-	<section id="<?php echo $story_title_slug; ?>" class="<?php echo $story_title_slug; ?> story block crop bg-light">
+	<section id="<?php echo $story_title_slug; ?>" class="<?php echo $story_title_slug; ?> story block min padded bg-light">
 
 		<?php
-			echo ws_ifdef_do( $story_is_container, 
-				ws_ifdef_concat(
+			if(!$story_is_container): 
+				echo ws_ifdef_concat(
 					'<div class="block-background" style="',
 					ws_ifdef_do($story_style_background_image, 'background-image:url('.$story_style_background_image.');' )
 					.ws_ifdef_do($story_style_background_color, 'background-color:'.$story_style_background_color.';' ),
 					'" ></div>'
-				)
+				);
 				
-			);
+			endif;
 			// echos a background container to the frame.
 
 			echo ws_ifdef_show( $story_content );
@@ -170,23 +244,29 @@
 
 	<section id="project-slideshow" class="project-slideshow block crop bg-light">
 
+		<!--
+<div class="flexslider-broken">
+			<ul class="slides">
 		<?php
 			echo ws_split_array_by_key(
 				$slideshow,
 				"",
 				function( $cb_img ) {
-					return '<img type="'.$cb_img[ 'mime_type' ].'" src="'.$cb_img['sizes']['full'].'" />';
+					return '<li><img type="'.$cb_img[ 'mime_type' ].'" src="'.$cb_img['sizes']['slideshow'].'" /></li>';
 				}
 			);
 	
 		?>
+			</ul>	
+		</div>
+-->
 
 	</section>
 
 	<?php endif; ?>
 	
 
-	<div id="story-bar">
+	<div id="story-bar" class="hidden">
 
 		<?php echo $sidebar_accumulator; ?>
 			
@@ -194,5 +274,8 @@
 
 	
 </div>	
+	
+<?php get_template_part('related'); ?>	
+	
 
 <?php get_footer(); ?>

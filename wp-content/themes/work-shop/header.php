@@ -28,6 +28,16 @@
 	          bloginfo('name'); }
 	   ?>
 	</title>
+
+	<!-- Twitter Card data -->
+	<meta name="twitter:card" value="<?php bloginfo('description'); ?>">
+	
+	<!-- Open Graph data -->
+	<meta property="og:title" content="<?php bloginfo('name'); ?>" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="<?php bloginfo('url'); ?>" />
+	<meta property="og:image" content="<?php bloginfo('template_directory'); ?>/_/img/logo.png" />
+	<meta property="og:description" content="<?php bloginfo('description'); ?>" />
 				   
 	<meta name="description" content="<?php bloginfo('description'); ?>">
 	<meta name="google-site-verification" content="">
@@ -62,16 +72,16 @@
 					<img src="<?php bloginfo('template_directory'); ?>/_/img/logo.png" alt="logo">					
 				</a>		
 
-				<nav class="right hidden-xs" id="nav">
+				<nav class="right" id="nav">
 					<ul class="main-menu">
 						<li id="home-link"><a href="<?php bloginfo('url'); ?>" class="hidden" >Home</a></li>
 						<li><a href="<?php bloginfo('url'); ?>/projects" id="work-link" class="">Projects</a></li>	
-						<li><a href="<?php bloginfo('url'); ?>/process" class="">Process</a></li>							
+						<li class="hidden"><a href="<?php bloginfo('url'); ?>/process" class="">Process</a></li>							
 						<li><a href="<?php bloginfo('url'); ?>/about" class="">About</a></li>
 					</ul>	
 				</nav>	
 				
-				<a id="carrot" href="#" class="nav-toggle closed">
+				<a id="carrot" href="#" class="nav-toggle closed hidden">
 					<img src="<?php bloginfo('template_directory'); ?>/_/img/toggle.png" alt="navigation-toggle">
 				</a>
 				
@@ -90,20 +100,26 @@
 		</header>
 
 	<div id="headerfix"></div>
+	
+	<?php if(is_home()): ?>
 
 	<div id="nav-side" class="dark">
 		<ul>
-			<li><a class="jump active side" href="#home-introduction"></a></li>
-			<li><a class="jump side" href="#home-about" ></a></li>
-			<li><a class="jump side" href="#home-spaces" ></a></li>		
-			<li><a class="jump side" href="#home-interfaces"></a></li>
-			<li><a class="jump side" href="#home-furniture"></a></li>		
-			<li><a class="jump side" href="#home-fabrication"></a></li>
-			<li><a class="jump side" href="#home-info"></a></li>	
-			<li><a class="jump side" href="#home-news"></a></li>				
-			<li><a class="jump side" href="#invitation"></a></li
+			<li><a class="jump active side" href="#home-introduction" data-toggle="tooltip" data-placement="left" title="home"></a></li>
+			<li><a class="jump side" href="#home-about"  data-toggle="tooltip" data-placement="left" title="studio"></a></li>
+			<li><a class="jump side" href="#home-spaces"  data-toggle="tooltip" data-placement="left" title="spaces"></a></li>		
+			<li><a class="jump side" href="#home-interfaces" data-toggle="tooltip" data-placement="left" title="interfaces"></a></li>
+			<li><a class="jump side" href="#home-furniture"  data-toggle="tooltip" data-placement="left" title="furniture"></a></li>
+ 			<li><a class="jump side" href="#home-web"  data-toggle="tooltip" data-placement="left" title="web"></a></li>		
+			<li><a class="jump side" href="#home-fabrication"  data-toggle="tooltip" data-placement="left" title="fabrication"></a></li>
+			<li><a class="jump side" href="#home-info" data-toggle="tooltip" data-placement="left" title="about"></a></li>	
+			<li><a class="jump side" href="#home-news" data-toggle="tooltip" data-placement="left" title="news"></a></li>				
+			<li><a class="jump side" href="#invitation" data-toggle="tooltip" data-placement="left" title="coffee"></a></li>
+			<li><a class="jump side" href="#contact" data-toggle="tooltip" data-placement="left" title="contact"></a></li>			
 		</ul>
 		
 	</div>	
+	
+	<?php endif; ?>
 		
 	<div id="content" class="">
