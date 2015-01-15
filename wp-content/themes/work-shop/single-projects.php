@@ -280,7 +280,8 @@
 		<?php echo $sidebar_accumulator; ?>
 			
 	</div>
-
+	
+	<div id="project-dash" class="dash static"></div>		
 	
 </div>	
 	

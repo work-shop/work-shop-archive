@@ -3,7 +3,7 @@
 	<div class="container">
 		<div class="row">
 		
-			<div class="col-sm-3">
+			<div class="col-sm-3 col-xs-12">
 				<h3>Related Projects</h3>
 			</div>
 				

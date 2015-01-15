@@ -16,10 +16,7 @@
 					while ( have_posts() ) : the_post();
 						
 						// requesting all of the post's relevant values
-						$hero_image = get_field('project_hero_image');
-						$hero_image_url = ( $hero_image ) ? $hero_image['sizes']['project'] : NULL; // url to the full-size image of the project		
 						$title = get_the_title(); // title text
-						$blurby = get_field('project_hero_blurby');
 						$perma = get_permalink();
 						?>
 
@@ -30,7 +27,7 @@
 								<div class="project-tile-image">
 									<?php the_post_thumbnail('project'); ?>					
 									<div class="project-tile-hook hidden">
-										<h2><?php echo ws_ifdef_show( $blurby ); ?></h2>
+										<h2><?php // echo ws_ifdef_show( $blurby ); ?></h2>
 									</div>
 									
 								</div>
