@@ -56,12 +56,16 @@
 				<?php break;				
 				case 'video': ?>
 				
-					<?php $video = get_field('project_hero_video'); ?> 
+					<?php 
+					$video = get_field('project_hero_video'); 
+					$hero_image 			= get_field('project_hero_image');
+					$hero_image_url 		= ($hero_image) ? $hero_image['sizes']['slideshow'] : NULL; 					
+					?> 
 				
-					<div class="row padded">
+					<div class="row">
 						<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 												
-							<video autoplay="autoplay" loop>
+							<video class="padded" autoplay="autoplay" loop poster="<?php echo $hero_image_url; ?>">
 								<source src="<?php echo $video; ?>" type="video/mp4">
 							</video>				
 		
@@ -84,13 +88,13 @@
 			$client_link 		= get_field('project_client_link');
 
 			$location 			= get_field('project_location');
-			$date_started 		= get_field('project_date_started');
-			$date_ended 		= get_field('project_date_ended');
+			$date 				= get_field('project_date');
 			$project_link 		= get_field('project_link');
 
 			$collaborators 		= get_field('project_collaborators');
 			$scope_tags 		= get_field('project_scope_tags');
 
+			$what_we_did		= get_field('project_what_we_did');
 			$intro 				= get_field('project_introductory_paragraph');
 			$bg_image			= get_field('project_background_image');
 			
@@ -132,41 +136,37 @@
 							) );
 							// conditionally echos a linked client ( or just a client )
 			
-							echo ws_ifdef_concat( '<li>',$location,'</li>' );
+							echo ws_ifdef_do( $location,'<li>' . $location . '</li>' );
 							// conditionally echos a location
-			
-							echo ws_ifdef_do( $date_started, ws_ifdef_do_else( 
-								$date_ended,
-								'<li>'.ws_render_date( $date_started ).' - '.ws_render_date( $date_ended ).'</li>',
-								'<li>'.ws_render_date( $date_started ).'</li>'
-							) );
-							// conditionally echo a date range, and format it from Ymd to ws_render_date();
+							
+							echo ws_ifdef_do( $date,'<li>' . $date . '</li>' );
+							// conditionally echos a location
 			
 							echo ws_ifdef_do( $scope_tags,
 								ws_ifdef_concat( 
-									'<ul class="">',
+									'<li>',
 									ws_split_array_by_key( 
-									$scope_tags, ", </li>", 
+									$scope_tags, ", ", 
 									function( $cb_elem ) {
-										return '<li>'.$cb_elem['scope_tag']->name;
+										return $cb_elem['scope_tag']->name;
 									}), 
-									"</li></ul>"
+									"</li>"
 							));
 							// conditionally outputs a ul of comma-separated scope-tags
 			
 							echo ws_ifdef_do( $collaborators, 
 								ws_ifdef_concat( 
-									"<ul>Collaborators: ",
+									"<li>Collaborators: ",
 									ws_split_array_by_key( 
-									$collaborators, ", </li>", 
+									$collaborators, ", ", 
 									function( $cb_elem ) {
 										return ws_ifdef_do_else(
 											$cb_elem['collaborator_link'],
-											'<li><a href="'.ws_decide_link_type($cb_elem['collaborator_link']).'" >'.$cb_elem['collaborator_name'].'</a>',
-											'<li>'.$cb_elem['collaborator_name']
+											'<a class="underline" href="'.ws_decide_link_type($cb_elem['collaborator_link']).'" >'.$cb_elem['collaborator_name'].'</a>',
+											$cb_elem['collaborator_name']
 										); 
 									}), 
-									"</li></ul>"
+									"</li>"
 							));
 							// this outputs a comma-separated list of links. This is NOT currently an html list.
 			
@@ -179,16 +179,15 @@
 						
 					</div>
 					<div class="col-sm-6 col-md-7 col-md-offset-1 description">
-
-						<?php 
-						echo ws_ifdef_concat(  '<p class="h3 text"><span class="bold">We designed a material and fabrication system for a set of 86 acoustic panels.</span> ', $intro,'</p>' );
-						// echos the descriptive introductory paragraph beneath the ul of metadata
-			
-					?>
+						
+						<p class="h3 text">
+							<?php echo ws_ifdef_do( $what_we_did, '<span class="bold">' . $what_we_did . '</span>' );?>
+							<?php echo $intro; ?>
+						</p>	
 		
+					</div>
 				</div>
 			</div>
-		</div>
 
 	</section>
 
