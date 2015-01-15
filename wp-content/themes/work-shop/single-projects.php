@@ -4,73 +4,73 @@
 
 	<section id="project-introduction" class="project-introduction introduction block three-quarter crop bg-white">
 	
-	<?php
+		<?php
 		$title 					= get_the_title();
-		$hero_image 			= get_field('project_hero_image');
-		$hero_blurby 			= get_field('project_hero_blurby');
-		$hero_image_url 		= ($hero_image) ? $hero_image['sizes']['slideshow'] : NULL;
+		$hero_type				= get_field('project_hero_type');
+		?>		
 		
-		?>
+		<div class="hero hero-<?php echo $hero_type; ?>">
 		
-		
-		
-		<div class="hero-image project-hero-image">
-		
-	
-	<?php if ( $slideshow = get_field('project_slideshow') ) : ?>
-	
-			<div class="flexslider-full">
-				<ul class="slides">
-					<?php
-						echo ws_split_array_by_key(
-							$slideshow,
-							"",
-							function( $cb_img ) {
-								return '<li><img type="'.$cb_img[ 'mime_type' ].'" src="'.$cb_img['sizes']['slideshow-project'].'" /></li>';
-							}
-						);
+			<?php switch($hero_type){
 				
-					?>
-				</ul>	
-			
-				<div class="flexslider-full-controls"></div> 
+				case 'gallery': ?>
 				
-				<div id="previous-home" class="flexslider-full-direction previous flex-previous">
-					<span class="icon" data-icon="&#8216;"></span>
-				</div>					
+					<?php $slideshow = get_field('project_slideshow') ?>
 				
-				<div id="next-1" class="flexslider-full-direction next flex-next">
-					<span class="icon" data-icon="&#8212;"></span>
-				</div>	
-				
-			</div>						
-			
-			<?php endif; ?>
-
-	
-	
-<!--
-			<div class="row">
-				<div class="col-sm-12 col-sm-offset-0">
+						<div class="flexslider-full">
+							<ul class="slides">
+								<?php
+									echo ws_split_array_by_key(
+										$slideshow,
+										"",
+										function( $cb_img ) {
+											return '<li><img type="'.$cb_img[ 'mime_type' ].'" src="'.$cb_img['sizes']['slideshow-project'].'" /></li>';
+										}
+									);
+							
+								?>
+							</ul>	
+						
+							<div class="flexslider-full-controls"></div> 
+							
+							<div id="previous-home" class="flexslider-full-direction previous flex-previous">
+								<span class="icon" data-icon="&#8216;"></span>
+							</div>					
+							
+							<div id="next-1" class="flexslider-full-direction next flex-next">
+								<span class="icon" data-icon="&#8212;"></span>
+							</div>	
+							
+						</div>						
 										
-					<video autoplay="autoplay" loop>
-						<source src="http://gregnemes.com/wp-content/uploads/2013/12/iphone-videod-croppeda.mp4" type="video/mp4">
-					</video>				
-
-				</div>
+				<?php break;				
+				case 'image': ?>
 				
-			</div>
+					<?php 
+					$hero_image 			= get_field('project_hero_image');
+					$hero_image_url 		= ($hero_image) ? $hero_image['sizes']['slideshow'] : NULL; 
+					$hero_image_alt 		= ($hero_image) ? $hero_image['alt'] : NULL; ?>
+					
+					<img src="<?php echo $hero_image_url; ?>" alt="<?php echo $hero_image_alt; ?>" />				
+				
+				<?php break;				
+				case 'video': ?>
+				
+					<?php $video = get_field('project_hero_video'); ?> 
+				
+					<div class="row padded">
+						<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+												
+							<video autoplay="autoplay" loop>
+								<source src="<?php echo $video; ?>" type="video/mp4">
+							</video>				
 		
-			<div class="row">
-				<div class="col-sm-12 col-sm-offset-0">
-				
-					<?php  echo ws_ifdef_do( $hero_image, ws_ifdef_concat('<img src="',$hero_image_url,'" />')); ?>
-
-				</div>
-				
-			</div>		
--->			
-		
+						</div>
+					
+					</div>
+					
+				<?php break;				
+			} ?>
 			
 		</div>
 

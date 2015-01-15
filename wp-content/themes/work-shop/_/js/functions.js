@@ -208,13 +208,13 @@ function view(){
 		$('.block.half').css('height',ch/2);				
 		$('.block.full').css('height',ch);		
 		$('.block.min').css('min-height',ch);	
-		$('.block.three-quarter').css('height',ph);									
+		$('.block.three-quarter').css('max-height',ph);									
 	}
 	else{
 		$('.block.half').css('height',ch/2);				
 		$('.block.full').css('height',ch);		
 		$('.block.min').css('min-height',ch);	
-		$('.block.three-quarter').css('height',ph);							
+		$('.block.three-quarter').css('max-height',ph);							
 	}
 	
 	if(!loaded){
