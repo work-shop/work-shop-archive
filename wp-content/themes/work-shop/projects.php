@@ -25,7 +25,7 @@
 							<a href="<?php the_permalink(); ?>">
 											
 								<div class="project-tile-image">
-									<?php the_post_thumbnail('project'); ?>					
+									<?php if(has_post_thumbnail()): the_post_thumbnail('project'); else: echo '<img src="' . get_bloginfo('template_directory') . '/_/img/default.png" alt="default image" />'; endif; ?>					
 									<div class="project-tile-hook hidden">
 										<h2><?php // echo ws_ifdef_show( $blurby ); ?></h2>
 									</div>

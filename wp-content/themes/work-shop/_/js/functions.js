@@ -212,18 +212,21 @@ function view(){
 	cw = $(window).width();
 	ph = ch - 130;
 	
-	if($(window).width() >= 768){	
-		//$('.flexslider-full').css('height',ph);				
+	if($(window).width() >= 768){		
 		$('.block.half').css('height',ch/2);				
 		$('.block.full').css('height',ch);		
-		$('.block.min').css('min-height',ch);	
+		$('.block.min-large').css('min-height',ch);	
 		$('.block.three-quarter').css('height',ph);	
 		$('.block.three-quarter-max').css('max-height',ph);																
+	}
+	else if($(window).width() <= 992 && $(window).width() >= 768){
+		console.log('medium');
+		$('.block.min-large').css('min-height','none');	
 	}
 	else{
 		$('.block.half').css('height',ch/2);				
 		$('.block.full').css('height',ch);		
-		$('.block.min').css('min-height',ch);	
+		$('.block.min-large').css('min-height','none');	
 		$('.block.three-quarter').css('height',ph);			
 		$('.block.three-quarter-max').css('max-height',ph);							
 	}

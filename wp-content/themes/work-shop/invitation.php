@@ -1,5 +1,5 @@
 
-<section id="invitation" class="invitation block min padded">
+<section id="invitation" class="invitation block min-large padded">
 	<div id="invitiation-background" class="block-background invitation-background" style="background-image: url(<?php bloginfo('template_directory'); ?>/_/img/invitation.jpg)">
 	</div>
 	
