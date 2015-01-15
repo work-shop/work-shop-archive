@@ -28,7 +28,7 @@
 							<a href="<?php the_permalink(); ?>">
 											
 								<div class="project-tile-image">
-									<?php echo ws_ifdef_do( $hero_image, ws_ifdef_concat( '<img src="', $hero_image_url, '" \>' ) ); ?>					
+									<?php the_post_thumbnail('project'); ?>					
 									<div class="project-tile-hook hidden">
 										<h2><?php echo ws_ifdef_show( $blurby ); ?></h2>
 									</div>
@@ -38,7 +38,7 @@
 								<div class="project-tile-info">
 
 									<h3 class="centered"><?php echo ws_ifdef_show( $title ); ?></h3>
-									<h4 class="centered hidden-xs"><?php 
+									<h5 class="centered hidden-xs"><?php 
 
 										echo ws_split_array_by_key( 
 											get_field('project_scope_tags'), ', ',
@@ -47,7 +47,7 @@
 											}
 										);
 
-									 ?></h4>
+									 ?></h5>
 								</div>
 								
 							</a>

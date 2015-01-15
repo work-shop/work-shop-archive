@@ -63,7 +63,7 @@
 								<div class="overlay"></div>
 							
 							<?php if ( has_post_thumbnail() ) {
-										the_post_thumbnail();
+										the_post_thumbnail('projects');
 									}
 									else { ?>
 									<?php } ?>
