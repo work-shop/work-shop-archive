@@ -2,7 +2,7 @@
 		
 <div id="project" class="template project">	
 
-	<section id="project-introduction" class="project-introduction introduction block three-quarter crop bg-white">
+	<section id="project-introduction" class="project-introduction introduction block three-quarter-max crop bg-white">
 	
 		<?php
 		$title 					= get_the_title();
