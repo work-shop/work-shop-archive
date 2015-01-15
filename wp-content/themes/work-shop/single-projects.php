@@ -15,7 +15,7 @@
 				
 				case 'gallery': ?>
 				
-					<?php $slideshow = get_field('project_slideshow') ?>
+					<?php $slideshow = get_field('project_hero_slideshow') ?>
 				
 						<div class="flexslider-full">
 							<ul class="slides">
@@ -100,7 +100,7 @@
 			
 			?>
 			
-			<div class="block-background hidden">
+			<div class="block-background">
 				<?php echo ws_ifdef_do( $bg_image, ws_decide_image_type( $bg_image ) ); ?>
 			</div>
 					
@@ -203,6 +203,7 @@
 			foreach ( ( $stories ) ? $stories : array() as $key => $story ) : 
 	
 				$story_title_slug = ws_derive_story_title( $story );
+				$story_classes = $story['project_story_classes'];
 				$story_style_background_image = $story['project_story_background_image']['sizes']['slideshow'];
 				$story_style_background_color = $story['project_story_background_color'];
 				$story_is_container = $story['is_container'];
@@ -212,10 +213,10 @@
 				?>
 				
 
-	<section id="<?php echo $story_title_slug; ?>" class="<?php echo $story_title_slug; ?> story block min padded bg-light">
+	<section id="<?php echo $story_title_slug; ?>" class="story padded block <?php echo $story_classes; ?> story-<?php echo $story_title_slug; ?>  ">
 
 		<?php
-			if(!$story_is_container): 
+			if(!$story_is_container){
 				echo ws_ifdef_concat(
 					'<div class="block-background" style="',
 					ws_ifdef_do($story_style_background_image, 'background-image:url('.$story_style_background_image.');' )
@@ -223,11 +224,14 @@
 					'" ></div>'
 				);
 				
-			endif;
-			// echos a background container to the frame.
-
-			echo ws_ifdef_show( $story_content );
-		?>
+			} else{ ?>
+			<div class="container"><?php }?>	
+					
+				<?php echo ws_ifdef_show( $story_content ); ?>
+			
+			<?php if($story_is_container): ?>
+			</div>
+			<?php endif; ?>
 
 		</section>
 			
@@ -239,26 +243,32 @@
 		?>
 
 
-	<?php if ( $slideshow = get_field('project_slideshow') ) : ?>
+	<?php if ( $slideshow_end = get_field('project_end_slideshow') ) : ?>
 
-	<section id="project-slideshow" class="project-slideshow block crop bg-light">
-
-		<!--
-<div class="flexslider-broken">
-			<ul class="slides">
-		<?php
-			echo ws_split_array_by_key(
-				$slideshow,
-				"",
-				function( $cb_img ) {
-					return '<li><img type="'.$cb_img[ 'mime_type' ].'" src="'.$cb_img['sizes']['slideshow'].'" /></li>';
-				}
-			);
+	<section id="project-end-slideshow" class="project-end-slideshow block crop padded">
 	
-		?>
-			</ul>	
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1">
+			
+					<div class="flexslider-project-slideshow-end">
+						<ul class="slides">
+							<?php
+								echo ws_split_array_by_key(
+									$slideshow_end,
+									"",
+									function( $cb_img ) {
+										return '<li><img type="'.$cb_img[ 'mime_type' ].'" src="'.$cb_img['sizes']['project'].'" /></li>';
+									}
+								);
+						
+							?>
+						</ul>	
+					</div>
+			
+				</div>
+			</div>
 		</div>
--->
 
 	</section>
 
