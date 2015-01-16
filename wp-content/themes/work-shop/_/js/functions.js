@@ -237,7 +237,8 @@ function view(){
 	
 	if($(window).width() >= 768){		
 		$('.block.half').css('height',ch/2);				
-		$('.block.full').css('height',ch);		
+		$('.block.full').css('height',ch);	
+		$('.block.min').css('min-height',ch);				
 		$('.block.min-large').css('min-height',ch);	
 		$('.block.three-quarter').css('height',ph);	
 		$('.block.three-quarter-max').css('max-height',ph);		
@@ -245,7 +246,8 @@ function view(){
 	}
 	else{
 		$('.block.half').css('height',ch/2);				
-		$('.block.full').css('height',ch);		
+		$('.block.full').css('height',ch);	
+		$('.block.min').css('min-height',ch);							
 		$('.block.min-large').css('min-height','none');	
 		$('.block.three-quarter').css('height',ph);			
 		$('.block.three-quarter-max').css('max-height',ph);	
@@ -285,7 +287,7 @@ function spy(){
 		}			
 	}
 	else{
-		var o = 90; 
+		var o = 80; 
 	}
 
 	
@@ -314,10 +316,10 @@ function spy(){
 			targets[j][2].addClass('activated');	
 			
 			if($('.spy').hasClass('falloff') && $(window).scrollTop() >= falloffPosition){
-				$('.spy').addClass('hidden');
+				$('.spy').addClass('off');
 			}	
 			else{
-				$('.spy').removeClass('hidden');
+				$('.spy').removeClass('off');
 			}	
 				
 		}

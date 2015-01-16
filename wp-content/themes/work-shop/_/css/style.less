@@ -332,6 +332,10 @@ h1,h2,h3,h4,h5,h6,p{
 
 h1,.h1{
 	font-size: 48px;
+	
+	&.large{
+		font-size: 80px;
+	}
 }
 
 h2,.h2{
@@ -439,13 +443,26 @@ h5,h6{
 			background: linear-gradient(to bottom,  rgba(255,255,255,0.99) 0%,rgba(255,255,255,0.85) 75%,rgba(255,255,255,.73) 100%); /* W3C */	
 		}
 	}
+	
+	.mask-light-light{
+		&:after{
+			background: linear-gradient(to bottom,  rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,.3) 100%); /* W3C */	
+		}
+	}	
 
 	.mask-dark{
 		&:after{
 			background: rgba(55,50,50,.72);
 		}
 			
-	}		
+	}
+	
+	.mask-dark-light{
+		&:after{
+			background: rgba(55,50,50,.25);
+		}
+			
+	}				
 	
 	.block-project-link{
 		position: absolute;
@@ -541,7 +558,6 @@ h5,h6{
 				border-bottom: 2px solid transparent;
 				.transition(all,.125s);
 				padding-bottom: 2px;
-				//.bold();
 				
 				&:hover{
 					//border-bottom: 1px solid black;
@@ -1063,7 +1079,11 @@ h5,h6{
 #about-nav{
 	position: fixed;
 	z-index: 998;
-	top: 115px;
+	top: 110px;
+	
+	&.off{
+		opacity: 0;
+	}
 	
 	&:hover{
 		li{
@@ -1093,6 +1113,10 @@ h5,h6{
 			}
 		}
 	}
+}
+
+.about-tagline{
+	.text-shadow(1px,1px,1px,rgba(50,50,50,.25));
 }
 
 .person{
@@ -1391,6 +1415,12 @@ label{
 
 h1{
 	font-size: 48px;
+
+	
+	&.large{
+		font-size: 60px;
+	}	
+	
 }
 
 h2{
@@ -1417,6 +1447,11 @@ h5,h6{
 
 h1{
 	font-size: 30px;
+
+	&.large{
+		font-size: 42px;
+	}	
+	
 }
 
 h2{
@@ -1435,7 +1470,7 @@ h5,h6{
 	font-size: 13px;
 }
 
-}
+} 
 
 //767px
 @media (max-width: 767px) {
@@ -1447,6 +1482,11 @@ h5,h6{
 
 h1,.h1{
 	font-size: 24px;
+	
+	&.large{
+		font-size: 30px;
+	}
+
 }
 
 h2,.h2{

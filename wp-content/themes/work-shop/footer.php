@@ -1,13 +1,12 @@
 
 	</div><!--/#content-->
-	
-	
+
 	
 	<?php if(!is_home()): get_template_part('signpost'); endif; ?>
 	
-	<?php get_template_part('invitation'); ?>
+	<?php get_template_part('invitation'); ?>	
 	
-	<?php get_template_part('contact'); ?>
+	<?php get_template_part('contact'); ?>	
   
 </div><!-- /#state -->
 

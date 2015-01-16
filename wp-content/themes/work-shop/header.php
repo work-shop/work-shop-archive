@@ -12,16 +12,16 @@
 
 	<title> 
 	   <?php
-	      if (is_category()) {
+	   	     if (is_category()) {
 	         	single_cat_title(); echo ' - '; bloginfo('name'); 
 	         }
 	         elseif (is_archive()){
-		        single_cat_title(); echo ' - '; bloginfo('name'); 
+	         	wp_title(''); echo ' - ';  
 	         }
 	      elseif (is_search()) {
 	         	echo 'Search for &quot;'.wp_specialchars($s).'&quot; - '; }
 	      elseif (!(is_404()) && (is_single()) || (is_page())) {
-	         	wp_title(''); echo ' - '; bloginfo('name'); 
+	         	wp_title(''); echo ' - '; 
 	         }
 	      elseif (is_404()) {
 	         	echo 'Not Found - '; bloginfo('name');
