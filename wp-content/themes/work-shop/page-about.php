@@ -41,7 +41,7 @@
 
 		<div class="block-background mask-light hidden-xs">	
 			<video autoplay="autoplay" loop>
-			  <source src="<?php bloginfo('template_directory'); ?>/_/img/mykd-shorter-medium.mp4" type="video/mp4">
+			  <source src="<?php bloginfo('template_directory'); ?>/_/img/process2.mp4" type="video/mp4">
 			</video>			
 		</div>		
 		
@@ -51,11 +51,11 @@
 				<div class="col-sm-10 col-sm-offset-2">
 					<h2 class="m2">Mollit tempor PBR, single-origin coffee messenger bag readymade crucifix quinoa incididunt gastropub chambray blog +1 keytar.</h2>
 					
-					<h2 class="m2">Mollit tempor PBR, single-origin coffee messenger bag readymade crucifix quinoa incididunt gastropub chambray blog +1 keytar.</h2>
+					<h2 class="m2">Mollit tempor PBR, single-origin coffee messenger bag readymade crucifix quinoa incididunt.</h2>
 					
-					<h2 class="m2">Mollit tempor PBR, single-origin coffee messenger bag readymade crucifix quinoa incididunt gastropub chambray blog +1 keytar.</h2>
+					<h2 class="m2">Mollit tempor PBR, single-origin coffee messenger bag readymade crucifix quinoa incididunt gastropub chambray blog +1 keytar Mollit tempor PBR, single-origin coffee messenger.</h2>
 					
-					<h2 class="m2">Mollit tempor PBR, single-origin coffee messenger bag readymade crucifix quinoa incididunt gastropub chambray blog +1 keytar.</h2>															
+					<h2 class="m2">Mollit tempor PBR, single-origin coffee messenger bag readymade.</h2>															
 				</div>
 				
 			</div>
@@ -182,7 +182,7 @@
 	</section>
 
 
-	<section id="about-place" class="about-6 block min padded">	
+	<section id="about-place" class="about-6 block min padded hidden">	
 	
 		<div class="block-background">
 		</div>
@@ -257,7 +257,7 @@
 						<li><a href="#about-process" class="jump">Process</a></li>
 						<li><a href="#about-services" class="jump">Services</a></li>						
 						<li><a href="#about-people" class="jump">People</a></li>
-						<li><a href="#about-place" class="jump">Place</a></li>
+						<li><a href="#about-place" class="jump hidden">Place</a></li>
 						<li><a href="#about-values" class="jump">Values</a></li>	
 						<li><a href="#contact" class="jump">Contact</a></li>				
 						<li><a href="#invitation" class="jump hidden falloff-link"></a></li>

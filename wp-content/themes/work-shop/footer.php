@@ -36,15 +36,8 @@
 		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		  })();
-		  
-		  //add this setup
-		  var addthis_config = {"data_track_addressbar":true}; 
-		  var addthis_config = {"data_track_clickback":true};
 	
-	</script> 
-
-	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50f20b8a658458ce">
-	</script>		 		
+	</script> 	 		
 
 	<?php 
 		if ( !file_exists( dirname(__FILE__) . 'env_prod' )  ) { 
