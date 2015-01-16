@@ -27,15 +27,12 @@
                     while ( $RPQ->have_posts()&&$posts<4 ) {
                         $post = $RPQ->next_post(); ?>
                         
-						<div class="tile project-tile project-tile-small col-sm-3">
+						<div class="tile project-tile project-tile-small col-sm-3 col-xs-6">
 							<a href="<?php the_permalink(); ?>">
 								<div class="overlay"></div>
 							
-							<?php if ( has_post_thumbnail() ) {
-										the_post_thumbnail('project');
-									}
-									else { } ?>
-								<p class="project-title">
+								<?php if(has_post_thumbnail()): the_post_thumbnail('project'); else: echo '<img src="' . get_bloginfo('template_directory') . '/_/img/default.png" alt="default image" />'; endif; ?>
+								<p class="project-title centered">
 									<?php the_title(); ?>
 								</p>						
 							</a>
@@ -58,16 +55,11 @@
                    while ( $AddQ->have_posts()&&$posts<3 ) {
                         $post = $AddQ->next_post(); ?>
 					
-						<div class="tile project-tile project-tile-small col-sm-3 col-xs-7">
+						<div class="tile project-tile project-tile-small col-sm-3 col-xs-6">
 							<a href="<?php the_permalink(); ?>">
 								<div class="overlay"></div>
-							
-							<?php if ( has_post_thumbnail() ) {
-										the_post_thumbnail('projects');
-									}
-									else { ?>
-									<?php } ?>
-								<p class="project-title">
+								<?php if(has_post_thumbnail()): the_post_thumbnail('project'); else: echo '<img src="' . get_bloginfo('template_directory') . '/_/img/default.png" alt="default image" />'; endif; ?>
+								<p class="project-title centered">
 									<?php the_title(); ?>
 								</p>						
 							</a>

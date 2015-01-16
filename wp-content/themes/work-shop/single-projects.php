@@ -17,7 +17,7 @@
 				
 					<?php $slideshow = get_field('project_hero_slideshow') ?>
 				
-						<div class="flexslider-full">
+						<div class="flexslider-full flexslider-hero">
 							<ul class="slides">
 								<?php
 									echo ws_split_array_by_key(
@@ -31,13 +31,13 @@
 								?>
 							</ul>	
 						
-							<div class="flexslider-full-controls"></div> 
+							<div class="flexslider-full-controls flexslider-controls"></div> 
 							
-							<div id="previous-home" class="flexslider-full-direction previous flex-previous">
+							<div id="previous-home" class="flexslider-full-direction flexslider-direction previous flex-previous">
 								<span class="icon" data-icon="&#8216;"></span>
 							</div>					
 							
-							<div id="next-1" class="flexslider-full-direction next flex-next">
+							<div id="next-1" class="flexslider-full-direction next flexslider-direction flex-next">
 								<span class="icon" data-icon="&#8212;"></span>
 							</div>	
 							
@@ -251,7 +251,8 @@
 			<div class="row">
 				<div class="col-sm-10 col-sm-offset-1">
 			
-					<div class="flexslider-project-slideshow-end">
+					<div class="flexslider-end">
+					
 						<ul class="slides">
 							<?php
 								echo ws_split_array_by_key(
@@ -264,6 +265,17 @@
 						
 							?>
 						</ul>	
+						
+						<div class="flexslider-end-controls flexslider-controls"></div> 
+						
+						<div id="previous-project-end-slideshow" class="flexslider-direction flex-end-previous previous flex-previous">
+							<span class="icon" data-icon="&#8216;"></span>
+						</div>					
+						
+						<div id="next-project-end-slideshow" class="flexslider-direction next flex-end-next flex-next">
+							<span class="icon" data-icon="&#8212;"></span>
+						</div>							
+
 					</div>
 			
 				</div>

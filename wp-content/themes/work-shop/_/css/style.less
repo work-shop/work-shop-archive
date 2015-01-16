@@ -228,6 +228,18 @@ ol,ul{
 	margin-bottom: 2em;
 }
 
+.m30{
+	margin-bottom: 30px;
+}
+
+.m60{
+	margin-bottom: 60px;
+}
+
+.m90{
+	margin-bottom: 90px;
+}
+
 .mt{
 	margin-top: 30px;
 }
@@ -377,7 +389,7 @@ h5,h6{
 }
 
 #content{
-	padding-top: 60px;
+	//padding-top: 60px;
 }
 
 .block{
@@ -536,7 +548,19 @@ h5,h6{
 	}
 }
 
+#headerfix{
+	height: 90px;
+}
+
+.home,.page-id-8,.single{
+	#headerfix{
+		display: none;
+	}
+}
+
 .home{
+
+
 	
 	#content{
 		padding-top: 0px;
@@ -629,6 +653,20 @@ h5,h6{
 	height: 6px;
 	background: @brand;
 	z-index: 9;
+	
+	&.inline{
+		display: inline-block;
+		position: relative;
+		top: -1px;
+		
+		&.ml{
+			margin-left: 15px;
+		}
+		
+		&.mr{
+			margin-right: 15px;
+		}
+	}
 	
 	&.static{
 		margin: 90px auto 0 auto;
@@ -866,8 +904,14 @@ h5,h6{
 		
 }
 
+.related{
+	.project-title{
+		min-height: 60px;
+	}
+}
 
-.flexslider-full-controls{		
+
+.flexslider-controls{	
 	position: absolute;
 	width: 300px;
 	z-index: 192;
@@ -902,7 +946,7 @@ h5,h6{
 
 
 
-.flexslider-full-direction{
+.flexslider-direction{
 	height: 100%;
 	z-index: 191;
 	position: absolute;
@@ -1014,15 +1058,6 @@ h5,h6{
 
 /********** @ABOUT *********/
 
-.info-mission{
-	
-
-	h3{
-		line-height: 1.6;
-	}
-
-	
-}
 
 .person{
 
@@ -1374,23 +1409,23 @@ h5,h6{
 	margin-bottom: 30px;
 }
 
-h1{
+h1,.h1{
 	font-size: 24px;
 }
 
-h2{
+h2,.h2{
 	font-size: 20px;
 }
 
-h3{
+h3,.h3{
 	font-size: 16px;
 }
 
-h4{
+h4,.h4{
 	font-size: 13px;
 }
 
-h5,h6{
+h5,h6,.h5,.h6{
 	font-size: 13px;
 }
 
@@ -1400,6 +1435,9 @@ h5,h6{
 }
 
 #header {
+
+	height: 53px;
+	
 	#logo{
 		margin-top: 0;
 		width: 110px;
@@ -1423,6 +1461,16 @@ h5,h6{
 		top: 14px;
 	}
 
+}
+
+#headerfix{
+	height: 53px;
+}
+
+.single{
+	#headerfix{
+		display: block;
+	}
 }
 
 
