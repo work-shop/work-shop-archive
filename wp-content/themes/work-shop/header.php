@@ -108,7 +108,7 @@
 	
 	<?php if(is_home()): ?>
 
-	<div id="nav-side" class="dark">
+	<div id="nav-side" class="dark spy">
 		<ul>
 			<li><a class="jump active side" href="#home-introduction" data-toggle="tooltip" data-placement="left" title="home"></a></li>
 			<li><a class="jump side" href="#home-about"  data-toggle="tooltip" data-placement="left" title="studio"></a></li>

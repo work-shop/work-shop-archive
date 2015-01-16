@@ -630,18 +630,12 @@ h5,h6{
 				border: 1px solid @light;
 			}
 			
-			&:hover{
-				cursor: pointer;
-				background: rgba(120,120,120,1);
-			}
-			
 			&.side-icon:hover{
 				background: none;
 				:before{
 					color: @brand;
 				}
-			}
-			
+			}		
 
 		}
 	}
@@ -1058,6 +1052,44 @@ h5,h6{
 
 /********** @ABOUT *********/
 
+#about-nav-container{
+	height: 0;
+}
+
+#about-nav{
+	position: fixed;
+	z-index: 998;
+	top: 115px;
+	
+	&:hover{
+		li{
+			a{
+				opacity: 1;
+			}
+		}
+	}
+	
+	li{
+		
+		a{
+			display: block;
+			padding: 7px 15px;		
+			color: @dark;
+			//opacity: .25;
+			
+			&.active{
+				opacity: 1;
+				background: @brand;
+				color: white;
+			}
+			
+			&:hover{
+				background: @brand;
+				color: white;			
+			}
+		}
+	}
+}
 
 .person{
 
@@ -1493,12 +1525,18 @@ h5,h6,.h5,.h6{
 	font-size: 18px;
 }
 
+.dash{
+	
+	&.static{
+		margin: 30px auto 0 auto;
+	}
+	
+}
+
 
 #projects-grid{
 	padding-bottom: 15%;
-	padding-top: 60px;
-	
-
+	padding-top: 30px;
 }
 
 

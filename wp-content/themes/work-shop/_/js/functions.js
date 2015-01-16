@@ -235,7 +235,6 @@ function view(){
 	ph = ch - 130;
 	fw = cw*.5;
 	
-	console.log($(window).width());
 	if($(window).width() >= 768){		
 		$('.block.half').css('height',ch/2);				
 		$('.block.full').css('height',ch);		
@@ -245,7 +244,6 @@ function view(){
 		$('.flexslider-hero').css('height',fw);																									
 	}
 	else{
-		console.log('small');
 		$('.block.half').css('height',ch/2);				
 		$('.block.full').css('height',ch);		
 		$('.block.min-large').css('min-height','none');	
@@ -279,28 +277,48 @@ function spy(){
 
 	var targets = new Array();
 	
-	$('#nav-side .jump').each(function(i){
-		targets[i] = new Array(3);
+	if($('body').hasClass('home')){	
+		if( $(window).width() < 768 ){ 
+			var o = 350; 
+		}else{ 
+			var o = ($(window).height() / 2); 
+		}			
+	}
+	else{
+		var o = 90; 
+	}
+
+	
+	$('.spy .jump').each(function(i){
+		targets[i] = new Array(4);
 		var temp = $(this).attr('href');
 		var offset = $(temp).offset();	
 		targets[i][0] = $(this);		
 		targets[i][1] = offset.top;
-		targets[i][2] = $(temp);
-		
+		targets[i][2] = $(temp);		
 	});
 	
+	if($('.spy').hasClass('falloff')){
+		var falloffTemp = $('.falloff-link').attr('href');	
+		var falloffOffset = $(falloffTemp).offset();
+		var falloffPosition = falloffOffset.top;
+		}	
+	
 	for(var j = 0; j < targets.length; j++){
-		if( $(window).width() < 768 ){ 
-		var o = 350; 
-		}
-		else{ var o = ($(window).height() / 2); }
 	
 		if(($(window).scrollTop() + o) >= targets[j][1]){
 			$('.block').removeClass('active');					
-			$('#nav-side .jump').removeClass('active');		
+			$('.spy .jump').removeClass('active');		
 			targets[j][0].addClass('active');		
 			targets[j][2].addClass('active');			
-			targets[j][2].addClass('activated');			
+			targets[j][2].addClass('activated');	
+			
+			if($('.spy').hasClass('falloff') && $(window).scrollTop() >= falloffPosition){
+				$('.spy').addClass('hidden');
+			}	
+			else{
+				$('.spy').removeClass('hidden');
+			}	
 				
 		}
 	}	
