@@ -57,21 +57,31 @@
 				case 'video': ?>
 				
 					<?php 
-					$video = get_field('project_hero_video'); 
+					$video = get_field('project_hero_video');
+					$full = get_field('hero_video_size'); 
 					$hero_image 			= get_field('project_hero_image');
 					$hero_image_url 		= ($hero_image) ? $hero_image['sizes']['slideshow'] : NULL; 					
-					?> 
-				
-					<div class="row">
-						<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-												
-							<video class="padded" autoplay="autoplay" loop poster="<?php echo $hero_image_url; ?>">
-								<source src="<?php echo $video; ?>" type="video/mp4">
-							</video>				
-		
-						</div>
+					 
+					if($full){ ?>
 					
-					</div>
+						<video class="video-full" autoplay="autoplay" loop poster="<?php echo $hero_image_url; ?>">
+								<source src="<?php echo $video; ?>" type="video/mp4">
+						</video>	
+					
+					<?php } else{ ?>	
+				
+						<div class="row">
+							<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+													
+								<video class="padded" autoplay="autoplay" loop poster="<?php echo $hero_image_url; ?>">
+									<source src="<?php echo $video; ?>" type="video/mp4">
+								</video>				
+			
+							</div>
+						
+						</div>
+						
+					<?php } ?>
 					
 				<?php break;				
 			} ?>
