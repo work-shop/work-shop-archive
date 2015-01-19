@@ -1,7 +1,7 @@
 
 <section id="contact" class="contact block min padded-more">
 
-	<div class="block-body">
+	<div class="block-body m60">
 		<div class="container">
 			<div class="row centered">
 			
@@ -11,29 +11,29 @@
 			
 				<div class="col-sm-4">
 					<address>
-						<h2>Contact</h2>
-						<div class="dash centered margined"></div>
-						<h3><a href="mailto:info@workshopri.com" target="_blank">info@workshopri.com</a></h3>
-						<h3>p. 440-915-2393</h3>
-						<h3>f. 401-274-1913</h3>						
+						<h3 class="bold uppercase m30">Contact</h3>
+						
+						<h4><a href="mailto:info@workshopri.com" target="_blank">info@workshopri.com</a></h4>
+						<h4>p. 440-915-2393</h4>
+						<h4>f. 401-274-1913</h4>						
 					</address>	
 				</div>
 			
 				<div class="col-sm-4">
 					<address>
-						<h2>Office</h2>
-						<div class="dash centered margined"></div>						
-						<h3>204 Westminster Street, Floor 3</h3>
-						<h3>Providence, RI 02903</h3>						
+						<h3 class="uppercase bold m30">Office</h3>
+											
+						<h4>204 Westminster Street, Floor 3</h4>
+						<h4>Providence, RI 02903</h4>						
 					</address>				
 				</div>	
 				
 				<div class="col-sm-4">
 					<address>
-						<h2>Shop</h2>
-						<div class="dash centered margined"></div>						
-						<h3>610 Manton Avenue</h3>
-						<h3>Providence, RI 02909</h3>						
+						<h3 class="uppercase bold m30">Shop</h3>
+											
+						<h4>610 Manton Avenue</h4>
+						<h4>Providence, RI 02909</h4>						
 					</address>					
 				</div>			
 								
@@ -46,14 +46,14 @@
 		<div class="container">
 			<div class="row">
 			
-				<div class="col-sm-4 col-sm-offset-2 col-xs-6 col-lg-3 col-lg-offset-3">
+				<div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-xs-12 centered">
 					<div class="contact-button-broken">
 						<h2 class="centered"><a href="#contact" data-toggle="modal" data-target="#contactModal" class="button">Contact Us</a></h2>
 					</div>
 				
 				</div>
 			
-				<div class="col-sm-4 col-lg-3 col-xs-6">
+				<div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-xs-12 centered">
 					<div class="contact-button-broken">
 						<h2 class="centered"><a href="#subscribe" data-toggle="modal" data-target="#subscribeModal" class="button">Subscribe to our Newsletter</a></h2>
 					</div>				

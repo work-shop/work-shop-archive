@@ -13,7 +13,7 @@
 	<title> 
 	   <?php
 	   	     if (is_category()) {
-	         	single_cat_title(); echo ' - '; bloginfo('name'); 
+	         	single_cat_title(); echo ' - '; 
 	         }
 	         elseif (is_archive()){
 	         	wp_title(''); echo ' - ';  
@@ -24,7 +24,7 @@
 	         	wp_title(''); echo ' - '; 
 	         }
 	      elseif (is_404()) {
-	         	echo 'Not Found - '; bloginfo('name');
+	         	echo 'Not Found - ';
 	         }
 	      if (is_home()) {
 	         bloginfo('name'); echo ' - '; bloginfo('description'); }
@@ -86,25 +86,19 @@
 					</ul>	
 				</nav>	
 				
-				<a id="carrot" href="#" class="nav-toggle closed hidden">
+				<a id="carrot" href="#" class="menu-toggle closed">
 					<img src="<?php bloginfo('template_directory'); ?>/_/img/toggle.png" alt="navigation-toggle">
 				</a>
 				
-				<nav id="menu" class="closed hidden">
-					<div class="row">
-						<div class="col-sm-6">
-						
-						</div>
-						<div class="col-sm-6">
-						
-						</div>
-					</div>
-				</nav>
-														
+				<a href="#close" class="menu-toggle display-block" id="menu-close"><span class="icon" data-icon="&#64258;"></span></a>
+				
+				
 			</div>					
-		</header>
+		</header>	
 
 	<div id="headerfix"></div>
+	
+	<?php  get_template_part('menu'); ?>
 	
 	<?php if(is_home()): ?>
 
@@ -120,7 +114,7 @@
 			<li><a class="jump side" href="#home-info" data-toggle="tooltip" data-placement="left" title="about"></a></li>	
 			<li><a class="jump side" href="#home-news" data-toggle="tooltip" data-placement="left" title="news"></a></li>				
 			<li><a class="jump side" href="#invitation" data-toggle="tooltip" data-placement="left" title="coffee"></a></li>
-			<li><a class="jump side" href="#contact" data-toggle="tooltip" data-placement="left" title="contact"></a></li>			
+			<li><a class="jump side" href="#contact" data-toggle="tooltip" data-placement="left" title="contact"></a></li>		
 		</ul>
 		
 	</div>	

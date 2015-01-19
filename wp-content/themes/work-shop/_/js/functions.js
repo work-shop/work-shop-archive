@@ -18,6 +18,7 @@ jQuery(document).ready(function($) {
 	$('.menu-toggle').click(function(event) {
 	  	event.preventDefault();
 		menuToggle();
+		console.log('.menu-toggle clicked');
 	});
 	
 	$('.invitation-toggle').click(function(event) {
@@ -84,18 +85,22 @@ $(window).resize(function() {
 
 $(window).scroll(function() { 
 
-	if($('#state').hasClass('spy')){
-		spy();
-	}	
+	if(!$('html').hasClass('menu-open')){
 
-	var after = $('body').offset().top + 200;
-	       
-	if($(this).scrollTop() >= after && $("body").hasClass('before')){
-		$("body").removeClass('before').addClass('after');
-	} 
-	else if($(this).scrollTop() < after && $("body").hasClass('after')){
-		$("body").removeClass('after').addClass('before');	
-	} 
+		if($('#state').hasClass('spy')){
+			spy();
+		}	
+	
+		var after = $('body').offset().top + 200;
+		       
+		if($(this).scrollTop() >= after && $("body").hasClass('before')){
+			$("body").removeClass('before').addClass('after');
+		} 
+		else if($(this).scrollTop() < after && $("body").hasClass('after')){
+			$("body").removeClass('after').addClass('before');	
+		} 
+	
+	}
 
 });//end window.scroll
 
@@ -105,7 +110,7 @@ $(window).scroll(function() {
 //m or M	
 $(document).keypress(function(e) {
 	if(e.which == 109 || e.which == 77) {
-		//navToggle();
+		menuToggle();
 	}	
 });
 
@@ -196,24 +201,26 @@ function scrollLink(destination){
 
 //open and close the menu
 function menuToggle(){
+	console.log('menutoggle');
 	
-	if($('#header').hasClass('off')){
-		$('#header').removeClass('off');
-		$('#header').addClass('on');
-		$('html').removeClass('header-closed');
-		$('html').addClass('header-open');	
+	if($('#menu').hasClass('off')){
+		$('#menu').removeClass('off');
+		$('#menu').addClass('on');
+		$('html').removeClass('menu-closed');
+		$('html').addClass('menu-open');	
 		var trim = $(window).height();		
 		$('html,body').css('height',trim);
+		$('html,body').css('overflow','hidden');
 	}
 	
-	else if($('#header').hasClass('on')){
-		$('#header').removeClass('on');
-		$('#header').addClass('off');
+	else if($('#menu').hasClass('on')){
+		$('#menu').removeClass('on');
+		$('#menu').addClass('off');
 		$('html').removeClass('header-open');
 		$('html').addClass('header-closed');
-		$('#header').scrollTop(0);	
-		$('html').css('height','100%');
-		$('body').css('height','100%');						
+		$('#menu').scrollTop(0);	
+		$('html,body').css('height','100%');
+		$('html,body').css('overflow','auto');
 	}
 	
 }
@@ -277,8 +284,11 @@ function loadPage(){
 //determine state of the users view on the page by scroll position 
 function spy(){
 
+	console.log('spy');
+
 	var targets = new Array();
 	
+
 	if($('body').hasClass('home')){	
 		if( $(window).width() < 768 ){ 
 			var o = 350; 
@@ -289,7 +299,6 @@ function spy(){
 	else{
 		var o = 80; 
 	}
-
 	
 	$('.spy .jump').each(function(i){
 		targets[i] = new Array(4);
@@ -308,12 +317,14 @@ function spy(){
 	
 	for(var j = 0; j < targets.length; j++){
 	
-		if(($(window).scrollTop() + o) >= targets[j][1]){
+		if(($(window).scrollTop() + o) >= targets[j][1]){		
 			$('.block').removeClass('active');					
-			$('.spy .jump').removeClass('active');		
+			$('.spy .jump').removeClass('active');	
+			//console.log('loop index:');	
+			console.log(targets[j]);	
 			targets[j][0].addClass('active');		
 			targets[j][2].addClass('active');			
-			targets[j][2].addClass('activated');	
+			targets[j][2].addClass('activated');
 			
 			if($('.spy').hasClass('falloff') && $(window).scrollTop() >= falloffPosition){
 				$('.spy').addClass('off');

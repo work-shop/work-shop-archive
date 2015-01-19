@@ -533,7 +533,7 @@ h5,h6{
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 10;
+	z-index: 9999;
 	
 	&:hover{
 		//background: rgba(240,240,240,.25);
@@ -545,8 +545,8 @@ h5,h6{
 		margin-left: -65px;
 		position: fixed;
 		margin-top: 10px;
-	}
-	
+		z-index: 9999;
+	}	
 	
 	#nav{
 		position: fixed;
@@ -573,6 +573,47 @@ h5,h6{
 	}
 }
 
+
+#menu{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: fixed;
+	top: 100%;
+	left: 0;
+	background: rgb(245,245,243);
+	.transition(top,.5s);
+	padding: 6% 0 7% 0;
+	z-index: 9998;
+	overflow: scroll;
+		
+	&.on{
+		top: 0%;
+	}
+	
+	.menu-about{
+	
+		margin-top: 30px;
+		
+		li{
+			margin-bottom: 30px;
+			a{
+				padding: 10px;
+			}
+		}
+	}
+	
+}
+
+#menu-close{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	right: -100px;
+	top: 24px;
+	z-index: 100000;
+}
+
 #headerfix{
 	height: 90px;
 }
@@ -597,11 +638,27 @@ h5,h6{
 	}
 }
 
-&.after{
+.after{
 	
 	#carrot{
 		right: 24px;
 	}
+	
+	#header #nav{
+		right: -200px;
+	}
+}
+
+.menu-open{
+
+	#menu-close{
+		right: 24px;
+	}
+	
+	#header #nav{
+		right: -200px;
+	}
+	
 }
 
 #nav-side{
@@ -637,6 +694,8 @@ h5,h6{
 			}
 
 			&.active{
+				width: 100px;
+				height: 100px;
 				background: @dark;
 				border: 1px solid @light;
 			}
@@ -674,7 +733,7 @@ h5,h6{
 	}
 	
 	&.static{
-		margin: 90px auto 0 auto;
+		margin: 30px auto 30px auto;
 	}
 	
 	&.bottom{
@@ -709,7 +768,7 @@ h5,h6{
 
 #scrolly{
 	position: absolute;
-	bottom: 5%;
+	bottom: 10%;
 	left: 50%;
 	margin-left: -17px;
 }
@@ -1193,22 +1252,10 @@ h5,h6{
 
 #contact{
 
-	
-	address h2,h3{
-		margin-top: 5px;
-		margin-bottom: 5px;
-	}
-	
-	.button{
-		display: block;
-	}
-	
-	.actions{
-		margin-top: 100px;
-		
-		.button{
-			//height: 60px;
-		}
+	address h4{
+		margin-top: 0px;
+		margin-bottom: 3px;
+		font-size: 17px;
 	}
 
 }
@@ -1219,7 +1266,7 @@ h5,h6{
 /********** @UTILITIES *********/
 
 .button{
-	padding: 7px;
+	padding: 8px 15px;
 	border: 2px solid @brand;
 	background: white;
 	color: @brand;
@@ -1515,7 +1562,7 @@ h5,h6,.h5,.h6{
 }
 
 .button{
-	padding: 3px;	
+	padding: 5px;	
 	font-size: 14px;
 }
 
@@ -1547,6 +1594,7 @@ h5,h6,.h5,.h6{
 	}
 
 }
+
 
 #headerfix{
 	height: 53px;

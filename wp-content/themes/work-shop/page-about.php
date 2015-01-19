@@ -257,7 +257,6 @@
 						<li><a href="#about-process" class="jump">Process</a></li>
 						<li><a href="#about-services" class="jump">Services</a></li>						
 						<li><a href="#about-people" class="jump">People</a></li>
-						<li><a href="#about-place" class="jump hidden">Place</a></li>
 						<li><a href="#about-values" class="jump">Values</a></li>	
 						<li><a href="#contact" class="jump">Contact</a></li>				
 						<li><a href="#invitation" class="jump hidden falloff-link"></a></li>

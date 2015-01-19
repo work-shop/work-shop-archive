@@ -26,15 +26,20 @@
 							
 	</section>	
 	
-	<section id="home-about" class="home-about block half padded">	
 	
-		<div class="vertical-center">
-			<h2 class="centered tagline">Work-Shop <br class="visible-xs"/>is an interdisciplinary<br class="visible-xs"/><br class="hidden-xs"/>
-			research, design, and fabrication<br class="visible-xs"/> studio<br class="hidden-xs"/>
-			in Providence,<br class="visible-xs"/> Rhode Island.<br/></h2>
-		</div>
-						
+	<section id="home-about" class="home-about block half padded">		
+	
+			<div class="vertical-center">
+				<h2 class="centered tagline m30">Work-Shop <br class="visible-xs"/>is an interdisciplinary<br class="visible-xs"/><br class="hidden-xs"/>
+				research, design, and fabrication<br class="visible-xs"/> studio<br class="hidden-xs"/>
+				in Providence,<br class="visible-xs"/> Rhode Island.<br/></h2>
+				
+				<h3 class="centered"><a href="<?php bloginfo('url'); ?>/jobs" class="bold h3">We're hiring! Check out our open positions.</a></h3>
+			
+			</div>
+			
 	</section>	
+	
 	
 	<section id="home-spaces" class="home-spaces block full bg-light">	
 	
@@ -72,6 +77,7 @@
 		</div>
 							
 	</section>		
+	
 	
 	<section id="home-interfaces" class="home-interfaces block full bg-light">	
 	
@@ -121,6 +127,7 @@
 		</div>		
 							
 	</section>		
+	
 	
 	<section id="home-furniture" class="home-furniture block full bg-light">	
 	
@@ -277,6 +284,7 @@
 		</div>
 							
 	</section>		
+	
 	
 	<section id="home-news" class="home-news block bg-light padded">	
 		

@@ -4,9 +4,17 @@
 	
 	<?php if(!is_home()): get_template_part('signpost'); endif; ?>
 	
-	<?php get_template_part('invitation'); ?>	
+	<?php if(is_page(8)): 
 	
-	<?php get_template_part('contact'); ?>	
+		 get_template_part('contact');
+		 get_template_part('invitation');
+	 
+	 else:
+	 
+	 	get_template_part('invitation');	
+	 	get_template_part('contact'); 
+	 	
+	 	endif; ?>	
   
 </div><!-- /#state -->
 
@@ -41,7 +49,7 @@
 
 	<?php 
 		if ( !file_exists( dirname(__FILE__) . 'env_prod' )  ) { 
-			include('less.php');
+			//include('less.php');
 		}
 	?>
 
