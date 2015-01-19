@@ -338,6 +338,9 @@ function spy(){
 	
 }
 
-
+function in_epsilon( value, target ) {
+	var e = 30;
+	return value >= ( target - e ) && value <= (target + e);
+}
 
 
