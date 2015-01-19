@@ -153,13 +153,19 @@ img,video{
 	.gradient();
 }
 
-.icon:before {
+.icon{
+	&:before {
     content: attr(data-icon);
     font-family: "modern_pictograms_proregular";
 	font-size: 31px;
 	line-height: 100%;
 	vertical-align: middle;
 	position: relative;	
+	}
+	
+	&.large:before{
+		font-size: 72px;
+	}
 }
 
 .icon-left:before{
@@ -255,13 +261,14 @@ body{
 }
 
 .row{
-	//margin-left: 0;
-	//margin-right: 0;
-	//box-sizing: border-box;
+
 }
 
 .container{
-	//padding: 0;
+	
+	&.md{
+		max-width: 960px;
+	}
 }
 
 .white{
@@ -397,9 +404,6 @@ h5,h6{
 	display: none;
 }
 
-#content{
-	//padding-top: 60px;
-}
 
 .block{
 	position: relative;
@@ -579,20 +583,6 @@ h5,h6{
 	}
 }
 
-.home{
-
-
-	
-	#content{
-		padding-top: 0px;
-	}
-}
-
-.single{
-	#content{
-		padding-top: 0px;
-	}
-}
 
 #carrot{
 	right: -100px;
@@ -687,6 +677,10 @@ h5,h6{
 		margin: 90px auto 0 auto;
 	}
 	
+	&.bottom{
+		margin-bottom: 90px;
+	}
+	
 	&.centered{
 		margin-left: auto;
 		margin-right: auto;
@@ -711,6 +705,13 @@ h5,h6{
 	position: relative;
 	right: 1500px;
 	.transition(right,1s,0s,linear);
+}
+
+#scrolly{
+	position: absolute;
+	bottom: 5%;
+	left: 50%;
+	margin-left: -17px;
 }
 
 
@@ -1134,6 +1135,12 @@ h5,h6{
 	p{
 		//margin-top: 
 	}
+}
+
+/********** @PAGE *********/
+
+.page-body{
+	padding-bottom: 90px;
 }
 
 

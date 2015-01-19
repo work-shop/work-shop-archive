@@ -12,9 +12,9 @@
 	</section>	
 
 	
-	<section id="page-body" class="block bg-light">
+	<section id="page-body" class="page-body block bg-light">
 	
-		<div class="container">
+		<div class="container md">
 		
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2">				
@@ -22,15 +22,19 @@
 				</div>			
 			</div>	
 			
-			<div class="post-content padded">					
+			<div class="page-content padded">					
 		
 				<?php the_content(); ?>
 			
 			</div>
 		
 		</div>
-	
+		
+		<div id="page-dash" class="dash static bottom"></div>		
+		
 	</section>
+	
+	
 		
 </div>	
 
