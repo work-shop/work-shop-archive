@@ -8,6 +8,8 @@ var moving = false;
 //initial events, and general event binding
 jQuery(document).ready(function($) {
 
+	$(document).trigger('spy-init');
+
 	view();
 	
 	$('#backtotop').click(function(event) {
@@ -81,34 +83,6 @@ $(window).resize(function() {
 	view();	
 	
 });//end window.resize
-
-
-$(window).scroll(function() { 
-
-	if(!$('html').hasClass('menu-open')){
-		console.log('scroll');
-
-		if($('#state').hasClass('spy')){
-			spy();
-		}	
-	
-		var after = $('body').offset().top + 200;
-		       
-		if($(this).scrollTop() >= after && $("body").hasClass('before')){
-			$("body").removeClass('before').addClass('after');
-		} 
-		else if($(this).scrollTop() < after && $("body").hasClass('after')){
-			$("body").removeClass('after').addClass('before');	
-		} 
-	
-	}
-	else{
-		console.log('NO scroll');
-		
-	}
-
-});//end window.scroll
-
 
 //FUNCTIONS
 
@@ -288,66 +262,166 @@ function loadPage(){
 		
 }
 
-//determine state of the users view on the page by scroll position 
-function spy(){
+$(window).scroll(function() { 
 
-	console.log('spy');
+	if( !$('html').hasClass('menu-open') ) {
 
-	var targets = new Array();
-	
-
-	if($('body').hasClass('home')){	
-		if( $(window).width() < 768 ){ 
-			var o = 350; 
-		}else{ 
-			var o = ($(window).height() / 2); 
-		}			
-	}
-	else{
-		var o = 80; 
-	}
-	
-	$('.spy .jump').each(function(i){
-		targets[i] = new Array(4);
-		var temp = $(this).attr('href');
-		var offset = $(temp).offset();	
-		targets[i][0] = $(this);		
-		targets[i][1] = offset.top;
-		targets[i][2] = $(temp);		
-	});
-	
-	if($('.spy').hasClass('falloff')){
-		var falloffTemp = $('.falloff-link').attr('href');	
-		var falloffOffset = $(falloffTemp).offset();
-		var falloffPosition = falloffOffset.top;
+		if($('#state').hasClass('spy')){
+			//spy();
 		}	
 	
-	for(var j = 0; j < targets.length; j++){
+		var after = $('body').offset().top + 200;
+		       
+		if($(this).scrollTop() >= after && $("body").hasClass('before')){
+			$("body").removeClass('before').addClass('after');
+		} 
+		else if($(this).scrollTop() < after && $("body").hasClass('after')){
+			$("body").removeClass('after').addClass('before');	
+		} 
 	
-		if(($(window).scrollTop() + o) >= targets[j][1]){		
-			$('.block').removeClass('active');					
-			$('.spy .jump').removeClass('active');	
-			//console.log('loop index:');	
-			console.log(targets[j]);	
-			targets[j][0].addClass('active');		
-			targets[j][2].addClass('active');			
-			targets[j][2].addClass('activated');
-			
-			if($('.spy').hasClass('falloff') && $(window).scrollTop() >= falloffPosition){
-				$('.spy').addClass('off');
-			}	
-			else{
-				$('.spy').removeClass('off');
-			}	
-				
-		}
-	}	
-	
-}
+	}
 
-function in_epsilon( value, target ) {
-	var e = 30;
-	return value >= ( target - e ) && value <= (target + e);
-}
+});//end window.scroll
+
+$(document).on('spy-init', function() {
+	var excludeIDs = ['#home-background'];
+	var current = undefined;
+	/**
+	 * When spying on the state of the page, we're interested in:
+	 * the currently-viewed element. (and performing actions on it).
+	 * at any point we can:
+	 * jump to
+	 */
+
+
+	 $(document).on('spy-recalculate', function() {
+	 	decideActive( $('.block:in-viewport') );
+	 });
+
+	 $(document).on('spy-repaint', function( event, d ) {
+	 	if ( current != d ) {
+	 		var c = $(current);
+	 		    d = $( d );
+
+	 		c.removeClass('active');
+	 		d.addClass('active').addClass('activated');
+	 		$('.spy .jump[href="#' + c.attr('id') + '"]').removeClass('active')
+	 		$('.spy .jump[href="#' + d.attr('id') + '"]').addClass('active');
+
+	 		current = d;
+	 	}
+	 })
+
+
+	 $(window).on('scroll', function() {
+	 	if ( current == undefined ) { $('.spy .jump').removeClass('active'); }
+	 	$(document).trigger('spy-recalculate');
+	 });
+
+	 function decideActive( inView ) {
+	 	/**
+		 * Let's define an element as "active" if its body is intersecting the
+		 * centerpoint of the page. Let's compute the current centerpoint, and 
+		 * iterate across the blocks that are in view, decide which ones are active,
+		 * and trigger the desired action on them.
+		 */
+
+		if($('.spy').hasClass('falloff')){
+			var falloffPosition = $( $('.falloff-link').attr('href')).offset().top;
+		}
+
+		var w = $(window), doc = $(document);
+		var centerline = w.scrollTop() + (w.height() / 2);
+
+	 	inView.each( function( i,d ) {
+
+	 		d = $( d );
+
+	 		if ( !excludeIDs.reduce(
+	 			function( prev,curr ) { return prev || d.is( curr ); }, false
+	 		) ) {	
+	 			if ( d.offset().top < centerline && (d.offset().top + d.height()) > centerline ) {
+	 				var s = $('.spy');
+	 				doc.trigger('spy-repaint', d);
+	 				if ($('.spy').hasClass('falloff') && w.scrollTop() >= falloffPosition ) {
+	 					s.addClass('off');
+	 				} else {
+	 					s.removeClass('off');
+	 				}
+	 			}
+	 		}
+	 	});
+	 }
+
+	 function decideOffset() {
+	 	var w = $(window);
+	 	return ($('body').hasClass('home')) ? ((w.width() < 768) ? 350 : (w.height() / 2)) : 80;
+	 }
+});
+
+
+//determine state of the users view on the page by scroll position 
+// function spy(){
+// 	var w = $(window);
+// 	console.log('spy');
+
+// 	var targets = new Array();
+	
+
+// 	if($('body').hasClass('home')){	
+// 		if( w.width() < 768 ){ 
+// 			var o = 350; 
+// 		}else{ 
+// 			var o = (w.height() / 2); 
+// 		}			
+// 	}
+// 	else{
+// 		var o = 80; 
+// 	}
+	
+// 	$('.spy .jump').each(function(i){
+// 		targets[i] = new Array(4);
+// 		var temp = $(this).attr('href');
+// 		var offset = $(temp).offset();	
+// 		targets[i][0] = $(this);		
+// 		targets[i][1] = offset.top;
+// 		targets[i][2] = $(temp);		
+// 	});
+	
+// 	if($('.spy').hasClass('falloff')){
+// 		var falloffTemp = $('.falloff-link').attr('href');	
+// 		var falloffOffset = $(falloffTemp).offset();
+// 		var falloffPosition = falloffOffset.top;
+// 		}	
+	
+// 	for(var j = 0; j < targets.length; j++){
+	
+// 		if(
+// 			(w.scrollTop() + o) >= targets[j][1] &&
+//  			(w.scrollTop()) <= targets[j][1] + 4
+
+// 			){	
+
+// 			$('.block').removeClass('active');					
+// 			$('.spy .jump').removeClass('active');	
+// 			//console.log('loop index:');	
+// 			console.log(targets[j]);	
+// 			targets[j][0].addClass('active');		
+// 			targets[j][2].addClass('active');			
+// 			targets[j][2].addClass('activated');
+			
+// 			if($('.spy').hasClass('falloff') && w.scrollTop() >= falloffPosition){
+// 				$('.spy').addClass('off');
+// 			}	
+// 			else{
+// 				$('.spy').removeClass('off');
+// 			}	
+				
+// 		}
+// 	}	
+	
+// }
+
+
 
 
