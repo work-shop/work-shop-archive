@@ -255,38 +255,28 @@
 	</section>			
 
 
-	<section id="home-info" class="home-info block bg-light padded">	
-	
-		<div class="block-background mask-light" style="background-image: none">	
-		</div>
+	<section id="home-info" class="home-info full block bg-light padded-more">	
 		
-		<div class="container">
-			<div class="row">
-	
-				<div class="col-sm-10 col-sm-offset-1">
+		<div class="vertical-center">
+			<div class="container">
+				<div class="row">
+		
+					<div class="col-sm-8 col-sm-offset-2">
+						
+						<h1 class="m30">We like to do good work, and we work with clients who like to do good.</h1>
+						<h3><a href="<?php bloginfo('url'); ?>/about" class="button">Learn More About Us</a></h3>
+						
+					</div>
 					
-					<h2 class="m1">We like to do good work, and we work with clients who like to do good.</h2>
-		
-					<h3 class="m1">As a studio, our process is project-centric. We bring a variety of backgrounds and perspectives to every project, to provide holistic, critical design to our clients.
-					We work in architectural design and fabrication, furniture design and construction, software architecture and implementation, app design and production, and web design and development. 
-					</h3><h3 class="m2">
-					To us, design is a tool that allows us ask the key questions of a project. Making is the ability to take those questions, and create something that answers them. We solve problems by blending design and making. 
-					</h3>
-		
-			<h3 class="m2">
-				<a href="http://gregnemes.com" target="_blank">Greg Nemes</a> and <a href="http://nicschumann.com" target="_blank">Nic Schumann</a> co-founded Work-Shop in the fall of 2013. Greg has a background in Architecture, User Interface/User Experience Design, Education, and the Culinary Industry. He is an amateur bird-watcher, and triathlete. Nic has a background in Computer Science, Industrial Design, Literature, and Mathematics. He draws, writes, cooks a little, and drinks coffee.
-			</h3>
-			
 				</div>
 				
 			</div>
-			
 		</div>
 							
 	</section>		
 	
 	
-	<section id="home-news" class="home-news block bg-light padded">	
+	<section id="home-news" class="home-news block bg-white padded">	
 		
 		<div class="container">
 			<div class="row">
