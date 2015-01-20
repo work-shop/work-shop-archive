@@ -100,7 +100,7 @@
 
 	<div id="headerfix"></div>
 	
-	<?php  get_template_part('menu'); ?>
+	<?php  get_template_part('menu','2'); ?>
 	
 	<?php if(is_home()): ?>
 
