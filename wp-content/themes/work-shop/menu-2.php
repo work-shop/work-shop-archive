@@ -5,7 +5,7 @@
 	
 			<div class="row mt">
 				<div class="col-sm-4 col-sm-offset-1 menu-about visible-xs">
-					<h2 class="m30">We're an interdisciplinary group of designers, makers, thinkers, and questioners. </h2>
+					<h2 class="m30">We're an interdisciplinary design studio comprised of designers, makers, thinkers, and creative technologists. </h2>
 
 					<ul class="">
 						<li><a href="<?php bloginfo('url') ;?>/about" class=" h2 bold">About</a></li>
@@ -33,20 +33,13 @@
 				
 				
 				<div class="col-sm-4 col-sm-offset-1 menu-about hidden-xs">
-					<h2 class="m30">We're an interdisciplinary group of designers, makers, thinkers, and questioners. </h2>
+					<h2 class="m30">We're an interdisciplinary design studio comprised of designers, makers, thinkers, and creative technologists. </h2>
 
 					<ul class="">
 						<li><a href="<?php bloginfo('url') ;?>/about" class=" h2 bold">About</a></li>
 						<li><a href="<?php bloginfo('url') ;?>/about#contact" class=" h2 bold">Contact</a></li>
 						<li><a href="<?php bloginfo('url') ;?>/jobs" class=" h2 bold">Jobs</a></li>
 						<li><a href="#" class=" h2 bold">Summer Apprenticeship Program</a></li>
-						<li><a href="#" class=" h2 bold">Projects</a>
-							<ul class="hidden">
-								<li>Spaces</li>
-								<li>Furniture</li>
-								<li>Webs</li>
-							</ul>
-						</li>
 					</ul>
 					<h2><span class="dash static inline"></span></h2>
 					<address>	

@@ -10,8 +10,6 @@ var log = console.log;
 //initial events, and general event binding
 jQuery(document).ready(function($) {
 
-	if ( $('.spy').length > 0 ) { $(document).trigger('spy-init'); }
-
 	view();
 	
 	$('#backtotop').click(function(event) {
@@ -226,7 +224,8 @@ function view(){
 	fw = cw*.5;
 	
 	if($(window).width() >= 768){		
-		$('.block.half').css('height',ch/2);				
+		$('.block.half').css('height',ch/2);
+		$('.block.sixty').css('height',ch*.69);										
 		$('.block.full').css('height',ch);	
 		$('.block.min').css('min-height',ch);				
 		$('.block.min-large').css('min-height',ch);	
@@ -260,6 +259,7 @@ function loadPage(){
 		$('.loading').addClass('loaded');
 		$('.landing').addClass('landed');
 		view();
+		if ( $('.spy').length > 0 ) { $(document).trigger('spy-init'); }	
 	},1000);		
 		
 }
@@ -326,6 +326,8 @@ $(document).on('spy-init', function() {
 	 	if ( current == undefined ) { $('.spy .jump').removeClass('active'); }
 	 	$(document).trigger('spy-recalculate');
 	 });
+
+	 $(document).trigger('spy-recalculate');
 
 	 function decideActive( candidates ) {
 	 	/**

@@ -263,8 +263,8 @@
 		
 					<div class="col-sm-10 col-sm-offset-1">
 						
-						<h1 class="m30">We specialize in developing creative strategies across disciplines to solve problems for small businesses, institutions, and organizations.</h1>
-						<h3><a href="<?php bloginfo('url'); ?>/about" class="button">Learn More About Us</a></h3>
+						<h1 class="m60 centered">We're an interdisciplinary design consultancy comprised of designers, makers, thinkers, and creative technologists. </h1>
+						<h3><a href="<?php bloginfo('url'); ?>/about" class="button centered">Learn More About Us</a></h3>
 						
 					</div>
 					
@@ -285,7 +285,7 @@
 					<h2 class="centered brand">
 						2015 RISCA Grant
 					</h2>
-					<h3>We just got word we received the Rhose Island State Council for the Arts 2015 Design Innovation Fellowship! We're honored and super excited to build 2 'Urban Chapels' in Providence this year.</h3>					
+					<h3 class="centered">We just got word we received the Rhose Island State Council for the Arts 2015 Design Innovation Fellowship! We're honored and super excited to build 2 'Urban Chapels' in Providence this year.</h3>					
 				</div>
 				
 			</div>

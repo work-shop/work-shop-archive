@@ -4,15 +4,15 @@
 <div id="about" class="template about">	
 
 
-	<section id="about-introduction" class="about-introduction introduction block crop three-quarter padded">	
+	<section id="about-introduction" class="about-introduction introduction block bg-brand sixty crop padded">	
 	
-		<div class="block-background mask-dark-light" style="background-image: url('<?php bloginfo('template_directory'); ?>/_/img/sketching.jpg')">
+		<div class="block-background mask-light hidden" style="background-image: url('<?php bloginfo('template_directory'); ?>/_/img/instagram.jpg'); opacity: .25;">
 		</div>
 		
-		<div class="container vertical-center">
+		<div class="container">
 			<div class="row">			
 				<div class="col-sm-10 col-sm-offset-2">
-				<h1 class="bold white large about-tagline">We are an interdisciplinary group of designers, makers, thinkers, and questioners. </h1>	
+				<h1 class=" about-tagline white">Work-Shop is an interdisciplinary <br/>design studio comprised of designers, makers, thinkers, and creative technologists. </h1>	
 				</div>
 			</div>
 		</div>
@@ -20,7 +20,7 @@
 	</section>
 
 		
-	<section id="about-mission" class="about-1 block padded bg-light three-quarter">	
+	<section id="about-mission" class="about-1 block padded bg-light three-quarter hidden">	
 
 		<?php $mission = get_field('info_page_mission_callout', 'option'); ?>
 
@@ -39,23 +39,42 @@
 	
 	<section id="about-process" class="about-2 block padded crop min">	
 
-		<div class="block-background mask-light hidden-xs">	
-			<video autoplay="autoplay" loop>
+		<div class="block-background mask-light hidden-xs" style="background-image: url('<?php bloginfo('template_directory'); ?>/_/img/sketching.jpg')">	
+			<!--
+<video autoplay="autoplay" loop>
 			  <source src="<?php bloginfo('template_directory'); ?>/_/img/office.mp4" type="video/mp4">
-			</video>			
+			</video>	
+-->		
 		</div>		
 		
 		<div class="container">
 			<div class="row">
-			
+		
+				<div class="col-sm-8 col-sm-offset-2">
+					<h2 class="bold m60">Our process is different on every project, but these components are at the core of our work.</h2>
+				</div>
+				
+			</div>					
+					
+			<div class="row">
+		
 				<div class="col-sm-10 col-sm-offset-2">
-					<h2 class="m2">Mollit tempor PBR, single-origin coffee messenger bag readymade crucifix quinoa incididunt gastropub chambray blog +1 keytar.</h2>
+
+					<h4 class="uppercase m0 bold">Strategy</h4>
+					<h2 class="m2">We investigate the core of a problem, and collaboratively possible solutions, foundational ideas, and concepts with our clients. 
+</h2>
+	
+					<h4 class="uppercase m0 bold">Design</h4>
+					<h2 class="m2">From the research, we create holistic designs that are functional, meaningful, and solve the core problems of the project. 
+</h2>
 					
-					<h2 class="m2">Mollit tempor PBR, single-origin coffee messenger bag readymade crucifix quinoa incididunt.</h2>
+					<h4 class="uppercase m0">Making</h4>					
+					<h2 class="m2">We design everything we make, and make everything we design. Blending Design and Making into one process creates a more integral and cohesive project. 
+</h2>
 					
-					<h2 class="m2">Mollit tempor PBR, single-origin coffee messenger bag readymade crucifix quinoa incididunt gastropub chambray blog +1 keytar Mollit tempor PBR, single-origin coffee messenger.</h2>
-					
-					<h2 class="m2">Mollit tempor PBR, single-origin coffee messenger bag readymade.</h2>															
+					<h4 class="uppercase m0">Evolution</h4>
+					<h2 class="m2">Projects never end. We stay involved to make sure the project blossoms and stays healthy.
+</h2>															
 				</div>
 				
 			</div>
@@ -67,40 +86,76 @@
 	<section id="about-services" class="about-5 block padded min bg-light">	
 
 		<div class="container">
-			<div class="row m60">
+			<div class="row m30">
 			
 				<div class="col-sm-10 col-sm-offset-2">
-					<h2>What we do is almost completely determined by the project’s we’re working on. In service of a given project, we’ve done: </h2>
+					<h2 class="m1">What we do is determined by the projects we’re working on.</h2>
+					<h2 class="m30"> We’ve done: </h2>
 				</div>
 				
 			</div>
 			
-			<div class="row">
-				<div class="col-sm-5 col-sm-offset-2">
+
+			<div class="row m60">
+				<div class="col-sm-1 col-sm-offset-2"><h4 class="uppercase bold">Strategy</h4></div>
+
+				<div class="col-sm-3 col-sm-offset-1">
 					<ul>
 						<li><a href="#"><h3>Creative Direction</h3></a></li>
 						<li><a href="#"><h3>Strategic Consulting</h3></a></li>
+						<li><a href="#"><h3>Content Strategy</h3></a></li>
+					</ul>
+				</div>
+
+				<div class="col-sm-3 col-sm-offset-0">
+					<ul>
 						<li><a href="#"><h3>Conceptual Design</h3></a></li>
+						<li><a href="#"><h3>Design Engineering</h3></a></li>						
+					</ul>
+				</div>
+			</div>
+
+			<div class="row m60">
+				<div class="col-sm-1 col-sm-offset-2"><h4 class="uppercase bold">Design</h4></div>
+
+				<div class="col-sm-3 col-sm-offset-1">
+					<ul>
 						<li><a href="#"><h3>Identity/Brand Design</h3></a></li>
 						<li><a href="#"><h3>Web Design</h3></a></li>
-						<li><a href="#"><h3>User Interface/User Experience Design</h3></a></li>
-						<li><a href="#"><h3>Software Design</h3></a></li>
-						<li><a href="#"><h3>Web Development</h3></a></li>						
-						<li><a href="#"><h3>Software Engineering</h3></a></li>								
-					</ul>					
+						<li><a href="#"><h3>User Experience Design</h3></a></li>
+						<li><a href="#"><h3>Software Architecture</h3></a></li>
+					</ul>
 				</div>
-				<div class="col-sm-5">
+
+				<div class="col-sm-3">
 					<ul>
+						<li><a href="#"><h3>Product Design</h3></a></li>
 						<li><a href="#"><h3>Interior Architectural Design</h3></a></li>
-						<li><a href="#"><h3>Installations/Environments</h3></a></li>
-						<li><a href="#"><h3>Furniture Design</h3></a></li>
-						<li><a href="#"><h3>Furniture Making</h3></a></li>						
-						<li><a href="#"><h3>Digital Fabrication</h3></a></li>
-						<li><a href="#"><h3></h3></a></li>
-					</ul>				
-				</div>				
+						<li><a href="#"><h3>Furniture Design</h3></a></li>	
+						<li><a href="#"><h3>Installation Design</h3></a></li>					
+					</ul>
+				</div>
 			</div>
-			
+
+			<div class="row">
+				<div class="col-sm-1 col-sm-offset-2"><h4 class="uppercase bold">Making</h4></div>
+
+				<div class="col-sm-3 col-sm-offset-1">
+					<ul>
+						<li><a href="#"><h3>Web Development</h3></a></li>	
+						<li><a href="#"><h3>iOS Development</h3></a></li>						
+						<li><a href="#"><h3>Software Engineering</h3></a></li>	
+					</ul>
+				</div>
+
+				<div class="col-sm-3">
+					<ul>
+						<li><a href="#"><h3>Furniture Fabrication</h3></a></li>					
+						<li><a href="#"><h3>Digital Fabrication</h3></a></li>
+						<li><a href="#"><h3>Installation Construction</h3></a></li>
+					</ul>
+				</div>
+			</div>
 		</div>
 
 	</section>		
@@ -115,13 +170,6 @@
 
 
 		<div class="container">
-			<div class="row">
-				
-				<div class="col-sm-10 col-sm-offset-2">
-					<h2 class="m90">We are an interdisciplinary group of creative thinkers.</h2>
-				</div>
-			
-			</div>
 			
 			<div class="row">
 
@@ -222,23 +270,28 @@
 
 		<div class="container">
 			<div class="row m90">
-			
-				<div class="col-sm-10 col-sm-offset-2">
-					<h1>We do meaningful, responsible, and critical work for clients who we believe in.</h1>
+		
+				<div class="col-sm-4 col-sm-offset-2">
+					<h1 class="">Make the world a better place.</h1>
+				</div>
+
+				<div class="col-sm-5 col-sm-offset-1">
+					<ul>
+						<!-- <li><h2>Our Core Values:</h2></li> -->
+						<li class="m2"><a href="#"><h3>Good design answers the right questions.</h3></a></li>
+						<li class="m2"><a href="#"><h3>Valuable questions drive good design.</h3></a></li>
+						<li class="m2"><a href="#"><h3>Value is defined on a project-by-project basis.</h3></a></li>
+						<li class="m2"><a href="#"><h3>Questions are asked on a project-by-project basis.</h3></a></li>	
+						<li class="m2"><a href="#"><h3>Answers are remembered from project to project.</h3></a></li>	
+						<li class="m2"><a href="#"><h3>Work at the intersection - of disciplines, of design and making, of old and new, of simple and complex.</h3></a></li>	
+						<li><a href="#"><h3>Do work that is rooted in the culture it is made for.</h3></a></li>							
+					</ul>					
 				</div>
 				
 			</div>
 				
 			<div class="row">
-				<div class="col-sm-10 col-sm-offset-2">
-					<ul>
-						<li><h2>Our Core Values:</h2></li>
-						<li><a href="#"><h3>Do good work for clients you believe in</h3></a></li>
-						<li><a href="#"><h3>Make the world a better place</h3></a></li>
-						<li><a href="#"><h3>Be responsible</h3></a></li>
-						<li><a href="#"><h3>Be thorough</h3></a></li>							
-					</ul>					
-				</div>			
+							
 			</div>				
 				
 		</div>
@@ -252,8 +305,7 @@
 
 				<div id="about-nav" class="spy falloff">
 					<ul>
-						<li><a href="#about-introduction" class="jump hidden">Work-Shop</a></li>					
-						<li><a href="#about-mission" class="jump">About</a></li>
+						<li><a href="#about-introduction" class="jump">About</a></li>					
 						<li><a href="#about-process" class="jump">Process</a></li>
 						<li><a href="#about-services" class="jump">Services</a></li>						
 						<li><a href="#about-people" class="jump">People</a></li>
