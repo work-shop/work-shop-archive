@@ -86,6 +86,7 @@ $(window).resize(function() {
 $(window).scroll(function() { 
 
 	if(!$('html').hasClass('menu-open')){
+		console.log('scroll');
 
 		if($('#state').hasClass('spy')){
 			spy();
@@ -100,6 +101,10 @@ $(window).scroll(function() {
 			$("body").removeClass('after').addClass('before');	
 		} 
 	
+	}
+	else{
+		console.log('NO scroll');
+		
 	}
 
 });//end window.scroll
@@ -207,7 +212,9 @@ function menuToggle(){
 		$('#menu').removeClass('off');
 		$('#menu').addClass('on');
 		$('html').removeClass('menu-closed');
-		$('html').addClass('menu-open');	
+		$('html').addClass('menu-open');
+		$('#menu').scrollTop(0);				
+		$('html,body').scrollTop(0);			
 		var trim = $(window).height();		
 		$('html,body').css('height',trim);
 		$('html,body').css('overflow','hidden');
@@ -216,11 +223,11 @@ function menuToggle(){
 	else if($('#menu').hasClass('on')){
 		$('#menu').removeClass('on');
 		$('#menu').addClass('off');
-		$('html').removeClass('header-open');
-		$('html').addClass('header-closed');
-		$('#menu').scrollTop(0);	
+		$('html').removeClass('menu-open');
+		$('html').addClass('menu-closed');
+		$('html').scrollTop(0);	
 		$('html,body').css('height','100%');
-		$('html,body').css('overflow','auto');
+		$('html,body').css('overflow','visible');
 	}
 	
 }

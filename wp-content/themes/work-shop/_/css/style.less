@@ -185,7 +185,7 @@ a{
 	
 	&:focus{
 		text-decoration: none;
-		color: auto;
+		color: @brand;
 		outline: none;
 	}
 }
@@ -346,7 +346,7 @@ h1,.h1{
 }
 
 h2,.h2{
-	font-size: 34px;
+	font-size: 33px;
 }
 
 h3,.h3{
@@ -419,7 +419,7 @@ h5,h6{
 	}
 	
 	&.padded{
-		padding: 6% 0 7% 0;
+		padding: 7% 0 8% 0;
 	}
 	
 	&.padded-more{
@@ -540,18 +540,18 @@ h5,h6{
 	}
 	
 	#logo{
-		width: 130px;
+		width: 124px;
 		left: 50%;
-		margin-left: -65px;
+		margin-left: -62px;
 		position: fixed;
-		margin-top: 10px;
+		margin-top: 7px;
 		z-index: 9999;
 	}	
 	
 	#nav{
 		position: fixed;
 		right: 30px;
-		top: 13px;
+		top: 10px;
 	
 		li{
 			display: inline-block;
@@ -589,6 +589,7 @@ h5,h6{
 		
 	&.on{
 		top: 0%;
+		display: block;
 	}
 	
 	.menu-about{
@@ -598,21 +599,24 @@ h5,h6{
 		li{
 			margin-bottom: 30px;
 			a{
-				padding: 10px;
+				padding: 10px 0px;
 			}
+		}
+	}
+	
+	.menu-projects{
+		h3{
+			margin-top: 0;
+			margin-bottom: 0px;
+		}
+		
+		h4{
+			line-height: 1.4;
 		}
 	}
 	
 }
 
-#menu-close{
-	position: absolute;
-	width: 30px;
-	height: 30px;
-	right: -100px;
-	top: 24px;
-	z-index: 100000;
-}
 
 #headerfix{
 	height: 90px;
@@ -625,11 +629,21 @@ h5,h6{
 }
 
 
+#menu-close{
+	position: fixed;
+	width: 30px;
+	height: 30px;
+	right: -100px;
+	top: 26px;
+	z-index: 100000;
+	.transition(right,.25s);
+}
+
 #carrot{
 	right: -100px;
 	position: fixed;
 	width: 25px;
-	top: 30px;
+	top: 27px;
 	opacity: .85;
 	.transition(all,.25s);
 	
@@ -651,8 +665,12 @@ h5,h6{
 
 .menu-open{
 
+	#carrot{
+		right: -100px;
+	}
+
 	#menu-close{
-		right: 24px;
+		right: 16px;
 	}
 	
 	#header #nav{
@@ -1141,7 +1159,7 @@ h5,h6{
 #about-nav{
 	position: fixed;
 	z-index: 998;
-	top: 110px;
+	top: 23%;
 	
 	&.off{
 		opacity: 0;
@@ -1568,7 +1586,9 @@ h5,h6,.h5,.h6{
 
 #header {
 
+	background: white;
 	height: 53px;
+	position: fixed;
 	
 	#logo{
 		margin-top: 0;
@@ -1590,9 +1610,13 @@ h5,h6,.h5,.h6{
 	}
 	
 	#carrot{
-		top: 14px;
+		top: 16px;
 	}
 
+}
+
+#menu-close{
+	top: 15px;
 }
 
 
@@ -1609,6 +1633,25 @@ h5,h6,.h5,.h6{
 
 #nav-side{
 	right: 0px;
+}
+
+#about-nav{
+	width: 100%;
+	left: 0px;
+	background: white;
+	top: 53px;
+		
+	li{
+		display: inline-block;
+		
+		a{
+			font-size: 11px;
+			padding: 6px;
+		}
+		&:last-child a{
+			padding-right: 0;
+		}		
+	}
 }
 
 .tooltip{

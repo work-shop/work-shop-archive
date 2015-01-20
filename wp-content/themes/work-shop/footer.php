@@ -49,7 +49,7 @@
 
 	<?php 
 		if ( !file_exists( dirname(__FILE__) . 'env_prod' )  ) { 
-			//include('less.php');
+			include('less.php');
 		}
 	?>
 

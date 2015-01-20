@@ -21,15 +21,15 @@
 						
 							<a href="<?php the_permalink(); ?>">
 											
-								<div class="project-tile-image col-sm-2 col-sm-offset-2 col-xs-6 ">
-									<?php if(has_post_thumbnail()): the_post_thumbnail('project'); else: echo '<img src="' . get_bloginfo('template_directory') . '/_/img/default.png" alt="default image" />'; endif; ?>					
+								<div class="project-tile-image col-sm-4 col-xs-6 ">
+									<?php if(has_post_thumbnail()): the_post_thumbnail('small'); else: echo '<img src="' . get_bloginfo('template_directory') . '/_/img/default.png" alt="default image" />'; endif; ?>					
 									<div class="project-tile-hook hidden">
 										<h2><?php // echo ws_ifdef_show( $blurby ); ?></h2>
 									</div>
 									
 								</div>
 						
-								<div class="project-tile-info col-sm-4 col-sm-offset-1 col-xs-6">
+								<div class="project-tile-info col-sm-7 col-sm-offset-0 col-xs-6">
 									<h3 class=""><?php echo ws_ifdef_show( $title ); ?></<h3>
 									<h4><?php the_field('project_what_we_did'); ?></h4>
 								</div>								
@@ -41,3 +41,5 @@
 
 			
 			<?php $i++; endwhile; ?>
+			
+			<?php wp_reset_query(); ?>

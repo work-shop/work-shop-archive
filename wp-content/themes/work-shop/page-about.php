@@ -41,7 +41,7 @@
 
 		<div class="block-background mask-light hidden-xs">	
 			<video autoplay="autoplay" loop>
-			  <source src="<?php bloginfo('template_directory'); ?>/_/img/process2.mp4" type="video/mp4">
+			  <source src="<?php bloginfo('template_directory'); ?>/_/img/office.mp4" type="video/mp4">
 			</video>			
 		</div>		
 		

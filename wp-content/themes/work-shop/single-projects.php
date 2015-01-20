@@ -1,4 +1,6 @@
 <?php get_header();?>
+
+
 		
 <div id="project" class="template project">	
 
@@ -307,7 +309,8 @@
 	
 </div>	
 	
-<?php get_template_part('related'); ?>	
+<?php get_template_part('related'); ?>
+
 	
 
 <?php get_footer(); ?>
