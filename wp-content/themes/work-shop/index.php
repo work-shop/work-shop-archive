@@ -10,7 +10,7 @@
 
 	<section id="home-introduction" class="home-introduction introduction block full">	
 	
-		<div class="tagline-container slide-left-auto">
+		<div class="tagline-container">
 			<h1 class="centered tagline">
 				We design and make<br/>
 				spaces, furniture, objects<br/>
@@ -261,9 +261,9 @@
 			<div class="container">
 				<div class="row">
 		
-					<div class="col-sm-8 col-sm-offset-2">
+					<div class="col-sm-10 col-sm-offset-1">
 						
-						<h1 class="m30">We like to do good work, and we work with clients who like to do good.</h1>
+						<h1 class="m30">We specialize in developing creative strategies across disciplines to solve problems for small businesses, institutions, and organizations.</h1>
 						<h3><a href="<?php bloginfo('url'); ?>/about" class="button">Learn More About Us</a></h3>
 						
 					</div>

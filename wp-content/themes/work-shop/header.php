@@ -83,6 +83,8 @@
 						<li><a href="<?php bloginfo('url'); ?>/projects" id="work-link" class="">Projects</a></li>	
 						<li class="hidden"><a href="<?php bloginfo('url'); ?>/process" class="">Process</a></li>							
 						<li><a href="<?php bloginfo('url'); ?>/about" class="">About</a></li>
+						<li><a href="#menu" class="menu-toggle">Menu</a></li>
+						
 					</ul>	
 				</nav>	
 				
@@ -98,7 +100,7 @@
 
 	<div id="headerfix"></div>
 	
-	<?php  get_template_part('menu','2'); ?>
+	<?php  get_template_part('menu'); ?>
 	
 	<?php if(is_home()): ?>
 

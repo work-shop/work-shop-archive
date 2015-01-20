@@ -16,7 +16,7 @@ while ( $q->have_posts() ) : $q->the_post();
 	?>
 		
 
-	<article class="col-sm-5 col-xs-6 project project-tile element <?php echo ws_derive_scope_string( get_field('project_scope_tags') ); ?>">
+	<article class="col-sm-6 col-xs-6 project project-tile element <?php echo ws_derive_scope_string( get_field('project_scope_tags') ); ?>">
 	
 		<a href="<?php the_permalink(); ?>">
 						

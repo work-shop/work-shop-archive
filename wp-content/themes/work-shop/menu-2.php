@@ -30,6 +30,8 @@
 						<?php get_template_part('projects','menu'); ?>		
 					</div>		
 				</div>
+				
+				
 				<div class="col-sm-4 col-sm-offset-1 menu-about hidden-xs">
 					<h2 class="m30">We're an interdisciplinary group of designers, makers, thinkers, and questioners. </h2>
 
@@ -38,6 +40,13 @@
 						<li><a href="<?php bloginfo('url') ;?>/about#contact" class=" h2 bold">Contact</a></li>
 						<li><a href="<?php bloginfo('url') ;?>/jobs" class=" h2 bold">Jobs</a></li>
 						<li><a href="#" class=" h2 bold">Summer Apprenticeship Program</a></li>
+						<li><a href="#" class=" h2 bold">Projects</a>
+							<ul class="hidden">
+								<li>Spaces</li>
+								<li>Furniture</li>
+								<li>Webs</li>
+							</ul>
+						</li>
 					</ul>
 					<h2><span class="dash static inline"></span></h2>
 					<address>	
