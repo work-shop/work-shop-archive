@@ -5,20 +5,24 @@
 
 <div id="page" class="template page">	
 
-	<section id="page-introduction" class="block crop introduction bg-light three-quarter-max <?php echo ((has_post_thumbnail()) ? 'introduction-image' : '') ?> ">
+	<?php if(has_post_thumbnail()): ?>	
+
+		<section id="page-introduction" class="block crop introduction golden-max <?php echo ((has_post_thumbnail()) ? 'introduction-image' : '') ?> ">
+		
+			<?php the_post_thumbnail('project-slideshow'); 	?>
+					
+		</section>	
 	
-		<?php if(has_post_thumbnail()): the_post_thumbnail('project-slideshow'); endif; ?>	
-				
-	</section>	
+	<?php endif; ?>
 
 	
-	<section id="page-body" class="page-body block bg-light">
+	<section id="page-body" class="page-body block bg-light <?php if(!has_post_thumbnail()): echo 'padded'; endif; ?>">
 	
 		<div class="container md">
 		
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2">				
-					<h2 class="page-title centered mt m60"><?php the_title(); ?></h2>
+					<h2 class="page-title centered mt <?php if(!has_post_thumbnail()): echo 'm30'; else: echo 'm60'; endif; ?>"><?php the_title(); ?></h2>
 				</div>			
 			</div>	
 			
@@ -34,8 +38,7 @@
 		
 	</section>
 	
-	
-		
+			
 </div>	
 
 <?php endwhile; ?>

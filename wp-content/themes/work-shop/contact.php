@@ -9,7 +9,7 @@
 					<h1 class="centered m2">We want to work with you.</h1>
 				</div>
 			
-				<div class="col-sm-4">
+				<div class="col-sm-3 col-sm-offset-1">
 					<address>
 						<h3 class="bold uppercase m30">Contact</h3>
 						
@@ -19,7 +19,7 @@
 					</address>	
 				</div>
 			
-				<div class="col-sm-4">
+				<div class="col-sm-3">
 					<address>
 						<h3 class="uppercase bold m30">Office</h3>
 											
@@ -28,7 +28,7 @@
 					</address>				
 				</div>	
 				
-				<div class="col-sm-4">
+				<div class="col-sm-3">
 					<address>
 						<h3 class="uppercase bold m30">Shop</h3>
 											
@@ -46,7 +46,7 @@
 		<div class="container">
 			<div class="row">
 			
-				<div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-xs-12 centered">
+				<div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-xs-12 centered m30">
 					<div class="contact-button-broken">
 						<h2 class="centered"><a href="#contact" data-toggle="modal" data-target="#contactModal" class="button">Contact Us</a></h2>
 					</div>

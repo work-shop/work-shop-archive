@@ -206,7 +206,7 @@ if ( function_exists( 'add_theme_support' ) ) {
     set_post_thumbnail_size( 300, 183, true ); 
 }
 if ( function_exists( 'add_image_size' ) ) { 
-	add_image_size( 'menu', 250, 125, true );  	
+	add_image_size( 'menu', 250, 153, true );  	
 	add_image_size( 'square', 720, 720, true );  	
 	add_image_size( 'project', 720, 440, true );  	
 	add_image_size( 'slideshow', 1440, 878, true );  

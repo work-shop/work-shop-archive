@@ -225,6 +225,7 @@ function view(){
 	
 	if($(window).width() >= 768){		
 		$('.block.half').css('height',ch/2);
+		$('.block.golden-max').css('max-height',ch*.72);		
 		$('.block.sixty').css('height',ch*.69);										
 		$('.block.full').css('height',ch);	
 		$('.block.min').css('min-height',ch);				
@@ -234,7 +235,8 @@ function view(){
 		$('.flexslider-hero').css('height',fw);																									
 	}
 	else{
-		$('.block.half').css('height',ch/2);				
+		$('.block.half').css('height',ch/2);
+		$('.block.golden-max').css('max-height',ch*.70);		
 		$('.block.full').css('height',ch);	
 		$('.block.min').css('min-height',ch);							
 		$('.block.min-large').css('min-height','none');	

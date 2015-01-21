@@ -5,9 +5,6 @@
 
 
 	<section id="about-introduction" class="about-introduction introduction block bg-brand sixty crop padded">	
-	
-		<div class="block-background mask-light hidden" style="background-image: url('<?php bloginfo('template_directory'); ?>/_/img/instagram.jpg'); opacity: .25;">
-		</div>
 		
 		<div class="container">
 			<div class="row">			
