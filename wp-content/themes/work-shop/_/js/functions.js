@@ -266,11 +266,7 @@ function loadPage(){
 
 $(window).scroll(function() { 
 
-	if( !$('html').hasClass('menu-open') ) {
-
-		if($('#state').hasClass('spy')){
-			//spy();
-		}	
+	if( !$('html').hasClass('menu-open') ) {	
 	
 		var after = $('body').offset().top + 200;
 		       
@@ -323,8 +319,10 @@ $(document).on('spy-init', function() {
 
 
 	 $(window).on('scroll', function() {
-	 	if ( current == undefined ) { $('.spy .jump').removeClass('active'); }
-	 	$(document).trigger('spy-recalculate');
+	 	if( !$('html').hasClass('menu-open') ) {	
+	 		if ( current == undefined ) { $('.spy .jump').removeClass('active'); }
+	 		$(document).trigger('spy-recalculate');
+	 	}
 	 });
 
 	 $(document).trigger('spy-recalculate');
