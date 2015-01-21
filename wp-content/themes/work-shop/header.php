@@ -68,7 +68,7 @@
 
 <?php get_template_part('ie'); ?>
 
-<div id="state" class="loading spy">
+<div id="state" class="loading">
 	
 		<header id="header" class="closed">
 			<div class="container">		

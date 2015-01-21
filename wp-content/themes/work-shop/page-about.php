@@ -9,7 +9,9 @@
 		<div class="container">
 			<div class="row">			
 				<div class="col-sm-10 col-sm-offset-2">
+
 				<h1 class=" about-tagline white">Work-Shop is an interdisciplinary <br/>design studio comprised of designers, makers, thinkers, and creative technologists. </h1>	
+
 				</div>
 			</div>
 		</div>
@@ -25,7 +27,24 @@
 			<div class="row">
 			
 				<div class="col-sm-9 col-sm-offset-2">
-					<h2>As a studio, we don’t fit well into a single category or discipline — and we see that as a strength. Our group thrives in the spaces between disciplines; this allows us to approach each project with a fresh set of eyes, a lack of preconceptions, and an ability to cut to the core issues, questions, and values of a project.</h2>
+
+					<h2 class="bold h1">
+
+					We don’t fit well into a single category or discipline. And we see that as a strength.
+
+					</h2>
+
+					<hr />
+
+					<h2 class="text">
+
+					<span class="brand">Work-Shop</span> specializes in developing creative strategies to solve problems for individuals, businesses, institutions, and organizations. 
+
+					Problems don't often come packaged up under a single discipline's umbrella, so we don't limit our scope of work to a single discipline.
+
+					This allows us to approach our clients' projects holistically – with fresh eyes and no preconceptions. 
+
+					</h2>
 				</div>
 				
 			</div>

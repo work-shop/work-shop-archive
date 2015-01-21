@@ -26,7 +26,6 @@
 							
 	</section>	
 	
-	
 	<section id="home-about" class="home-about block half padded">		
 	
 			<div class="vertical-center">
@@ -34,13 +33,16 @@
 				research, design, and fabrication<br class="visible-xs"/> studio<br class="hidden-xs"/>
 				in Providence,<br class="visible-xs"/> Rhode Island.<br/></h2>
 				
-				<h3 class="centered"><a href="<?php bloginfo('url'); ?>/jobs" class="bold h3">We're hiring! Check out our open positions.</a></h3>
+				<h3 class="centered m30"><a href="<?php bloginfo('url'); ?>/jobs" class="bold h3">We're hiring! Check out our open positions.</a></h3>
+
+				<h3 class="centered">
+				<a href="<?php bloginfo('url'); ?>/about" class="button">Learn More About Us</a>
+				</h3>
 			
 			</div>
 			
 	</section>	
-	
-	
+
 	<section id="home-spaces" class="home-spaces block full bg-light">	
 	
 		<div class="block-background mask-dark" style="background-image: url('<?php bloginfo('template_directory'); ?>/_/img/home.jpg')">
@@ -254,22 +256,20 @@
 							
 	</section>			
 
-
-	<section id="home-info" class="home-info full block bg-light padded-more">	
+	 <section id="home-info" class="home-info full block bg-light padded-more">	
 		
 		<div class="vertical-center">
 			<div class="container">
 				<div class="row">
 		
-					<div class="col-sm-10 col-sm-offset-1">
+					<div class="col-sm-10 col-sm-offset-1 centered">
 						
+						<h1 class="m30">
 						<h1 class="m60 centered">We're an interdisciplinary design consultancy comprised of designers, makers, thinkers, and creative technologists. </h1>
 						<h3><a href="<?php bloginfo('url'); ?>/about" class="button centered">Learn More About Us</a></h3>
 						
 					</div>
-					
 				</div>
-				
 			</div>
 		</div>
 							
