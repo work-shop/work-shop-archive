@@ -21,8 +21,16 @@
 		<div class="container md">
 		
 			<div class="row">
-				<div class="col-sm-8 col-sm-offset-2">				
-					<h2 class="page-title centered mt <?php if(!has_post_thumbnail()): echo 'm30'; else: echo 'm60'; endif; ?>"><?php the_title(); ?></h2>
+				<div class="col-sm-8 col-sm-offset-2 <?php if(!has_post_thumbnail()): echo 'm30'; else: echo 'm60'; endif; ?>">				
+					<h2 class="page-title centered mt"><?php the_title(); ?></h2>
+					
+					<?php 
+					$parent_id = $post->post_parent;
+					if($parent_id): 
+						$parent_link = get_the_permalink( $parent_id );
+						$parent_title = get_the_title( $parent_id ); ?>
+						<h4 class="centered"><a href="<?php echo $parent_link; ?>"><span class="icon icon-left" data-icon="&#219;"></span>Back to <?php echo $parent_title; ?></a></h4>
+					<?php endif; ?>
 				</div>			
 			</div>	
 			
@@ -38,7 +46,8 @@
 		
 	</section>
 	
-			
+	<?php get_template_part('edit','button') ?>
+				
 </div>	
 
 <?php endwhile; ?>

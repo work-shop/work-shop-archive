@@ -137,7 +137,7 @@
 					<div class="col-sm-6 col-md-4 metadata">
 								
 						<?php 
-						if ( $client || $location || $date_started || $project_link || $collaborators || $scope_tags ) :
+						if ( $client || $location || $date || $project_link || $collaborators || $scope_tags ) :
 			
 						echo '<ul class="">';
 			
@@ -307,7 +307,7 @@
 	
 	<div id="project-dash" class="dash static"></div>		
 	
-	<?php if(is_user_logged_in()): ?><a href="<?php echo get_edit_post_link(); ?>" target="_blank" id="project-edit" class="hidden-xs"><span class="icon" data-icon="r"></span></a><?php endif; ?>
+	<?php get_template_part('edit','button') ?>
 	
 </div>	
 	

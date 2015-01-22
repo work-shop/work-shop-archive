@@ -20,7 +20,7 @@
 		
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2">				
-					<h2 class="page-title centered mt <?php if(!has_post_thumbnail()): echo 'm90'; else: echo 'm60'; endif; ?>"><?php the_title(); ?></h2>
+					<h2 class="page-title centered mt <?php if(!has_post_thumbnail()): echo 'm90'; else: echo 'm60'; endif; ?>">Work With Us</h2>
 				</div>			
 			</div>	
 			

@@ -1,4 +1,3 @@
-	
 <section class="block padded related">
 	<div class="container">
 		<div class="row">
@@ -12,19 +11,30 @@
                 // related posts logic.
                 $tags = array_map(function( $x ) {
                     return $x->term_id;
-                }, wp_get_post_tags( get_the_ID() ));
+                }, ( $a = get_the_terms( get_the_ID(), 'project_categories' )) ? $a : array() );
 
                 $posted = array( get_the_ID() );
                 $posts = 0;
+
+
                 if ( !empty($tags) ) {
+
                     $RPQ = new WP_Query( array(
                         "post_type" => 'projects',
                         "posts_per_page" => 3,
+                        "post_count" => 3,
                         "nopaging" => true,
-                        "tag__in" => $tags,
-                        "post__not_in" => $posted
+                        "post__not_in" => $posted,
+                        "tax_query" => array(
+	                        	array(
+	                        		'taxonomy' => 'project_categories',
+	                        		'field' => 'id',
+	                        		'terms' => $tags
+	                        	)
+                        	)
                     ) );
-                    while ( $RPQ->have_posts()&&$posts<4 ) {
+
+                    while ( $RPQ->have_posts()&&$posts<3 ) {
                         $post = $RPQ->next_post(); ?>
                         
 						<div class="tile project-tile project-tile-small col-sm-3 col-xs-6">
@@ -43,6 +53,8 @@
                     }
                     wp_reset_query();
                 }
+
+                if ( !$a ) :
 
                 if ( $posts<3 ) {
                     $AddQ = new WP_Query( array(
@@ -69,6 +81,8 @@
                     }
                     wp_reset_query();
                 }
+
+                endif;
             ?>
 			</div>
 		</div>
