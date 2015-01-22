@@ -8,7 +8,7 @@
 				<div class="row">
 				<div class="col-sm-10 col-sm-offset-1">
 					<h2 class="centered">
-						We design and make spaces, furniture, objects, websites, and apps
+						We design and make spaces, furniture, objects, websites, apps, and events
 					</h2>
 				</div>
 			</div>
