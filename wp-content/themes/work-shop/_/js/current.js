@@ -1,4 +1,7 @@
 $(window).load(function() {
+
+	if($('#current').length > 0){
+
 	var cID 		= 'a90e3dfba3fe4ec88113f3e0ce0e04b3',
 	    uID 		= 1196000869,
 	    aTkn 		= '1196000869.467ede5.0ad5b8c9836e4fd8a072f925d6e9b964',
@@ -65,6 +68,8 @@ $(window).load(function() {
 	}
 
 	f.run();
+	
+	}
 
 });
 

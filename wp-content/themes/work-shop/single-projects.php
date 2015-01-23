@@ -93,7 +93,7 @@
 	</section>
 	
 
-	<section id="project-overview" class="project-overview overview block bg-light">
+	<section id="project-overview" class="project-overview overview block bg-light <?php if(get_field('project_stories')): echo 'has-stories'; else: echo 'no-stories'; endif; ?>">
 		
 		<?php
 			$client 			= get_field('project_client');
@@ -101,7 +101,7 @@
 
 			$location 			= get_field('project_location');
 			$date 				= get_field('project_date');
-			$project_link 		= get_field('project_link');
+			$project_link 		= get_field('project_link'); 
 
 			$collaborators 		= get_field('project_collaborators');
 			$scope_tags 		= get_field('project_scope_tags');
@@ -225,7 +225,7 @@
 				?>
 				
 
-	<section id="<?php echo $story_title_slug; ?>" class="story padded block <?php echo $story_classes; ?> story-<?php echo $story_title_slug; ?>  ">
+	<section id="<?php echo $story_title_slug; ?>" class="story block <?php echo $story_classes; ?> story-<?php echo $story_title_slug; ?>  ">
 
 		<?php
 			if(!$story_is_container){

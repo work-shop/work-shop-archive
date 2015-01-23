@@ -3,7 +3,7 @@
 
 // Monadic functions for echoing content to the page.
 function ws_ifdef_do_else( $check, $content, $else ) {
-	return ( $check ) ? $content : $else;
+	return ( $check || !empty($check) ) ? $content : $else;
 }
 
 function ws_ifdef_do( $check, $content ) {
@@ -15,7 +15,7 @@ function ws_ifdef_show( $content ) {
 }
 
 function ws_ifdef_concat($before, $content, $after) {
-	return $before . ws_ifdef_show( $content ) . $after;
+	return ws_ifdef_do( $content, $before.$content.$after );
 }
 
 function ws_derive_story_title( $story ) {
