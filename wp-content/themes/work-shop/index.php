@@ -34,10 +34,6 @@
 				in Providence,<br class="visible-xs"/> Rhode Island.<br/></h2>
 				
 				<h3 class="centered m30"><a href="<?php bloginfo('url'); ?>/jobs" class="bold h3">We're hiring! Check out our open positions.</a></h3>
-
-				<h3 class="centered">
-				<a href="<?php bloginfo('url'); ?>/about" class="button">Learn More About Us</a>
-				</h3>
 			
 			</div>
 			

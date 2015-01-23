@@ -305,7 +305,7 @@
 			
 	</div>
 	
-	<div id="project-dash" class="dash static"></div>		
+	<div id="project-dash" class="dash static hidden"></div>		
 	
 	<?php get_template_part('edit','button') ?>
 	
