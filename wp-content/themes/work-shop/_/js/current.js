@@ -121,7 +121,7 @@ $(window).load(function() {
 				div = $('<div/>')
 					.addClass('col-sm-3')
 					.addClass('col-md-2')
-					.addClass('col-xs-6')
+					.addClass('hidden-xs')
 					.addClass('current-item')
 					.addClass('current-item-video')																														
 					.append( video );

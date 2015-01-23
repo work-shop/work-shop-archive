@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row">
 		
-			<div class="col-sm-3 col-xs-12">
+			<div class="col-sm-2 col-xs-6">
 				<h3>Related Projects</h3>
 			</div>
 				
@@ -21,8 +21,8 @@
 
                     $RPQ = new WP_Query( array(
                         "post_type" => 'projects',
-                        "posts_per_page" => 3,
-                        "post_count" => 3,
+                        "posts_per_page" => 5,
+                        "post_count" => 5,
                         "nopaging" => true,
                         "post__not_in" => $posted,
                         "tax_query" => array(
@@ -34,10 +34,10 @@
                         	)
                     ) );
 
-                    while ( $RPQ->have_posts()&&$posts<3 ) {
+                    while ( $RPQ->have_posts()&&$posts<5 ) {
                         $post = $RPQ->next_post(); ?>
                         
-						<div class="tile project-tile project-tile-small col-sm-3 col-xs-6">
+						<div class="tile project-tile project-tile-small col-sm-3 col-md-2 col-xs-6">
 							<a href="<?php the_permalink(); ?>">
 								<div class="overlay"></div>
 							
@@ -59,15 +59,15 @@
                 if ( $posts<3 ) {
                     $AddQ = new WP_Query( array(
                         "post_type" => 'projects',
-                        "posts_per_page" => (3-$posts),
+                        "posts_per_page" => (5-$posts),
                         "nopaging" => true,
                         "post__not_in" => $posted
                     )); 
                                         
-                   while ( $AddQ->have_posts()&&$posts<3 ) {
+                   while ( $AddQ->have_posts()&&$posts<5 ) {
                         $post = $AddQ->next_post(); ?>
 					
-						<div class="tile project-tile project-tile-small col-sm-3 col-xs-6">
+						<div class="tile project-tile project-tile-small col-sm-3 col-md-2 col-xs-6">
 							<a href="<?php the_permalink(); ?>">
 								<div class="overlay"></div>
 								<?php if(has_post_thumbnail()): the_post_thumbnail('project'); else: echo '<img src="' . get_bloginfo('template_directory') . '/_/img/default.png" alt="default image" />'; endif; ?>

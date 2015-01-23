@@ -148,11 +148,11 @@
 							) );
 							// conditionally echos a linked client ( or just a client )
 			
-							echo ws_ifdef_do( $location,'<li>' . $location . '</li>' );
+							//echo ws_ifdef_do( $location,'<li>' . $location . '</li>' );
 							// conditionally echos a location
 							
 							echo ws_ifdef_do( $date,'<li>' . $date . '</li>' );
-							// conditionally echos a location
+							// conditionally echos a date
 			
 							echo ws_ifdef_do( $scope_tags,
 								ws_ifdef_concat( 
@@ -182,7 +182,7 @@
 							));
 							// this outputs a comma-separated list of links. This is NOT currently an html list.
 			
-							//echo ws_ifdef_concat( '<a href="',ws_decide_link_type( $project_link ),'" > more </a>' );
+							echo ws_ifdef_concat( '<li class="project-link-item"><a href="',ws_decide_link_type( $project_link ),'" target="_blank" class="project-link"> Visit ' . $project_link . '</a></li>' );
 							// this outputs an external link to more information about this project
 			
 						echo '</ul>';
