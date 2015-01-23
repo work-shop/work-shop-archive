@@ -2,11 +2,13 @@ $(window).load(function() {
 	var cID 		= 'a90e3dfba3fe4ec88113f3e0ce0e04b3',
 	    uID 		= 1196000869,
 	    aTkn 		= '1196000869.467ede5.0ad5b8c9836e4fd8a072f925d6e9b964',
-	    targetID 	= '#work-stage';
-	    blk 		= 10,
-	    at 		= 0,
-	    max 		= 60,
-	    doc 		= $(document);
+	    targetID 	= '#current';
+	    blk 		= 12,
+	    at 			= 0,
+	    max 		= 96,
+	    doc 		= $(document),
+	    loaded_videos = 0,
+	    max_videos = 4;
 
 	var f = new Instafeed({
 		clientId: cID,
@@ -35,6 +37,20 @@ $(window).load(function() {
 	}
 
 	function act( recv ) {
+
+		recv.data = recv.data.filter( function( x ) {
+			if ( x.type == 'video' ) {
+				if ( loaded_videos < max_videos ) {
+					loaded_videos += 1;
+					return true;
+				} 
+				
+				return false;
+			} 
+
+			return true;
+		});	
+	
 		at += recv.data.length;
 		doc.trigger( 'feed-recv', recv );
 		//console.log( data );
@@ -84,7 +100,7 @@ $(window).load(function() {
 			});
 
 		} else {
-			buckets['*'] = parent;
+			buckets['*'] = parent.addClass('row');
 		}
 
 		console.log( buckets );
@@ -99,13 +115,15 @@ $(window).load(function() {
 			if ( x.type == 'video' ) {
 
 
-				var video = $('<video autoplay loop></video>')
+				var video = $('<video autoplay loop muted></video>')
 					  .append('<source src="' + x.videos.standard_resolution.url + '" type="video/mp4" />');
 
 				div = $('<div/>')
-					.addClass('col-sm-2')
-					.addClass('col-md-3')
+					.addClass('col-sm-3')
+					.addClass('col-md-2')
 					.addClass('col-xs-6')
+					.addClass('current-item')
+					.addClass('current-item-video')																														
 					.append( video );
 
 
@@ -116,9 +134,11 @@ $(window).load(function() {
 				});
 
 				div = $('<div/>')
-					.addClass('col-sm-2')
-					.addClass('col-md-3')
+					.addClass('col-sm-3')
+					.addClass('col-md-2')
 					.addClass('col-xs-6')
+					.addClass('current-item')
+					.addClass('current-item-image')																				
 					.append( image );
 
 				buckets[ decide_bucket_type( x ) ].append( div );
